@@ -3,10 +3,10 @@
 
 <head>
     <!-- preload -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" href="https://unpkg.com/vue@3/dist/vue.global.js">
-    <link rel="preload" href="./style/index.css">
-    <link rel="preload" href="./script/index.js">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://unpkg.com/vue@3/dist/vue.global.js" as="script">
+    <link rel="preload" href="./style/index.css" as="style">
+    <link rel="preload" href="./script/index.js" as="script">
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -24,9 +24,11 @@
 
     <div id="app">
         <div class="container">
+            <!-- 页眉 -->
             <header>
                 <div class="avatar">
-                    <img src="https://avatars.githubusercontent.com/u/121269017?v=4" alt="head" width="100%" height="100%">
+                    <img src="https://avatars.githubusercontent.com/u/121269017?v=4" alt="head" width="100%"
+                        height="100%">
                 </div>
                 <h1>RealMaybe</h1>
                 <p class="tagline">唱歌写文打游戏，想做更好的自己</p>
@@ -37,10 +39,12 @@
                 </p>
             </header>
 
+            <!-- 主要内容 -->
             <main>
                 <!-- OC角色创作 -->
                 <section class="oc-section">
-                    <h2><i class="fas fa-paint-brush"></i> OC角色创作</h2>
+                    <h2><i class="fas fa-paint-brush"></i> OC 角色创作</h2>
+
                     <div class="oc-grid">
                         <div class="oc-card" v-for="(character, index) in characters" :key="index">
                             <h3>{{ character.name }}</h3>
@@ -52,6 +56,7 @@
                 <!-- 自我介绍 -->
                 <section class="self-introduction">
                     <h2><i class="fas fa-feather-alt"></i> 关于我</h2>
+
 
                     <div class="introduction-text">
                         <p>嗨，初次见面，我是 RealMaybe，你也可以叫我「许真」或「尘羽」。</p>
@@ -82,8 +87,9 @@
                 </section>
 
                 <!-- 技能 -->
-                <section class="delay-1">
+                <section class="delay delay-1">
                     <h2><i class="fas fa-code"></i> 前端技能</h2>
+
                     <div class="skill-item" v-for="(skill, index) in skills" :key="index">
                         <div class="skill-header">
                             <span>{{ skill.name }}</span>
@@ -96,8 +102,9 @@
                 </section>
 
                 <!-- 语言 -->
-                <section class="delay-2">
+                <section class="delay delay-2">
                     <h2><i class="fas fa-language"></i> 语言学习</h2>
+
                     <div class="language-item" v-for="(language, index) in languages" :key="index">
                         <i :class="language.icon"></i>
                         <div class="language-info">
@@ -113,8 +120,9 @@
                 </section>
 
                 <!-- 兴趣爱好 -->
-                <section class="delay-3">
+                <section class="delay delay-3">
                     <h2><i class="fas fa-heart"></i> 兴趣爱好</h2>
+
                     <div class="hobbies">
                         <div class="hobby-item" v-for="(hobby, index) in hobbies" :key="index">
                             <i :class="hobby.icon"></i> {{ hobby.name }}
@@ -123,6 +131,7 @@
                 </section>
             </main>
 
+            <!-- 底部 -->
             <footer>
                 <div class="social-links">
                     <template v-for="item in links" :key="item.name">
@@ -131,15 +140,18 @@
                         </a>
                     </template>
                 </div>
-
-                <p>© 2025 RealMaybe</p>
+                
+                <div>
+                    <span>© 2025 RealMaybe</span>
+                    <a href="https://icp.gov.moe/?keyword=20250294" target="_blank">萌ICP备20250294号</a>
+                </div>
             </footer>
         </div>
     </div>
 
     <!-- script -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./script/index.js"></script>
+    <script type="module" src="./script/index.js"></script>
 
 </body>
 

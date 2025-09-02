@@ -28,6 +28,7 @@ body {
 
 // 头部样式
 header {
+    width: 100%;
     text-align: center;
     margin-bottom: 2.5rem;
     animation: fadeIn 1s ease-out;
@@ -74,7 +75,7 @@ header {
             padding: 0 0.5rem;
         }
 
-        @media (max-width: 30rem) {
+        @media (max-width: @mobile-breakpoint) {
             span {
                 display: block;
             }
@@ -88,6 +89,7 @@ header {
 
 // 主要内容区域 - 修改为flex布局
 main {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 1.875rem;
@@ -126,6 +128,7 @@ main {
     // OC角色区域 - 修改为flex布局
     .oc-section,
     .self-introduction {
+        // width: 100%;
         flex: 1 1 100% !important;
 
         // OC角色网格
@@ -143,11 +146,11 @@ main {
             transition: transform 0.3s, box-shadow 0.3s;
             flex: 1 1 calc(100% - 1.25rem);
 
-            @media (min-width: 30rem) {
+            @media (min-width: @mobile-breakpoint) {
                 flex: 1 1 calc(50% - 1.25rem);
             }
 
-            @media (min-width: 48rem) {
+            @media (min-width: @tablet-breakpoint) {
                 flex: 1 1 calc(25% - 1.25rem);
             }
 
@@ -249,10 +252,53 @@ main {
             .hover();
         }
     }
+
+    // 作品区域
+    .my-creations {
+        flex: 1;
+
+        .creation {
+            div.creation-item {
+                max-width: 300px;
+                width: 300px;
+
+                // 移动端：小于断点时自动 100%
+                @media (max-width: @mobile-breakpoint) {
+                    max-width: none; // 取消 300px 限制
+                    width: 100%; // 占满一行
+                }
+
+                .video-box {
+                    position: relative;
+                    width: 100%;
+                    padding-top: calc(9 / 16 * 100%);
+                    background-color: red;
+                }
+
+                p.title {
+                    width: 100%;
+                    font-size: 1rem;
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // 页脚样式
 footer {
+    width: 100%;
     text-align: center;
     margin-top: 3.125rem;
     padding: 1.25rem;
@@ -273,6 +319,14 @@ footer {
                 color: @secondary-color;
             }
         }
+    }
+
+    span {
+        padding: 0 0.25rem;
+    }
+
+    a {
+        color: @text-muted;
     }
 }
 

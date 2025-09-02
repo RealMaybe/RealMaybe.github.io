@@ -1,0 +1,43 @@
+@import url("./less/var.less");
+
+// 作品区域
+.my-creations {
+    flex: 1 ;
+
+    .creation {
+        div.creation-item {
+            max-width: 300px;
+            width: 300px;
+
+            // 移动端：小于断点时自动 100%
+            @media (max-width: @mobile-breakpoint) {
+                max-width: none; // 取消 300px 限制
+                width: 100%; // 占满一行
+            }
+
+            .video-box {
+                position: relative;
+                width: 100%;
+                padding-top: calc(9 / 16 * 100%);
+                background-color: red;
+            }
+
+            p.title {
+                width: 100%;
+                font-size: 1rem;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

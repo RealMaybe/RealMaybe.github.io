@@ -1,3 +1,14 @@
+import { parseUrlParams } from "./url.js";
+
+export const getVideoID = url => {
+    const params = parseUrlParams(1, url);
+    if (params.bvid) return params.bvid;
+
+    return null;
+};
+
+/* ========== */
+
 const { createApp, reactive } = Vue;
 
 const app = createApp({
@@ -18,9 +29,9 @@ const app = createApp({
         ]);
 
         const languages = reactive([
-            { name: "英语", level: 60, icon: "fas fa-language" },
-            { name: "日语", level: 40, icon: "fas fa-language" },
-            { name: "德语", level: 30, icon: "fas fa-language" },
+            { name: "英语", level: 50, icon: "fas fa-language" },
+            { name: "日语", level: 20, icon: "fas fa-language" },
+            { name: "德语", level: 10, icon: "fas fa-language" },
         ]);
 
         const hobbies = reactive([
@@ -37,12 +48,22 @@ const app = createApp({
             { name: "Twitter", icon: "fab fa-twitter", link: "https://x.com/RealMaybe0429" },
         ]);
 
+        const creations = reactive([
+            {
+                link: "https://player.bilibili.com/player.html?autoplay=false&bvid=BV1v6N1znEKw",
+                title: "让现在……成为永远……｜记 · 念｜RealMaybe｜中文翻唱",
+            },
+        ]);
+
+        console.log(getVideoID(creations[0].link));
+
         return {
             characters,
             skills,
             languages,
             hobbies,
             links,
+            creations,
         };
     },
 });
