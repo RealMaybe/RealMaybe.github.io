@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from "node:url";
-
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
@@ -29,6 +29,10 @@ export default defineConfig({
     build: {
         assetsDir: "assets", // 将所有静态资源放在 assets 文件夹中
         rollupOptions: {
+            input: {
+                main: resolve(__dirname, "index.html"),
+                "404": resolve(__dirname, "404.html"),
+            },
             output: {
                 entryFileNames: "script/main-[hash].js", // 入口文件放在 script 文件夹中
                 chunkFileNames: "script/[name]-[hash].js", // JS 文件放在 script 文件夹中
