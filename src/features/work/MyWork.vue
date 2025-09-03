@@ -176,10 +176,6 @@ onMounted(() => {
                 flex: 0 0 100%;
                 max-width: 100%;
                 margin-bottom: 1.25rem;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
             }
         }
 
