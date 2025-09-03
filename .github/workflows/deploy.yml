@@ -25,6 +25,12 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v5
 
+              # 安装 pnpm
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: "^10.15.0"
+
             # 设置 Node.js 和 pnpm
             - name: Setup Node.js and pnpm
               uses: actions/setup-node@v4
