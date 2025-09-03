@@ -1,0 +1,45 @@
+// out: false
+
+// 变量定义
+@primary-color: #6e45e2;
+@secondary-color: #88d3ce;
+@accent-color: #ff7e5f;
+@dark-bg: #1a1a2e;
+@card-bg: #16213e;
+@text-color: #f0f0f0;
+@text-muted: #8a8a8a;
+@link-on-color: #fff;
+
+// 媒体查询
+@mobile-breakpoint: 30rem; // 移动端布局
+@tablet-breakpoint: 48rem; // 平板端布局
+@desktop-breakpoint: 62rem; // 桌面端布局
+
+// container
+@main-content-width: 75rem;
+@main-content-padding-top: 2.5rem;
+@main-content-padding-left: 2rem;
+
+// 混合
+.card() {
+    background: @card-bg;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.hover(@h) {
+    transform: translateY(@h);
+    box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.3);
+}
+
+// logo
+.logo-realmaybe() {
+    font-size: 2.5rem;
+    font-family: "yuanti";
+    margin-bottom: 0.625rem;
+    background: linear-gradient(45deg, @primary-color, @secondary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
