@@ -1,24 +1,48 @@
-<!-- 底部 -->
+<!-- 页脚 -->
 
 <template>
     <footer id="page-footer">
-        <div class="social-links">
-            <template v-for="item in links" :key="item.name">
-                <a :href="item.link" target="_blank" rel="noopener noreferrer">
-                    <i :class="item.icon"></i>
-                </a>
-            </template>
+        <!-- 上方 -->
+        <div class="footer-content top">
+            <!-- 左侧 -->
+            <div class="left">
+                <div class="social-links">
+                    <template v-for="item in links" :key="item.name">
+                        <a :href="item.link" target="_blank" rel="noopener noreferrer">
+                            <i :class="item.icon"></i>
+                        </a>
+                    </template>
+                </div>
+            </div>
+
+            <!-- 右侧 -->
+            <div class="right links-content">
+                <LinksNav />
+            </div>
         </div>
 
-        <div class="right">
-            <LinksNav />
+        <!-- 下方 -->
+        <div class="footer-content bottom">
+            <!-- 左侧 -->
+            <div class="left links-content">
+                <div class="changelog-link">
+                    <a href="/changelog">更新日志</a>
+                </div>
+            </div>
 
-            <section class="copyright">
-                <span>© 2025 RealMaybe</span>
-                <span>
-                    <a href="https://icp.gov.moe/?keyword=20250294" target="_blank">萌ICP备20250294号</a>
-                </span>
-            </section>
+            <!-- 右侧 -->
+            <div class="right">
+                <section class="copyright">
+                    <span class="personal">
+                        <span>© 2025</span>
+                        <a href="https://www.realmaybe0429.space/">RealMaybe</a>
+                    </span>
+                    <span class="divider">|</span>
+                    <span>
+                        <a href="https://icp.gov.moe/?keyword=20250294" target="_blank">萌ICP备20250294号</a>
+                    </span>
+                </section>
+            </div>
         </div>
     </footer>
 </template>
@@ -40,43 +64,28 @@ const links = reactive([
 @import url("@style/public/var.less");
 
 footer {
-    .flex-between-center();
     width: 100%;
     text-align: center;
     margin-top: @main-content-padding-top;
     padding: 1.25rem 0;
     color: @text-muted;
 
-    .right {
-        .flex-start-end();
-        flex-direction: column;
+    .footer-content {
+        .flex-between-center();
+        width: 100%;
 
-        nav {
-            margin-bottom: 1rem;
-        }
-    }
-
-    @media (max-width: @tablet-breakpoint) {
-        flex-direction: column;
-
-        nav {
-            display: none !important;
-        }
-
-        .social-links {
-            margin-bottom: 0.5rem;
-        }
-    }
-
-    @media (max-width: @mobile-breakpoint) {
-        .copyright {
+        @media (max-width: @tablet-breakpoint) {
             .flex-center();
-            flex-direction: column
+
+            .links-content {
+                display: none;
+            }
         }
     }
 
     .social-links {
-        .flex-between-center();
+        .flex-between-start();
+        margin-bottom: .5rem;
         gap: 1.25rem;
 
         a {
@@ -90,13 +99,49 @@ footer {
         }
     }
 
+    // 更新日志链接样式
+    .changelog-link {
+        .flex-start();
+
+        a {
+            color: @text-muted;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+
+            &:hover {
+                color: @secondary-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
     .copyright {
         span {
             padding: 0 0.25rem;
+
+            &.personal {
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
         }
 
         a {
             color: @text-muted;
+        }
+
+        @media (max-width: @mobile-breakpoint) {
+            .flex-center();
+            flex-direction: column;
+
+            .divider {
+                display: none;
+            }
         }
     }
 }

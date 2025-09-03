@@ -82,7 +82,7 @@ pnpm preview
 
 ## 📄 许可证
 
-此项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+此项目采用 MIT 许可证 - 查看 [LICENSE](./MIT-LICENSE.md) 文件了解详情。
 
 ---
 

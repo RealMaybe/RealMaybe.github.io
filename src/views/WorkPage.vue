@@ -1,13 +1,10 @@
+<!-- 我的作品页面 -->
+
 <template>
-
-    <MyWork v-if="videoLink.length > 0" :creations="videoLink" />
-
+    <MyWork :all-creations="videoLink" />
 </template>
 
 <script setup lang="ts">
-// main
-import MyWork from "@/features/work/MyWork.vue";
-
-// data
-import videoLink from "@/assets/data/video.json";
+import MyWork from "@/features/work/MyWork.vue"; // main
+import videoLink from "@/assets/data/video.json"; // data
 </script>

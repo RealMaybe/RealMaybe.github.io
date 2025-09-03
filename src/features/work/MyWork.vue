@@ -3,54 +3,105 @@
 <template>
     <section class="my-creations">
         <h2>
-            <i class="fas fa-cubes"></i>
-            <span>我的作品</span>
+            <p>
+                <i class="fas fa-cubes"></i>
+                <span>我的作品</span>
+            </p>
+            <p class="refresh" @click="refreshCreations" :class="{ rotating: isRefreshing }">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </p>
         </h2>
 
         <div class="creation">
-            <template
-                v-for="(creation, _index) in creations"
-                :key="creation.title"
-            >
+            <template v-for="(creation, _index) in displayedCreations" :key="creation.title">
                 <div class="creation-item">
                     <div class="video-box">
-                        <iframe
-                            class="video-frame"
-                            :src="createPlayerLink(creation.link)"
-                            scrolling="yes"
-                            frameborder="no"
-                            framespacing="0"
-                            allowfullscreen="true"
-                        ></iframe>
+                        <iframe class="video-frame" :src="createPlayerLink(creation.link)" scrolling="yes"
+                            frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
                     </div>
 
                     <p class="title">
-                        <a
-                            :href="createBVLink(creation.link.bvid)"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            :title="creation.title"
-                            >{{ creation.title }}</a
-                        >
+                        <a :href="createBVLink(creation.link.bvid)" target="_blank" rel="noopener noreferrer"
+                            :title="creation.title">{{ creation.title }}</a>
                     </p>
                 </div>
             </template>
         </div>
+
+        <div class="tips">本区域的刷新功能存在页面卡顿的情况，该问题仍在修复中……</div>
     </section>
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted, watch } from "vue";
 import type { createPlayerLinkOptions } from "@/tsTypes";
 import { createPlayerLink, createBVLink } from "@/plugin";
 
-interface Props {
-    creations: Array<{
-        title: string;
-        link: createPlayerLinkOptions;
-    }>;
+interface Creation {
+    title: string;
+    link: createPlayerLinkOptions;
 }
 
-const { creations } = defineProps<Props>();
+interface Props {
+    allCreations: Creation[];
+}
+
+const props = defineProps<Props>();
+
+// 响应式状态
+const isRefreshing = ref(false);
+const currentIndices = ref<Set<number>>(new Set());
+
+// 计算属性：根据当前索引显示的作品
+const displayedCreations = computed(() => {
+    return Array.from(currentIndices.value).map(index => props.allCreations[index]);
+});
+
+// 随机选择不重复的作品索引
+const selectRandomIndices = (count: number): Set<number> => {
+    const indices = new Set<number>();
+
+    // 如果作品数量不超过需要的数量，选择所有作品
+    if (props.allCreations.length <= count) {
+        for (let i = 0; i < props.allCreations.length; i++) indices.add(i);
+
+        return indices;
+    }
+
+    // 随机选择指定数量的不重复索引
+    while (indices.size < count) {
+        const randomIndex = Math.floor(Math.random() * props.allCreations.length);
+        indices.add(randomIndex);
+    }
+
+    return indices;
+};
+
+// 刷新作品显示
+const refreshCreations = () => {
+    isRefreshing.value = true;
+
+    // 添加一点延迟，让旋转动画更明显
+    setTimeout(() => {
+        currentIndices.value = selectRandomIndices(6);
+        isRefreshing.value = false;
+    }, 500);
+};
+
+// 监听 allCreations 的变化
+watch(
+    () => props.allCreations,
+    newCreations => {
+        if (newCreations && newCreations.length > 0) currentIndices.value = selectRandomIndices(6);
+    },
+    { immediate: true }
+);
+
+// 组件挂载时初始化显示的作品
+onMounted(() => {
+    if (props.allCreations && props.allCreations.length > 0)
+        currentIndices.value = selectRandomIndices(6);
+});
 </script>
 
 <style scoped lang="less">
@@ -58,6 +109,41 @@ const { creations } = defineProps<Props>();
 
 .my-creations {
     flex: 1;
+
+    h2 {
+        .flex-between-center();
+
+        .refresh {
+            .flex-center();
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            transform-origin: 50% 50%;
+
+            &.rotating {
+                animation: rotate 0.5s linear;
+            }
+
+            &:active {
+                opacity: 0.5;
+            }
+
+            * {
+                margin: 0;
+            }
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
 
     .creation {
         .flex-between-center();
@@ -133,6 +219,13 @@ const { creations } = defineProps<Props>();
                 }
             }
         }
+    }
+
+    .tips {
+        border-left: 0.25rem solid @text-muted;
+        padding-left: 0.75rem;
+        font-size: 0.75rem;
+        color: @text-muted;
     }
 }
 </style>

@@ -4,3 +4,8 @@ export type createPlayerLinkOptions = {
     cid: string | number;
     p?: string | number;
 };
+
+export interface VideoItem {
+    title: string;
+    link: createPlayerLinkOptions;
+}
