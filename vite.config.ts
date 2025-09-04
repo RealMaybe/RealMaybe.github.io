@@ -3,11 +3,18 @@ import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
+import Markdown from "unplugin-vue-markdown/vite";
 
 /* ========== */
 
 export default defineConfig({
-    plugins: [vue(), vueDevTools()],
+    plugins: [
+        vue({
+            include: [/\.vue$/, /\.md$/],
+        }),
+        vueDevTools(),
+        Markdown({}),
+    ],
     server: {
         port: 429, // 设置服务器端口号
         open: true, // 启动时自动打开浏览器

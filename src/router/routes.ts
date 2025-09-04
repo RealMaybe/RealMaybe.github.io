@@ -20,7 +20,9 @@ export const views = {
 
 // 定义子组件元素
 export const components = {
-    work: {},
+    blog: {
+        index: () => import("@/features/blog/BlogIndex.vue"),
+    },
 };
 
 /* ========== */
@@ -52,7 +54,18 @@ const pages: Array<RouteRecordRaw> = [
             title: "博客",
             disableZoom: true,
             nav: true,
-        }
+        },
+        children: [
+            {
+                path: "",
+                name: "blog",
+                component: components.blog.index,
+                meta: {
+                    title: "博客",
+                    disableZoom: true,
+                },
+            },
+        ],
     }, */
     {
         path: "/work",
@@ -84,9 +97,15 @@ const specialRoutes: Array<RouteRecordRaw> = [
         redirect: "/index",
     },
     {
+        // 重定向到原创角色
         path: "/oc",
         redirect: "/original-character",
     },
+    /* {
+        // 重定向到致谢页面
+        path: "thanks",
+        redirect: "/acknowledgments",
+    }, */
     {
         // 404 页面
         path: "/:pathMatch(.*)*",

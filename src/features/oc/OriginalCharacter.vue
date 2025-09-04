@@ -43,7 +43,20 @@ const characters = reactive([{
         "傲娇大小姐，橘红发赤瞳",
         "讨厌传统，最黏哥哥"
     ]
-}]);
+}, {
+    name: "墨执",
+    description: [
+        "蓝发蓝瞳的记录者",
+        "沉静温柔，为使命殉道"
+    ]
+}, {
+    name: "聆玄",
+    description: [
+        "黑发黑瞳的见证者",
+        "果决重情，为创世变革"
+    ]
+}
+]);
 </script>
 
 <style scoped lang="less">

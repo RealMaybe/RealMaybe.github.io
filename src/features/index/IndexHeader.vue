@@ -2,9 +2,7 @@
 
 <template>
     <header id="index-header">
-        <div class="avatar">
-            <img src="https://avatars.githubusercontent.com/u/121269017?v=4" alt="head" width="100%" height="100%" />
-        </div>
+        <div class="avatar"><span></span></div>
         <h1>RealMaybe</h1>
         <p class="tagline">唱歌写文打游戏，想做更好的自己</p>
         <div class="intro">
@@ -49,9 +47,12 @@ header {
         background: linear-gradient(45deg, @primary-color, @secondary-color);
         .flex-center();
 
-        i {
-            font-size: 3.75rem;
-            color: white;
+        span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url("https://avatars.githubusercontent.com/u/121269017?v=4") no-repeat;
+            background-size: cover;
         }
     }
 

@@ -47,10 +47,10 @@ const astroDelay = (n: number) => ({
 // 全屏固定布局
 .not-found {
     position: fixed;
+    .flex-center();
+    width: 100vw;
+    height: 100vh;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     background: linear-gradient(135deg, @dark-bg 0%, #0f3460 100%);
     color: @text-color;
@@ -202,6 +202,7 @@ const astroDelay = (n: number) => ({
 /* 返回按钮 */
 .btn-home {
     .card(); // 使用公共 mixin
+    padding: 0.75rem 1.5rem;
     border: none;
     font-size: 1.1rem;
     color: @text-color;

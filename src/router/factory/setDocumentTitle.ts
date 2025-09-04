@@ -1,9 +1,15 @@
-/* 路由 key 转 id */
+/* 设置页面标题 */
 
 import type { RouteLocationNormalized } from "vue-router";
 
 /* ========== */
 
+/**
+ * 设置页面标题
+ * @param to 目标路由
+ * @param siteName 网站名称
+ * @returns { void }
+ */
 export function setDocumentTitle(to: RouteLocationNormalized, siteName: string): void {
     if (typeof document === "undefined") return;
 
