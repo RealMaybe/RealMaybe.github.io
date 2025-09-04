@@ -12,11 +12,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { routes } from "@/router/routes";
+import { publicPages } from "@/router/routes/publicPage";
 
 // 拿到导航的一级路由
 const links = computed(() =>
-    routes
+    publicPages
         .filter(r => r.meta?.nav && r.meta?.title && !r.redirect)
         .map(r => ({
             name: r.meta!.title as string,
