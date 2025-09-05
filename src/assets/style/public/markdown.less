@@ -69,6 +69,12 @@
     line-height: @md-line-height;
     letter-spacing: 0.015em;
 
+    // 特殊格式
+    b,
+    strong {
+        color: @md-text-bright;
+    }
+
     // 标题
     h1,
     h2,
@@ -114,7 +120,7 @@
 
     // 段落
     p {
-        margin: 0.35rem 0;
+        margin: 0 0 0.35rem;
         color: @md-text-normal;
         line-height: 1.55;
     }
@@ -173,17 +179,19 @@
 
     // 引用
     blockquote {
+        @p-t: 0.75rem; // 上方
+        @p-r: 1rem; // 右侧
+        @p-b: 0.75rem; // 底部
+        @p-l: 2.5rem; // 左侧
+
         margin: 1rem 0;
-        padding: 0.6rem 1rem 0.6rem 2.2rem;
+        padding: @p-t @p-r @p-b @p-l;
         position: relative;
         .card-base();
         color: @md-text-dim;
+        opacity: 0.7;
 
         p {
-            &:first-child {
-                margin-top: 0;
-            }
-
             &:last-child {
                 margin-bottom: 0;
             }
@@ -196,7 +204,7 @@
             top: 50%;
             transform: translateY(-50%);
             width: 0.25rem;
-            height: 60%;
+            height: calc(100% - @p-t - @p-b);
             background: @md-accent;
             border-radius: 0.125rem;
         }

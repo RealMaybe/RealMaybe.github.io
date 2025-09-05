@@ -28,8 +28,6 @@ export const nonPublicPages: Array<RouteRecordRaw> = [
         path: "/blog",
         component: views.blog,
         meta: {
-            title: "博客",
-            disableZoom: true,
             nav: true,
         },
         children: [
@@ -38,7 +36,7 @@ export const nonPublicPages: Array<RouteRecordRaw> = [
                 name: "blog",
                 component: components.blog.index,
                 meta: {
-                    title: "博客",
+                    title: "博客123",
                     disableZoom: true,
                 },
             },
