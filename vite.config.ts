@@ -14,10 +14,13 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 export default defineConfig({
     plugins: [
         vue({
-            include: [/\.vue$/, /\.md$/],
+            include: [/\.vue$/i, /\/src\/assets\/docs\/.*\.md$/i],
         }),
         vueDevTools(),
-        Markdown({}),
+        Markdown({
+            include: "src/assets/docs/*.md", // glob
+            exclude: "public/**", // 运行时动态区
+        }),
     ],
     server: {
         port: 429, // 设置服务器端口号

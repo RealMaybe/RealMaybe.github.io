@@ -11,7 +11,7 @@ export const views = {
     work: () => import("@/views/WorkPage.vue"), // 作品
     originalCharacter: () => import("@/views/OriginalCharacterPage.vue"), // 原创角色
     acknowledgments: () => import("@/views/ThanksPage.vue"), // 致谢
-    changeLog:  () => import("@/views/ChangeLogPage.vue"), // 更新日志
+    changeLog: () => import("@/views/ChangeLogPage.vue"), // 更新日志
 };
 
 // 定义子组件元素

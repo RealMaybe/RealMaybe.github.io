@@ -8,15 +8,9 @@ importers:
 
   .:
     dependencies:
-      less:
-        specifier: ^4.4.1
-        version: 4.4.1
       pinia:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.20(typescript@5.8.3))
-      unplugin-vue-markdown:
-        specifier: ^29.1.0
-        version: 29.1.0(vite@7.1.3(@types/node@22.18.0)(less@4.4.1))
       vue:
         specifier: ^3.5.18
         version: 3.5.20(typescript@5.8.3)
@@ -36,6 +30,21 @@ importers:
       '@vue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.8.3)(vue@3.5.20(typescript@5.8.3))
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
+      less:
+        specifier: ^4.4.1
+        version: 4.4.1
+      marked:
+        specifier: ^16.2.1
+        version: 16.2.1
+      marked-highlight:
+        specifier: ^2.2.2
+        version: 2.2.2(marked@16.2.1)
       npm-run-all2:
         specifier: ^8.0.4
         version: 8.0.4
@@ -45,6 +54,9 @@ importers:
       typescript:
         specifier: ~5.8.0
         version: 5.8.3
+      unplugin-vue-markdown:
+        specifier: ^29.1.0
+        version: 29.1.0(vite@7.1.3(@types/node@22.18.0)(less@4.4.1))
       vite:
         specifier: ^7.0.6
         version: 7.1.3(@types/node@22.18.0)(less@4.4.1)
@@ -789,6 +801,10 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
@@ -900,6 +916,16 @@ packages:
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
+    hasBin: true
+
+  marked-highlight@2.2.2:
+    resolution: {integrity: sha512-KlHOP31DatbtPPXPaI8nx1KTrG3EW0Z5zewCwpUj65swbtKOTStteK3sNAjBqV75Pgo3fNEVNHeptg18mDuWgw==}
+    peerDependencies:
+      marked: '>=4 <17'
+
+  marked@16.2.1:
+    resolution: {integrity: sha512-r3UrXED9lMlHF97jJByry90cwrZBBvZmjG1L68oYfuPMW+uDTnuMbyJDymCWwbTE+f+3LhpNDKfpR3a3saFyjA==}
+    engines: {node: '>= 20'}
     hasBin: true
 
   mdurl@2.0.0:
@@ -2010,6 +2036,8 @@ snapshots:
 
   he@1.2.0: {}
 
+  highlight.js@11.11.1: {}
+
   hookable@5.5.3: {}
 
   human-signals@8.0.1: {}
@@ -2110,6 +2138,12 @@ snapshots:
       mdurl: 2.0.0
       punycode.js: 2.3.1
       uc.micro: 2.1.0
+
+  marked-highlight@2.2.2(marked@16.2.1):
+    dependencies:
+      marked: 16.2.1
+
+  marked@16.2.1: {}
 
   mdurl@2.0.0: {}
 

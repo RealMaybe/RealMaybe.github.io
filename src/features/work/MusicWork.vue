@@ -1,16 +1,16 @@
-<!-- 我的作品 -->
+<!-- 音乐作品 -->
 
 <template>
-    <section class="my-creations">
-        <h2>
-            <p>
-                <i class="fas fa-cubes"></i>
-                <span>我的作品</span>
+    <div class="creation-section creation-music">
+        <h3>
+            <p class="title">
+                <i class="fas fa-music"></i>
+                <span>唱过的歌</span>
             </p>
             <p class="refresh" @click="refreshCreations" :class="{ rotating: isRefreshing }">
                 <i class="fa-solid fa-arrows-rotate"></i>
             </p>
-        </h2>
+        </h3>
 
         <div class="creation">
             <template v-for="(creation, _index) in displayedCreations" :key="creation.title">
@@ -26,10 +26,10 @@
                     </p>
                 </div>
             </template>
-        </div>
 
-        <div class="tips">本区域的刷新功能存在页面卡顿的情况，该问题仍在修复中……</div>
-    </section>
+            <div class="tips">本区域的刷新功能存在页面卡顿的情况，貌似是 B 站的渲染问题，暂不清楚修复方式……</div>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -107,121 +107,128 @@ onMounted(() => {
 <style scoped lang="less">
 @import url("@style/page/index-public.less");
 
-.my-creations {
-    flex: 1;
+h3 {
+    .flex-center();
+    margin: 1.25rem 0;
+    font-size: 1.25rem;
 
-    h2 {
-        .flex-between-center();
-
-        .refresh {
-            .flex-center();
-            width: 1.5rem;
-            height: 1.5rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-            transform-origin: 50% 50%;
-
-            &.rotating {
-                animation: rotate 0.5s linear;
-            }
-
-            &:active {
-                opacity: 0.5;
-            }
-
-            * {
-                margin: 0;
-            }
-        }
+    i {
+        margin-right: 0.625rem;
+        color: #88d3ce;
     }
 
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
+    .title {
+        margin-right: 3rem;
     }
 
-    .creation {
-        .flex-between-center();
-        width: 100%;
-        overflow: hidden;
+    .refresh {
+        .flex-center();
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+        transform-origin: 50% 50%;
 
-        @media (min-width: @desktop-breakpoint) {
-            flex-wrap: wrap;
-
-            .creation-item {
-                flex: 0 0 calc(33.333% - 0.9375rem);
-                max-width: calc(33.333% - 0.9375rem);
-            }
+        &.rotating {
+            animation: rotate 0.5s linear;
         }
 
-        @media (max-width: @tablet-breakpoint) {
-            flex-wrap: wrap;
-
-            .creation-item {
-                flex: 0 0 calc(50% - 0.9375rem);
-                max-width: calc(50% - 0.9375rem);
-            }
+        &:active {
+            opacity: 0.5;
         }
 
-        @media (max-width: @mobile-breakpoint) {
-            flex-direction: column;
-            flex-wrap: wrap;
-
-            .creation-item {
-                flex: 0 0 100%;
-                max-width: 100%;
-                margin-bottom: 1.25rem;
-            }
+        * {
+            margin: 0;
         }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.creation {
+    .flex-between-center();
+    width: 100%;
+    overflow: hidden;
+
+    @media (min-width: @desktop-breakpoint) {
+        flex-wrap: wrap;
 
         .creation-item {
-            width: 18.75rem;
+            flex: 0 0 calc(33.333% - 0.9375rem);
+            max-width: calc(33.333% - 0.9375rem);
+        }
+    }
+
+    @media (max-width: @tablet-breakpoint) {
+        flex-wrap: wrap;
+
+        .creation-item {
+            flex: 0 0 calc(50% - 0.9375rem);
+            max-width: calc(50% - 0.9375rem);
+        }
+    }
+
+    @media (max-width: @mobile-breakpoint) {
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .creation-item {
+            flex: 0 0 100%;
+            max-width: 100%;
             margin-bottom: 1.25rem;
+        }
+    }
 
-            .video-box {
-                position: relative;
+    .creation-item {
+        width: 18.75rem;
+        margin-bottom: 1.25rem;
+
+        .video-box {
+            position: relative;
+            width: 100%;
+            padding-top: calc(9 / 16 * 100%);
+
+            .video-frame {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
-                padding-top: calc(9 / 16 * 100%);
-
-                .video-frame {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                }
+                height: 100%;
             }
+        }
 
-            p.title {
-                width: 100%;
-                font-size: 1rem;
-                overflow-x: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                line-height: 2;
+        p.title {
+            width: 100%;
+            font-size: 1rem;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 2;
 
-                a {
-                    color: white;
-                    text-decoration: none;
+            a {
+                color: white;
+                text-decoration: none;
 
-                    &:hover {
-                        text-decoration: underline;
-                    }
+                &:hover {
+                    text-decoration: underline;
                 }
             }
         }
     }
+}
 
-    .tips {
-        border-left: 0.25rem solid @text-muted;
-        padding-left: 0.75rem;
-        font-size: 0.75rem;
-        color: @text-muted;
-    }
+.tips {
+    border-left: 0.25rem solid @text-muted;
+    padding-left: 0.75rem;
+    font-size: 0.75rem;
+    color: @text-muted;
 }
 </style>

@@ -8,7 +8,7 @@
             <div class="left">
                 <div class="social-links">
                     <template v-for="item in socialLinks" :key="item.name">
-                        <a :href="item.link" target="_blank" rel="noopener noreferrer">
+                        <a :href="item.link" target="_blank" rel="noopener noreferrer" :title="item.title">
                             <i :class="item.icon"></i>
                         </a>
                     </template>
@@ -61,10 +61,30 @@ const footerDocLinks = reactive([
 ]);
 
 const socialLinks = reactive([
-    { name: "Weibo", icon: "fab fa-weibo", link: "https://weibo.com/u/5678690912" },
-    { name: "Bilibili", icon: "fab fa-bilibili", link: "https://space.bilibili.com/175020735" },
-    { name: "GitHub", icon: "fab fa-github", link: "https://github.com/realmaybe" },
-    { name: "Twitter", icon: "fab fa-twitter", link: "https://x.com/RealMaybe0429" },
+    {
+        name: "Weibo",
+        icon: "fab fa-weibo",
+        title: "也许吧真的RealMaybe - 微博",
+        link: "https://weibo.com/u/5678690912"
+    },
+    {
+        name: "Bilibili",
+        icon: "fab fa-bilibili",
+        title: "也许吧真的RealMaybe - 哔哩哔哩",
+        link: "https://space.bilibili.com/175020735"
+    },
+    {
+        name: "Twitter",
+        icon: "fab fa-twitter",
+        title: "RealMaybe - X",
+        link: "https://x.com/RealMaybe0429"
+    },
+    {
+        name: "GitHub",
+        icon: "fab fa-github",
+        title: "RealMaybe - GitHub",
+        link: "https://github.com/realmaybe"
+    },
 ]);
 </script>
 

@@ -1,6 +1,7 @@
 // out: false
 
-@import url("./flex.less");
+@import url("../flex.less");
+@import url("../var.less");
 
 // =====  深空律动  ‑  专为 unplugin-vue-markdown 定制  =====
 
@@ -69,6 +70,10 @@
     line-height: @md-line-height;
     letter-spacing: 0.015em;
 
+    @media (max-width: @mobile-breakpoint) {
+        font-size: 0.875rem;
+    }
+
     // 特殊格式
     b,
     strong {
@@ -82,7 +87,7 @@
     h4,
     h5,
     h6 {
-        margin: 2.2rem 0 0.8rem;
+        margin: 2rem 0 1rem;
         font-weight: 600;
         color: @md-primary;
         scroll-margin-top: 4rem;
@@ -93,29 +98,53 @@
         border-image: linear-gradient(90deg, @md-primary, @md-accent) 1;
         border-bottom: 0.125rem solid;
         padding-bottom: 0.4em;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 2rem;
+        }
     }
 
     h2 {
         font-size: 1.8rem;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 1.5rem;
+        }
     }
 
     h3 {
         font-size: 1.5rem;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 1.3rem;
+        }
     }
 
     h4 {
         font-size: 1.3rem;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 1.1rem;
+        }
     }
 
     h5 {
         font-size: 1.1rem;
         color: @md-text-dim;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 1rem;
+        }
     }
 
     h6 {
         font-size: 1rem;
         color: @md-text-dim;
         font-weight: 500;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 0.875rem;
+        }
     }
 
     // 段落
@@ -197,14 +226,18 @@
             }
         }
 
+        // 左侧装饰条
         &::before {
+            @before-margin-top: @p-t + 0.125rem;
+            @before-margin-bottom: @p-b + 0.125rem;
+
             content: "";
             position: absolute;
             left: 1rem;
             top: 50%;
             transform: translateY(-50%);
             width: 0.25rem;
-            height: calc(100% - @p-t - @p-b);
+            height: calc(100% - @before-margin-top - @before-margin-bottom);
             background: @md-accent;
             border-radius: 0.125rem;
         }
@@ -261,4 +294,8 @@
             accent-color: @md-primary;
         }
     }
+
+    // ==========
+
+    @import url("./otherStyles.less");
 }

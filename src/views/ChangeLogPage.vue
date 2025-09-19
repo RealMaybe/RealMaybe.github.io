@@ -1,11 +1,13 @@
 <template>
     <section class="change-log">
+        <MobileAccessReminder />
         <changeLogDoc />
     </section>
 </template>
 
 <script setup lang="ts">
 import changeLogDoc from "@/assets/docs/CHANGELOG.md";
+import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
 </script>
 
 <style scoped lang="less">

@@ -1,0 +1,18 @@
+// out: false
+
+// 其他自定义样式
+
+@import url("../var.less");
+
+// 行内小标题
+span.tag-Inline-title {
+    display: inline-block;
+    width: 5rem;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    color: @link-on-color;
+
+    @media (max-width: @mobile-breakpoint) {
+        width: 3.5rem;
+    }
+}

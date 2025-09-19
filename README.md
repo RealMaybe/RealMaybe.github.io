@@ -1,89 +1,27 @@
-# RealMaybe's Personal Website
+# RealMaybe 的个人网站
 
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![Vue.js](https://img.shields.io/badge/vue.js-%2342b883.svg?style=for-the-badge&logo=vuedotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+欢迎来到我的个人网站项目的源代码库。这里不仅是一系列代码的集合，更是我在数字世界中的一片自留地，用于表达思考、展示创作和探索有趣的想法。
 
-这是我的个人网站项目，使用现代前端技术栈构建，部署在 GitHub Pages 上。
+整个网站由我精心设计和构建，旨在提供一个简洁、优雅且充满个人色彩的体验。每一处交互和视觉细节都体现着我的风格与偏好。
 
-## ✨ 特性
+**[→ 访问网站，亲身体验 ←](https://www.realmaybe0429.space/index)**
 
-- ⚡ 基于 Vite 构建，极速的开发服务器和构建过程
-- 🎨 使用 Vue 3 Composition API 开发，响应式编程体验
-- 📱 响应式设计，适配各种屏幕尺寸
-- 🚀 自动部署到 GitHub Pages，通过 GitHub Actions 实现 CI/CD
-- 🔧 使用 pnpm 作为包管理器，更快的安装速度和磁盘效率
+## 关于构建
 
-## 🛠️ 技术栈
+项目采用现代前端技术栈开发，确保了极致的开发体验与流畅的用户体验。整个架构轻快而灵活，正如我所期待的个人空间一样，能够自由地生长和演化。
 
-- **前端框架**: Vue 3
-- **构建工具**: Vite
-- **开发语言**: TypeScript
-- **包管理器**: pnpm
-- **部署平台**: GitHub Pages
-- **CI/CD**: GitHub Actions
+## 灵感与创作
 
-## 📦 项目设置
+这个网站会持续迭代，它不仅是一个静态的展示窗口，更是一个动态的、与我共同成长的创意项目。如果你对某些设计或实现感到好奇，欢迎探索代码，或许你能从中发现一些有趣的灵感。
 
-### 前置要求
+## 动态更新
 
-确保您的系统已安装:
+这个网站如同一个持续生长的有机体，在不断迭代和进化。你可以在网站上查看详细的**[更新日志](https://www.realmaybe0429.space/change-log)**，了解它的演变历程和背后的思考。
 
-- Node.js (推荐 LTS 版本)
-- pnpm (可通过 `npm install -g pnpm` 安装)
+## 反馈与交流
 
-### 安装依赖
+如果你有任何想法或建议，欢迎通过**[电子邮件](mailto:realmaybe0429@qq.com)**与我交流。我很乐意听到你的声音。
 
-```bash
-pnpm install
-```
+感谢你的到访。
 
-### 启动开发服务器
-
-```bash
-pnpm dev
-```
-
-项目将在 `http://localhost:5173` 上运行，并支持热重载。
-
-### 编译和生产构建
-
-```bash
-pnpm build
-```
-
-构建完成后，静态文件将生成在 `dist/` 目录中。
-
-### 预览生产构建
-
-```bash
-pnpm preview
-```
-
-这将在本地启动一个服务器来预览生产构建的效果。
-
-## 🌐 部署
-
-本项目使用 GitHub Actions 实现自动部署。当代码推送到 `main` 分支时，会自动触发构建和部署流程。
-
-部署流程包括:
-
-1. 安装 Node.js 和 pnpm
-2. 安装项目依赖
-3. 构建生产版本
-4. 部署到 GitHub Pages
-
-网站地址: [https://www.realmaybe0429.space/](https://www.realmaybe0429.space/)
-
-## 🤝 贡献
-
-虽然这是一个个人项目，但欢迎提出建议和反馈。如果您发现任何问题或有改进建议，请创建 Issue 或 Pull Request。
-
-## 📄 许可证
-
-此项目采用 MIT 许可证 - 查看 [LICENSE](./MIT-LICENSE.md) 文件了解详情。
-
----
-
-⭐ 如果您喜欢这个项目，请给它一个星标！
+— RealMaybe
