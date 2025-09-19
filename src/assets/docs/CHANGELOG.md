@@ -15,6 +15,7 @@
 - <span class="tag-Inline-title">【样式】</span>更新了<router-link to="/work">「我的作品」</router-link>页面的样式内容，对其中的部分内容进行模块拆分
 - <span class="tag-Inline-title">【功能】</span>给部分文档内容的区域增加了一个移动端的随机提示，提示用户使用更大的屏幕访问页面以获得更好的体验
 - <span class="tag-Inline-title">【修复】</span>修复页脚区域的一些外链的顺序，加入了 title 提示
+- <span class="tag-Inline-title">【修复】</span>修复文档区域的移动端随机提示的组件的类型错误
 
 ## v1.1.2 – 2025/09/06
 

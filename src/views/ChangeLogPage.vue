@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import changeLogDoc from "@/assets/docs/CHANGELOG.md";
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
+import changeLogDoc from "@/assets/docs/CHANGELOG.md";
 </script>
 
 <style scoped lang="less">
