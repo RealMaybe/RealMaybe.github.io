@@ -6,13 +6,7 @@
         <div class="footer-content top">
             <!-- 左侧 -->
             <div class="left">
-                <div class="social-links">
-                    <template v-for="item in socialLinks" :key="item.name">
-                        <a :href="item.link" target="_blank" rel="noopener noreferrer" :title="item.title">
-                            <i :class="item.icon"></i>
-                        </a>
-                    </template>
-                </div>
+                <SocialLinks />
             </div>
 
             <!-- 右侧 -->
@@ -48,34 +42,7 @@
 <script setup lang="ts">
 import LinksNav from "./LinksNav.vue";
 import MetaLink from "./MetaLink.vue";
-import { reactive } from "vue";
-
-const socialLinks = reactive([
-    {
-        name: "Weibo",
-        icon: "fab fa-weibo",
-        title: "也许吧真的RealMaybe - 微博",
-        link: "https://weibo.com/u/5678690912"
-    },
-    {
-        name: "Bilibili",
-        icon: "fab fa-bilibili",
-        title: "也许吧真的RealMaybe - 哔哩哔哩",
-        link: "https://space.bilibili.com/175020735"
-    },
-    {
-        name: "Twitter",
-        icon: "fab fa-twitter",
-        title: "RealMaybe - X",
-        link: "https://x.com/RealMaybe0429"
-    },
-    {
-        name: "GitHub",
-        icon: "fab fa-github",
-        title: "RealMaybe - GitHub",
-        link: "https://github.com/realmaybe"
-    },
-]);
+import SocialLinks from "./SocialLinks.vue";
 </script>
 
 <style scoped lang="less">
@@ -98,24 +65,6 @@ footer {
 
             .links-content {
                 display: none;
-            }
-        }
-    }
-
-    .left {
-        .social-links {
-            .flex-between-start();
-            margin-bottom: .5rem;
-            gap: 1.25rem;
-
-            a {
-                color: @text-color;
-                font-size: 1.5rem;
-                transition: color 0.3s;
-
-                &:hover {
-                    color: @secondary-color;
-                }
             }
         }
     }

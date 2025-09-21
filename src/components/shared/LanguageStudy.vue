@@ -40,11 +40,11 @@ const languages = reactive([
     .language-item {
         display: flex;
         align-items: center;
-        margin-bottom: 0.9375rem;
+        margin-bottom: 1rem;
 
         i {
             font-size: 1.5rem;
-            margin-right: 0.9375rem;
+            margin-right: 1rem;
             color: @secondary-color;
         }
 

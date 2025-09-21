@@ -6,11 +6,21 @@
     <section id="self-introduction">
         <aboutMe />
     </section>
+
+    <WebSkill />
+    <LanguageStudy />
+    <PersonalHobbies />
 </template>
 
 <script setup lang="ts">
+// 引入组件
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
 import aboutMe from "@/assets/docs/aboutMe.md";
+
+// 技能
+import WebSkill from "@/components/shared/WebSkill.vue";
+import LanguageStudy from "@/components/shared/LanguageStudy.vue";
+import PersonalHobbies from "@/components/shared/PersonalHobbies.vue";
 </script>
 
 <style scoped lang="less">

@@ -4,12 +4,32 @@
 
 @import url("./markdownVar.less");
 
-// 行内小标题
-span.tag-Inline-title {
-    display: inline-block;
-    width: 5rem;
-    margin-right: 0.5rem;
-    font-weight: bold;
-    color: @md-inline-title;
-    text-shadow: 0 0 2px rgba(127, 209, 255, 0.3);
+span {
+    // 行内小标题
+    &.tag-Inline-title {
+        display: inline-block;
+        width: 5rem;
+        margin-right: 0.5rem;
+        font-weight: bold;
+        color: @md-inline-title;
+        text-shadow: 0 0 2px rgba(127, 209, 255, 0.3);
+    }
+
+    // 行内 Icon 图标
+    &.tag-Inline-icon {
+        @h: 1.5rem;
+
+        display: inline-block;
+        width: @h;
+        height: @h;
+        line-height: @h;
+        margin-right: 0.25rem;
+        color: @md-inline-title;
+        text-align: center;
+    }
+}
+
+div.icons-box {
+    .flex-center();
+    width: 100%;
 }

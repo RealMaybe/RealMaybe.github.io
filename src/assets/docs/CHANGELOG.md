@@ -9,12 +9,18 @@
 
 ---
 
+## v1.2.1 – 2025/09/22
+
+- <span class="tag-Inline-title">【优化】</span>清理并移除了未使用的字体文件，减小项目体积
+- <span class="tag-Inline-title">【基建】</span>将 Font Awesome 图标库的引入方式从 CDN 改为通过 `pnpm` 包 （`@fortawesome/fontawesome-free`）管理
+  - 此举提升了开发依赖管理的规范性和可靠性
+
 ## v1.2.0 – 2025/09/21
 
-- <span class="tag-Inline-title">【功能】</span>新增回到顶部按钮（仅移动端 / 窄屏状态显示），方便用户快速返回页面顶部
 - <span class="tag-Inline-title">【优化】</span>升级导航栏，提升移动体验
   - <RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面和<RouterLink to="/change-log">「更新日志」</RouterLink>页面的入口已添加到导航栏中
   - 可通过 PC 端的页脚链接访问，移动端用户可通过侧边栏底部链接访问
+- <span class="tag-Inline-title">【功能】</span>新增回到顶部按钮（仅移动端 / 窄屏状态显示），方便用户快速返回页面顶部
 - <span class="tag-Inline-title">【优化】</span>优化移动端兼容提示组件
   - 新增了「关闭」按钮，让它不再那么「唠叨」啦~
   - 你的关闭选择会被记住（仅限当前浏览会话），避免重复提示
