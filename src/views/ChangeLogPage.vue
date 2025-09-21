@@ -1,6 +1,7 @@
 <template>
-    <section class="change-log">
-        <MobileAccessReminder />
+    <MobileAccessReminder />
+
+    <section id="change-log">
         <changeLogDoc />
     </section>
 </template>
@@ -11,10 +12,16 @@ import changeLogDoc from "@/assets/docs/CHANGELOG.md";
 </script>
 
 <style scoped lang="less">
-@padding-top-bottom: 1.5rem;
-@padding-left-right: 3rem;
+@import url("@style/page/index-public.less");
 
-.change-log {
-    padding: @padding-top-bottom @padding-left-right !important;
+@padding-top-bottom: 1.5rem;
+@padding-left-right: @padding-top-bottom * 2;
+
+#change-log {
+    padding: @padding-top-bottom @padding-left-right ;
+
+    @media (max-width: @tablet-breakpoint) {
+        padding: 0 @padding-top-bottom 1.5rem;
+    }
 }
 </style>

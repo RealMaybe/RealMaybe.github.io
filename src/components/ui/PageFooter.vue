@@ -25,13 +25,7 @@
         <div class="footer-content bottom">
             <!-- 左侧 -->
             <div class="left links-content">
-                <div class="meta-link">
-                    <template v-for="item in footerDocLinks" :key="item.name">
-                        <RouterLink :to="item.to" rel="noopener noreferrer">
-                            {{ item.text }}
-                        </RouterLink>
-                    </template>
-                </div>
+                <MetaLink />
             </div>
 
             <!-- 右侧 -->
@@ -53,12 +47,8 @@
 
 <script setup lang="ts">
 import LinksNav from "./LinksNav.vue";
+import MetaLink from "./MetaLink.vue";
 import { reactive } from "vue";
-
-const footerDocLinks = reactive([
-    { text: "更新日志", to: "/change-log" },
-    { text: "致谢名单", to: "/acknowledgments" },
-]);
 
 const socialLinks = reactive([
     {
@@ -125,32 +115,6 @@ footer {
 
                 &:hover {
                     color: @secondary-color;
-                }
-            }
-        }
-
-        // 功能链接样式
-        .meta-link {
-            .flex-start();
-
-            a {
-                color: @text-muted;
-                text-decoration: none;
-                font-size: 0.9rem;
-                transition: color 0.3s;
-                margin: 0 .25rem;
-
-                &:hover {
-                    color: @secondary-color;
-                    text-decoration: underline;
-                }
-
-                &:first-child {
-                    margin-left: 0;
-                }
-
-                &:last-child {
-                    margin-right: 0;
                 }
             }
         }

@@ -2,7 +2,7 @@
 
 // 其他自定义样式
 
-@import url("../var.less");
+@import url("./markdownVar.less");
 
 // 行内小标题
 span.tag-Inline-title {
@@ -10,9 +10,6 @@ span.tag-Inline-title {
     width: 5rem;
     margin-right: 0.5rem;
     font-weight: bold;
-    color: @link-on-color;
-
-    @media (max-width: @mobile-breakpoint) {
-        width: 3.5rem;
-    }
+    color: @md-inline-title;
+    text-shadow: 0 0 2px rgba(127, 209, 255, 0.3);
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="acknowledgments"></div>
+    <section class="acknowledgments"></section>
 </template>
 
 <script setup lang="ts">
