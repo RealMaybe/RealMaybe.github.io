@@ -2,21 +2,29 @@
 
 <template>
     <nav id="links-nav">
-        <p v-for="link in links" :key="link.name">
+        <!-- 内链 -->
+        <template v-for="link in internalLink" :key="link.name">
             <RouterLink :to="link.path" active-class="on" @click="scrollToTop">
                 {{ link.name }}
             </RouterLink>
-        </p>
+        </template>
+
+        <!-- 外链 -->
+        <template v-for="link in externalLinks" :key="link.name">
+            <a :href="link.path" :target="link.target" :rel="link.rel">
+                {{ link.name }}
+            </a>
+        </template>
     </nav>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { reactive, computed } from "vue";
 import { publicPages } from "@/router/routes/publicPage";
 import { scrollToTop } from "@/plugin";
 
-// 拿到导航的一级路由
-const links = computed(() =>
+// 内链
+const internalLink = computed(() =>
     publicPages
         .filter(r => r.meta?.nav && r.meta?.title && !r.redirect)
         .map(r => ({
@@ -24,6 +32,14 @@ const links = computed(() =>
             path: r.path,
         }))
 );
+
+// 外链
+const externalLinks = reactive([{
+    name: "小店",
+    path: "https://realmaybe0429.taobao.com/",
+    target: "_blank",
+    rel: "noopener"
+}])
 </script>
 
 <style scoped lang="less">
@@ -39,29 +55,19 @@ const links = computed(() =>
     transition: all 0.3s ease-in-out;
     white-space: nowrap;
 
-    p {
+    a {
         padding: 0 0.25rem;
+        color: @text-color;
+        text-decoration: none;
 
-        &.line {
-            display: none;
-            padding: 0;
-            width: 100%;
-            border-bottom: 0.0625rem solid @text-color;
+        &.on {
+            color: @link-on-color;
+            font-weight: bold;
+            text-decoration: underline;
         }
 
-        a {
-            color: @text-color;
-            text-decoration: none;
-
-            &.on {
-                color: @link-on-color;
-                font-weight: bold;
-                text-decoration: underline;
-            }
-
-            &:hover {
-                text-decoration: underline;
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

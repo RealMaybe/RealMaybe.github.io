@@ -11,6 +11,7 @@
 
 ## v1.2.2 – 2025/09/28
 
+- <span class="tag-Inline-title">【修复】</span>修复部分内容的表述错误
 - <span class="tag-Inline-title">【优化】</span>优化导航栏的点击响应体验
 - <span class="tag-Inline-title">【优化】</span>更新了<RouterLink to="/about">「关于我」</RouterLink>页面的内容，加了点新的小玩意儿~
 - <span class="tag-Inline-title">【重构】</span>调整<RouterLink to="/work">「我的作品」</RouterLink>页面的渲染方式，为后续功能开发做准备

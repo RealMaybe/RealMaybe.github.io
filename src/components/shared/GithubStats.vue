@@ -13,20 +13,35 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { baseParam, buildGitHubStatsURL } from "@/plugin";
 
+/**
+ * 提示语
+ */
 const tips = [
     "GitHub 卡片走 Vercel 网络，偶尔抽风请多包涵 😇",
-    "下面这几张图靠 GitHub API 活着，如果白屏大概是被墙了……",
+    "下面这几张图靠 GitHub API 活着，如果渲染失败大概是被墙了…… 🧱",
     "这是我在 GitHub 的日常数据，加载不出？试试刷新 or 科学上网吧 🔓",
 ] as const;
 
-/* 2. 随机抽一条 */
+/**
+ * 随机获取提示语
+ */
 const tip = ref(tips[Math.floor(Math.random() * tips.length)]);
 
+/**
+ * 获取 GitHub 统计数据
+ */
 const imgSrc = ref({
-    topLangs:
-        "https://github-readme-stats.vercel.app/api/top-langs/?username=RealMaybe&layout=compact&theme=radical&hide_border=true",
-    stats: "https://github-readme-stats.vercel.app/api?username=RealMaybe&show_icons=true&theme=radical&hide_border=true&include_all_commits=true",
+    topLangs: buildGitHubStatsURL({
+        ...baseParam,
+        layout: "compact",
+    }, "top-langs"),
+    stats: buildGitHubStatsURL({
+        ...baseParam,
+        show_icons: true,
+        include_all_commits: true
+    }),
 });
 </script>
 
