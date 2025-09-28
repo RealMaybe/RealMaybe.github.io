@@ -82,7 +82,6 @@ export default defineConfig({
                 manualChunks: id => {
                     // 将所有第三方依赖打包到一个名为 vendor 的文件中
                     if (id.includes("node_modules")) return "vendor";
-                    // return id.toString().split("node_modules/")[1].split("/")[0]; // 将 node_modules 中的包拆分到单独的文件中
                 },
             },
         },

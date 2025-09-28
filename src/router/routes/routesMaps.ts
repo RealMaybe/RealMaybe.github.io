@@ -17,6 +17,9 @@ export const views = {
 // 定义子组件元素
 export const components = {
     blog: {
-        index: () => import("@/features/blog/BlogIndex.vue"),
+        display: () => import("@/features/blog/BlogDisplay.vue"),
+        detail: () => import("@/features/blog/BlogDetail.vue"),
+        list: () => import("@/features/blog/BlogList.vue"),
+        update: () => import("@/features/blog/BlogUpdate.vue"),
     },
 };

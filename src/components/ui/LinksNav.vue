@@ -3,7 +3,7 @@
 <template>
     <nav id="links-nav">
         <p v-for="link in links" :key="link.name">
-            <RouterLink :to="link.path" active-class="on">
+            <RouterLink :to="link.path" active-class="on" @click="scrollToTop">
                 {{ link.name }}
             </RouterLink>
         </p>
@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { publicPages } from "@/router/routes/publicPage";
+import { scrollToTop } from "@/plugin";
 
 // 拿到导航的一级路由
 const links = computed(() =>

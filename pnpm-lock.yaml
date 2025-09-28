@@ -21,6 +21,9 @@ importers:
       '@fortawesome/fontawesome-free':
         specifier: ^7.0.1
         version: 7.0.1
+      '@highlightjs/vue-plugin':
+        specifier: ^2.1.0
+        version: 2.1.0(highlight.js@11.11.1)(vue@3.5.20(typescript@5.8.3))
       '@tsconfig/node22':
         specifier: ^22.0.2
         version: 22.0.2
@@ -375,6 +378,12 @@ packages:
   '@fortawesome/fontawesome-free@7.0.1':
     resolution: {integrity: sha512-RLmb9U6H2rJDnGxEqXxzy7ANPrQz7WK2/eTjdZqyU9uRU5W+FkAec9uU5gTYzFBH7aoXIw2WTJSCJR4KPlReQw==}
     engines: {node: '>=6'}
+
+  '@highlightjs/vue-plugin@2.1.0':
+    resolution: {integrity: sha512-E+bmk4ncca+hBEYRV2a+1aIzIV0VSY/e5ArjpuSN9IO7wBJrzUE2u4ESCwrbQD7sAy+jWQjkV5qCCWgc+pu7CQ==}
+    peerDependencies:
+      highlight.js: ^11.0.1
+      vue: ^3
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1596,6 +1605,11 @@ snapshots:
     optional: true
 
   '@fortawesome/fontawesome-free@7.0.1': {}
+
+  '@highlightjs/vue-plugin@2.1.0(highlight.js@11.11.1)(vue@3.5.20(typescript@5.8.3))':
+    dependencies:
+      highlight.js: 11.11.1
+      vue: 3.5.20(typescript@5.8.3)
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

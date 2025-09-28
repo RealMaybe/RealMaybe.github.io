@@ -9,6 +9,7 @@
 
         <div class="skill-item" v-for="(skill, index) in skills" :key="index">
             <div class="skill-header">
+                <!-- <i :class="skill.icon"></i> -->
                 <span>{{ skill.name }}</span>
             </div>
             <div class="skill-bar">
@@ -22,11 +23,12 @@
 import { reactive } from "vue";
 
 const skills = reactive([
-    { name: "HTML5", strength: 9 },
-    { name: "CSS3 / Less", strength: 8 },
-    { name: "JavaScript", strength: 8 },
-    { name: "TypeScript", strength: 7 },
-    { name: "Vue3", strength: 7 },
+    { name: "HTML5", strength: 9, icon: "fa-brands fa-html5" },
+    { name: "CSS3 / Less", strength: 8, icon: "fa-brands fa-css3" },
+    // { name: "Less", strength: 8, icon: "fa-brands fa-less" },
+    { name: "JavaScript", strength: 8, icon: "fa-brands fa-js" },
+    { name: "TypeScript", strength: 7, icon: "fa-brands fa-js" },
+    { name: "Vue3", strength: 7, icon: "fa-brands fa-vuejs" },
 ]);
 </script>
 
@@ -40,9 +42,13 @@ const skills = reactive([
         margin-bottom: 0.9375rem;
 
         .skill-header {
-            display: flex;
-            justify-content: space-between;
+            .flex-start-center();
             margin-bottom: 0.3125rem;
+
+            i {
+                margin-right: 0.5rem;
+                font-size: 1.125rem;
+            }
         }
 
         .skill-bar {

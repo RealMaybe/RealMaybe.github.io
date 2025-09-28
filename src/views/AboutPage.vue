@@ -10,6 +10,7 @@
     <WebSkill />
     <LanguageStudy />
     <PersonalHobbies />
+    <GithubStats />
 </template>
 
 <script setup lang="ts">
@@ -21,6 +22,9 @@ import aboutMe from "@/assets/docs/aboutMe.md";
 import WebSkill from "@/components/shared/WebSkill.vue";
 import LanguageStudy from "@/components/shared/LanguageStudy.vue";
 import PersonalHobbies from "@/components/shared/PersonalHobbies.vue";
+
+// Github Stats
+import GithubStats from "@/components/shared/GithubStats.vue";
 </script>
 
 <style scoped lang="less">

@@ -2,21 +2,28 @@
 
 <template>
     <div class="meta-link">
-        <template v-for="item in footerDocLinks" :key="item.name">
-            <RouterLink :to="item.to" rel="noopener noreferrer">
-                {{ item.text }}
+        <template v-for="item in metaLinkPages" :key="item.name">
+            <RouterLink :to="item.path" rel="noopener noreferrer" @click="scrollToTop">
+                {{ item.name }}
             </RouterLink>
         </template>
     </div>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { computed } from "vue";
+import { metaLinkPage } from "@/router/routes/metaLinkPage";
+import { scrollToTop } from "@/plugin";
 
-const footerDocLinks = reactive([
-    { text: "更新日志", to: "/change-log" },
-    { text: "致谢名单", to: "/acknowledgments" },
-]);
+// 拿到导航的一级路由
+const metaLinkPages = computed(() =>
+    metaLinkPage
+        .filter(r => r.meta?.nav && r.meta?.title && !r.redirect)
+        .map(r => ({
+            name: r.meta!.title as string,
+            path: r.path,
+        }))
+);
 </script>
 
 <style scoped lang="less">

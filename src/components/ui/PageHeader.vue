@@ -42,6 +42,7 @@
 import LinksNav from "./LinksNav.vue";
 import MetaLink from "./MetaLink.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { scrollToTop } from "@/plugin";
 
 /* 侧边栏开关 */
 const open = ref(false);
@@ -63,9 +64,6 @@ const updateFab = () => {
 };
 onMounted(() => window.addEventListener("scroll", updateFab, { passive: true }));
 onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
-
-/* 回到顶部 */
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 </script>
 
 <style scoped lang="less">

@@ -5,7 +5,7 @@
         <h3>
             <p class="title">
                 <i class="fas fa-music"></i>
-                <span>唱过的歌</span>
+                <span>翻唱过的歌</span>
             </p>
             <p class="refresh" @click="refreshCreations" :class="{ rotating: isRefreshing }">
                 <i class="fa-solid fa-arrows-rotate"></i>
@@ -13,49 +13,52 @@
         </h3>
 
         <div class="creation">
-            <template v-for="(creation, _index) in displayedCreations" :key="creation.title">
-                <div class="creation-item">
-                    <div class="video-box">
-                        <iframe class="video-frame" :src="createPlayerLink(creation.link)" scrolling="yes"
-                            frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-                    </div>
-
-                    <p class="title">
-                        <a :href="createBVLink(creation.link.bvid)" target="_blank" rel="noopener noreferrer"
-                            :title="creation.title">{{ creation.title }}</a>
-                    </p>
-                </div>
+            <template v-for="creations in displayedCreations" :key="creations.videoTitle">
+                <CreationCard :link="creations.link"
+                    :title="{ video: creations.videoTitle, song: creations.songTitle }" />
             </template>
-
-            <div class="tips">本区域的刷新功能存在页面卡顿的情况，貌似是 B 站的渲染问题，暂不清楚修复方式……</div>
+        </div>
+        
+        <div class="tips">
+            本区域的刷新功能存在页面卡顿的情况，貌似是 B 站的渲染问题，暂不清楚修复方式……
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+// 引入组件
+import CreationCard from "@/components/shared/CreationCard.vue";
+
+// 引入依赖
 import { ref, computed, onMounted, watch } from "vue";
 import type { createPlayerLinkOptions } from "@/tsTypes";
-import { createPlayerLink, createBVLink } from "@/plugin";
 
+/* ========== */
+
+/**
+ * 作品
+ */
 interface Creation {
-    title: string;
     link: createPlayerLinkOptions;
+    videoTitle: string;
+    songTitle: string;
 }
 
+/**
+ * 组件属性
+ */
 interface Props {
-    allCreations: Creation[];
+    allCreations: Array<Creation>;
 }
+
+/* ========== */
 
 const props = defineProps<Props>();
-
-// 响应式状态
-const isRefreshing = ref(false);
-const currentIndices = ref<Set<number>>(new Set());
+const isRefreshing = ref(false); // 是否正在刷新
+const currentIndices = ref<Set<number>>(new Set()); // 当前显示的索引
 
 // 计算属性：根据当前索引显示的作品
-const displayedCreations = computed(() => {
-    return Array.from(currentIndices.value).map(index => props.allCreations[index]);
-});
+const displayedCreations = computed(() => Array.from(currentIndices.value).map(index => props.allCreations[index]));
 
 // 随机选择不重复的作品索引
 const selectRandomIndices = (count: number): Set<number> => {
@@ -91,9 +94,7 @@ const refreshCreations = () => {
 // 监听 allCreations 的变化
 watch(
     () => props.allCreations,
-    newCreations => {
-        if (newCreations && newCreations.length > 0) currentIndices.value = selectRandomIndices(6);
-    },
+    newCreations => { if (newCreations && newCreations.length > 0) currentIndices.value = selectRandomIndices(6) },
     { immediate: true }
 );
 
@@ -160,68 +161,15 @@ h3 {
 
     @media (min-width: @desktop-breakpoint) {
         flex-wrap: wrap;
-
-        .creation-item {
-            flex: 0 0 calc(33.333% - 0.9375rem);
-            max-width: calc(33.333% - 0.9375rem);
-        }
     }
 
     @media (max-width: @tablet-breakpoint) {
         flex-wrap: wrap;
-
-        .creation-item {
-            flex: 0 0 calc(50% - 0.9375rem);
-            max-width: calc(50% - 0.9375rem);
-        }
     }
 
     @media (max-width: @mobile-breakpoint) {
         flex-direction: column;
         flex-wrap: wrap;
-
-        .creation-item {
-            flex: 0 0 100%;
-            max-width: 100%;
-            margin-bottom: 1.25rem;
-        }
-    }
-
-    .creation-item {
-        width: 18.75rem;
-        margin-bottom: 1.25rem;
-
-        .video-box {
-            position: relative;
-            width: 100%;
-            padding-top: calc(9 / 16 * 100%);
-
-            .video-frame {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        p.title {
-            width: 100%;
-            font-size: 1rem;
-            overflow-x: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            line-height: 2;
-
-            a {
-                color: white;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
     }
 }
 
