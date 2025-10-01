@@ -1,5 +1,12 @@
 <template>
     <section class="acknowledgments">
-        <h1>不好意思，这里暂时还是空的~</h1>
+        <thanksDocs />
     </section>
 </template>
+
+<script setup lang="ts">
+import thanksDocs from "@/assets/docs/thanks.md";
+import thanksData from "@/assets/data/thanks.json";
+
+console.log(thanksData);
+</script>

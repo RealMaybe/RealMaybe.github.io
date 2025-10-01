@@ -8,6 +8,11 @@
     font-family: "Inter", "Segoe UI", Roboto, sans-serif;
     line-height: @md-line-height;
     letter-spacing: 0.015em;
+    padding: 0 1rem;
+
+    @media (max-width: @tablet-breakpoint) {
+        padding: 0;
+    }
 
     @media (max-width: @mobile-breakpoint) {
         font-size: 0.875rem;

@@ -106,7 +106,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 h3 {
     .flex-center();

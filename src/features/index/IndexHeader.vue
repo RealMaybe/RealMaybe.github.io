@@ -22,7 +22,7 @@ import LinksNav from "@/components/ui/LinksNav.vue";
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 .padding(@p) {
     padding-left: @p;

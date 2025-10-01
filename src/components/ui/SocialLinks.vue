@@ -42,8 +42,7 @@ const socialLinks = reactive([
 </script>
 
 <style scoped lang="less">
-@import url("@style/public/flex.less");
-@import url("@style/public/var.less");
+@import url("@style/public-page.less");
 
 .social-links {
     .flex-between-start();

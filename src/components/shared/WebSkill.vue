@@ -33,7 +33,7 @@ const skills = reactive([
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 #skill {
     animation-delay: 0.2s;

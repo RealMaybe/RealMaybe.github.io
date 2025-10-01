@@ -84,7 +84,7 @@ const characters = reactive({
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 .oc-section {
     flex: 1 1 100% !important;

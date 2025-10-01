@@ -9,15 +9,27 @@
 
 ---
 
+## V1.2.3 – 2025/10/02
+
+- <span class="tag-Inline-title">【优化】</span>全面调整各模块的样式引入逻辑，提升在不同屏幕尺寸下的自适应表现
+- <span class="tag-Inline-title">【优化】</span>为页脚的特殊导航栏添加了路由高亮效果，与主导航栏保持一致的交互体验
+- <span class="tag-Inline-title">【调整】</span>暂时移除导航栏中的「小店」外部跳转链接
+    - 优化用户体验：将直接跳转淘宝的设计改为更符合一体化理念的站内页面
+    - 正在精心设计独立的「小店」页面，预计在后续版本中与大家见面 🛍️
+- <span class="tag-Inline-title">【文档】</span>调整了<RouterLink to="/change-log">「更新日志」</RouterLink>文档中历史版本的表述不当，提升了文档的规范性和可读性
+    - 规划未来在 2.0.0 版本时开启新版「更新日志」页面
+- <span class="tag-Inline-title">【文档】</span>小小更新了<RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面内容
+    - 这只是个开始，后续版本会为大家带来更完整、更详细的致谢内容整理 ✨
+
 ## v1.2.2 – 2025/09/28
 
-- <span class="tag-Inline-title">【修复】</span>修复部分内容的表述错误
 - <span class="tag-Inline-title">【优化】</span>优化导航栏的点击响应体验
-- <span class="tag-Inline-title">【优化】</span>更新了<RouterLink to="/about">「关于我」</RouterLink>页面的内容，加了点新的小玩意儿~
-- <span class="tag-Inline-title">【重构】</span>调整<RouterLink to="/work">「我的作品」</RouterLink>页面的渲染方式，为后续功能开发做准备
 - <span class="tag-Inline-title">【重构】</span>更新页脚导航栏的样式和渲染逻辑
+- <span class="tag-Inline-title">【重构】</span>调整<RouterLink to="/work">「我的作品」</RouterLink>页面的渲染方式，为后续功能开发做准备
 - <span class="tag-Inline-title">【调整】</span>暂时关闭「博客」页面访问路由，待技术方案完善后重新开放
-  - 博客功能仍在规划中，当前调整是为了提供更完善的使用体验
+    - 博客功能仍在规划中，当前调整是为了提供更完善的使用体验
+- <span class="tag-Inline-title">【优化】</span>更新了<RouterLink to="/about">「关于我」</RouterLink>页面的内容，加了点新的小玩意儿~
+- <span class="tag-Inline-title">【修复】</span>修复部分内容的表述错误
 
 ## v1.2.1 – 2025/09/22
 
@@ -39,10 +51,10 @@
 
 ## v1.1.3 – 2025/09/20
 
+- <span class="tag-Inline-title">【功能】</span>给部分文档内容的区域增加了一个移动端的随机提示，提示用户使用更大的屏幕访问页面以获得更好的体验
 - <span class="tag-Inline-title">【样式】</span>更新了<RouterLink to="/about">「关于我」</RouterLink>和<RouterLink to="/change-log">「更新日志」</RouterLink>页面的样式内容，让界面更符合全局的文档样式风格
 - <span class="tag-Inline-title">【样式】</span>更新了<RouterLink to="/work">「我的作品」</RouterLink>页面的样式内容，对其中的部分内容进行模块拆分
 - <span class="tag-Inline-title">【修复】</span>修复页脚区域的一些外链的顺序，加入了 title 提示
-- <span class="tag-Inline-title">【功能】</span>给部分文档内容的区域增加了一个移动端的随机提示，提示用户使用更大的屏幕访问页面以获得更好的体验
 - <span class="tag-Inline-title">【修复】</span>修复文档区域的移动端随机提示的组件的类型错误
 
 ## v1.1.2 – 2025/09/06
@@ -85,8 +97,8 @@
 
 ## v0.0.2 – 2025/08/31
 
-- <span class="tag-Inline-title">【样式】</span>调整页面视口的默认缩放比例
 - <span class="tag-Inline-title">【功能】</span>新增多个内容页面
+- <span class="tag-Inline-title">【样式】</span>调整页面视口的默认缩放比例
 
 ## v0.0.1 – 2025/02/22
 

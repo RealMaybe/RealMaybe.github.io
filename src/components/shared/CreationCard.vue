@@ -31,7 +31,7 @@ const bvUrl = createBVLink(props.link.bvid);
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 .creation-item {
     width: 18.75rem;

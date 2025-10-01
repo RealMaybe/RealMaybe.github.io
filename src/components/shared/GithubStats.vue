@@ -46,7 +46,7 @@ const imgSrc = ref({
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 .github-stats {
     flex: 1 1 100% !important;

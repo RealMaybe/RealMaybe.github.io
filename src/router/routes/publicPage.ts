@@ -33,4 +33,13 @@ export const publicPages: Array<RouteRecordRaw> = [
             nav: true,
         },
     },
+    {
+        path: "/shop",
+        component: views.shop,
+        meta: {
+            title: "小店",
+            disableZoom: true,
+            // nav: true,
+        },
+    },
 ];

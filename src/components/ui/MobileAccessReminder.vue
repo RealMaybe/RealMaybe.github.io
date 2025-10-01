@@ -123,8 +123,7 @@ onUnmounted((): void => {
 </script>
 
 <style scoped lang="less">
-@import url("@style/public/var.less");
-@import url("@style/public/flex.less");
+@import url("@style/public-page.less");
 
 // 移动端访问提醒
 .mobile-access-reminder {

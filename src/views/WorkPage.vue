@@ -17,5 +17,5 @@ import videoLink from "@/assets/data/video.json"; // data
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 </style>

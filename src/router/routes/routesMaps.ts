@@ -9,6 +9,7 @@ export const views = {
     about: () => import("@/views/AboutPage.vue"), // 关于
     blog: () => import("@/views/BlogPage.vue"), // 博客
     work: () => import("@/views/WorkPage.vue"), // 作品
+    shop: () => import("@/views/ShopPage.vue"), // 小店
     originalCharacter: () => import("@/views/OriginalCharacterPage.vue"), // 原创角色
     acknowledgments: () => import("@/views/ThanksPage.vue"), // 致谢
     changeLog: () => import("@/views/ChangeLogPage.vue"), // 更新日志

@@ -28,7 +28,7 @@ import GithubStats from "@/components/shared/GithubStats.vue";
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 @padding-top-bottom: 1.5rem;
 @padding-left-right: @padding-top-bottom * 2;

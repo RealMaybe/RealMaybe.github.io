@@ -2,18 +2,10 @@
 
 <template>
     <nav id="links-nav">
-        <!-- 内链 -->
         <template v-for="link in internalLink" :key="link.name">
             <RouterLink :to="link.path" active-class="on" @click="scrollToTop">
                 {{ link.name }}
             </RouterLink>
-        </template>
-
-        <!-- 外链 -->
-        <template v-for="link in externalLinks" :key="link.name">
-            <a :href="link.path" :target="link.target" :rel="link.rel">
-                {{ link.name }}
-            </a>
         </template>
     </nav>
 </template>
@@ -32,19 +24,10 @@ const internalLink = computed(() =>
             path: r.path,
         }))
 );
-
-// 外链
-const externalLinks = reactive([{
-    name: "小店",
-    path: "https://realmaybe0429.taobao.com/",
-    target: "_blank",
-    rel: "noopener"
-}])
 </script>
 
 <style scoped lang="less">
-@import url("@style/public/flex.less");
-@import url("@style/public/var.less");
+@import url("@style/public-page.less");
 
 #links-nav {
     .flex-between-center();

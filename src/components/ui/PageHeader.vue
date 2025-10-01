@@ -67,8 +67,7 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 </script>
 
 <style scoped lang="less">
-@import url("@style/public/flex.less");
-@import url("@style/public/var.less");
+@import url("@style/public-page.less");
 
 @fontSize: 1.5rem;
 

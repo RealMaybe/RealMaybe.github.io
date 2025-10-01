@@ -3,7 +3,7 @@
 <template>
     <div class="meta-link">
         <template v-for="item in metaLinkPages" :key="item.name">
-            <RouterLink :to="item.path" rel="noopener noreferrer" @click="scrollToTop">
+            <RouterLink :to="item.path" active-class="on" @click="scrollToTop">
                 {{ item.name }}
             </RouterLink>
         </template>
@@ -27,8 +27,7 @@ const metaLinkPages = computed(() =>
 </script>
 
 <style scoped lang="less">
-@import url("@style/public/flex.less");
-@import url("@style/public/var.less");
+@import url("@style/public-page.less");
 
 .meta-link {
     .flex-start();
@@ -41,8 +40,11 @@ const metaLinkPages = computed(() =>
         margin: 0 .25rem;
 
         &:hover {
-            color: @secondary-color;
             text-decoration: underline;
+        }
+
+        &.on {
+            color: @secondary-color;
         }
 
         &:first-child {

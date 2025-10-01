@@ -27,7 +27,7 @@ const hobbies = reactive([
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 #personal-hobbies {
     animation-delay: 0.6s;

@@ -42,7 +42,7 @@ const astroDelay = (n: number) => ({
 </script>
 
 <style lang="less">
-@import url("@style/page-public.less");
+@import url("@style/public-page.less");
 
 // 全屏固定布局
 .not-found {

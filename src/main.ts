@@ -10,7 +10,7 @@ import router from "./router";
 import { autoRefresh } from "@/plugin";
 
 /* 引入全局样式 */
-import "./assets/style/page-public.less";
+import "./assets/style/public-global.less";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "highlight.js/styles/github-dark.css"; 
 

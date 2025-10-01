@@ -32,7 +32,7 @@ const languages = reactive([
 </script>
 
 <style scoped lang="less">
-@import url("@style/page/index-public.less");
+@import url("@style/public-page.less");
 
 #language {
     animation-delay: 0.4s;
