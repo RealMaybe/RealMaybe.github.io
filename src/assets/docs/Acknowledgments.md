@@ -1,0 +1,13 @@
+<!-- <script setup>
+import ThanksList from "@/features/thanks/ThanksList.vue";
+</script> -->
+
+# 献给照亮我的小星星们 🌟
+
+我的宇宙里，因为有这些闪闪发光的小星星，才变得如此明亮又温暖。
+
+现在，我想把他们指给你看！
+
+**每一颗，都是我最宝贵的收藏。** 💫
+
+---

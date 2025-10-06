@@ -27,7 +27,7 @@
                 <section class="copyright">
                     <span class="personal">
                         <span>© 2025</span>
-                        <a href="https://www.realmaybe0429.space/">RealMaybe</a>
+                        <RouterLink to="/index">RealMaybe</RouterLink>
                     </span>
                     <span class="divider">|</span>
                     <span>
@@ -40,6 +40,7 @@
 </template>
 
 <script setup lang="ts">
+import { RouterLink } from "vue-router";
 import LinksNav from "./LinksNav.vue";
 import MetaLink from "./MetaLink.vue";
 import SocialLinks from "./SocialLinks.vue";

@@ -69,7 +69,7 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 <style scoped lang="less">
 @import url("@style/public-page.less");
 
-@fontSize: 1.5rem;
+@fontSize: 2rem;
 
 #page-header {
     width: 100%;

@@ -58,6 +58,7 @@ header {
 
     h1 {
         .logo-realmaybe();
+        font-size: 3rem;
     }
 
     .tagline {

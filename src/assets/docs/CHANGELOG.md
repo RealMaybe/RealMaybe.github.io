@@ -5,18 +5,26 @@
 > - 本项目正在茁壮成长，会经常"打打闹闹"地更新版本！
 > - 不用担心错过什么，记得常回来摸摸鱼、看看新变化就好啦～ 🐟
 > - 某一天更新了好几个版本也是很正常的事情
-> - 不用担心，每次更新都会尽量保持向下兼容，尽量减少对现有功能的影响
+> - 不用担心，每次更新都会尽量保持向下兼容，以减少对现有功能的影响
 
 ---
 
-## V1.2.3 – 2025/10/02
+## v1.2.4 - 2025/10/06
+
+- <span class="tag-Inline-title">【优化】</span>统一处理全站路由链接，确保跨页面跳转的一致性与可靠性
+- <span class="tag-Inline-title">【优化】</span>对<RouterLink to="/work">「我的作品」</RouterLink>页面的模块**刷新**逻辑进行控制，防止重复操作
+- <span class="tag-Inline-title">【文档】</span>修正<RouterLink to="/change-log">「更新日志」</RouterLink>文档本身的历史记录表述与格式，提升一致性与可读性
+- <span class="tag-Inline-title">【性能】</span>优化站点 LOGO 样式，提升页面加载性能与视觉一致性
+
+## v1.2.3 – 2025/10/02
 
 - <span class="tag-Inline-title">【优化】</span>全面调整各模块的样式引入逻辑，提升在不同屏幕尺寸下的自适应表现
 - <span class="tag-Inline-title">【优化】</span>为页脚的特殊导航栏添加了路由高亮效果，与主导航栏保持一致的交互体验
 - <span class="tag-Inline-title">【调整】</span>暂时移除导航栏中的「小店」外部跳转链接
-    - 优化用户体验：将直接跳转淘宝的设计改为更符合一体化理念的站内页面
-    - 正在精心设计独立的「小店」页面，预计在后续版本中与大家见面 🛍️
-- <span class="tag-Inline-title">【文档】</span>调整了<RouterLink to="/change-log">「更新日志」</RouterLink>文档中历史版本的表述不当，提升了文档的规范性和可读性
+    - 暂且将「小店」入口改为隐藏路由
+    - 正在精心设计独立的「小店」页面，将直接跳转淘宝的设计改为更符合一体化理念的站内页面
+    - 预计在 v1.3.0 版本中与大家见面 🛍️
+- <span class="tag-Inline-title">【文档】</span>修正<RouterLink to="/change-log">「更新日志」</RouterLink>文档本身的历史记录表述与格式，提升一致性与可读性
     - 规划未来在 2.0.0 版本时开启新版「更新日志」页面
 - <span class="tag-Inline-title">【文档】</span>小小更新了<RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面内容
     - 这只是个开始，后续版本会为大家带来更完整、更详细的致谢内容整理 ✨
@@ -41,7 +49,7 @@
 ## v1.2.0 – 2025/09/21
 
 - <span class="tag-Inline-title">【优化】</span>升级导航栏，提升移动体验
-    - <RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面和<RouterLink to="/change-log">「更新日志」</RouterLink>页面的入口已添加到导航栏中
+    - <RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面和<RouterLink to="/change-log">「更新日志」</RouterLink>页面的入口已正式开放
     - 可通过 PC 端的页脚链接访问，移动端用户可通过侧边栏底部链接访问
 - <span class="tag-Inline-title">【功能】</span>新增回到顶部按钮（仅移动端 / 窄屏状态显示），方便用户快速返回页面顶部
 - <span class="tag-Inline-title">【优化】</span>优化移动端兼容提示组件
@@ -49,7 +57,7 @@
     - 你的关闭选择会被记住（仅限当前浏览会话），避免重复提示
 - <span class="tag-Inline-title">【样式】</span>优化侧边栏的动画效果和视觉样式
 
-## v1.1.3 – 2025/09/20
+## v1.1.1 – 2025/09/20
 
 - <span class="tag-Inline-title">【功能】</span>给部分文档内容的区域增加了一个移动端的随机提示，提示用户使用更大的屏幕访问页面以获得更好的体验
 - <span class="tag-Inline-title">【样式】</span>更新了<RouterLink to="/about">「关于我」</RouterLink>和<RouterLink to="/change-log">「更新日志」</RouterLink>页面的样式内容，让界面更符合全局的文档样式风格
@@ -57,23 +65,24 @@
 - <span class="tag-Inline-title">【修复】</span>修复页脚区域的一些外链的顺序，加入了 title 提示
 - <span class="tag-Inline-title">【修复】</span>修复文档区域的移动端随机提示的组件的类型错误
 
-## v1.1.2 – 2025/09/06
+## v1.1.0 – 2025/09/06
 
 - <span class="tag-Inline-title">【基建】</span>提供了全局的 MarkDown 渲染器和相关样式，以支持在页面中直接渲染 MarkDown 文档
 - <span class="tag-Inline-title">【功能】</span>正式完成<RouterLink to="/change-log">「更新日志」</RouterLink>页面的构建，并在页脚添加访问入口
+- <span class="tag-Inline-title">【功能】</span>将<RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面加入页脚导航栏
 - <span class="tag-Inline-title">【修复】</span>修复<RouterLink to="/change-log">「更新日志」</RouterLink>页面的样式问题
 - <span class="tag-Inline-title">【备注】</span>
     - 目前页脚链接仅支持在 PC 端显示，移动设备用户可通过直接输入链接访问
     - <RouterLink to="/acknowledgments">「致谢名单」</RouterLink>页面暂时是空的，后续会逐步完善
 
-## v1.1.1 – 2025/09/05
+## v1.0.4 – 2025/09/05
 
 - <span class="tag-Inline-title">【功能】</span>新增<RouterLink to="/change-log">「更新日志」</RouterLink>、<RouterLink to="/acknowledgments">「致谢名单」</RouterLink>和「原创角色」页面
 - <span class="tag-Inline-title">【重构】</span>将以上页面设置为隐藏路由
     - 仅可通过链接访问，不显示在导航中
     - 暂时无内容或暂时不开放访问的页面暂时不在本文档中提供链接
 
-## v1.1.0 – 2025/09/04
+## v1.0.3 – 2025/09/04
 
 - <span class="tag-Inline-title">【基建】</span>初步搭建「博客」页面框架（功能尚未开放）
 
@@ -81,9 +90,9 @@
 
 - <span class="tag-Inline-title">【样式】</span>微调作品展示区域的视觉样式
 - <span class="tag-Inline-title">【性能】</span>优化作品区域的加载逻辑
-    - ⚠️当前加载性能仍需进一步优化
+    - ⚠️ 当前加载性能仍需进一步优化
 
-> 这个性能问题貌似是 B 站的渲染逻辑导致
+> 这个性能问题貌似是 B 站的渲染逻辑导致，暂不清楚修复方式
 
 ## v1.0.1 – 2025/09/03
 

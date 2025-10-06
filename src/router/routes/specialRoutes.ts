@@ -17,9 +17,19 @@ export const specialRoutes: Array<RouteRecordRaw> = [
         redirect: "/original-character",
     },
     {
+        // 原创角色子页面路由转发
+        path: "/oc/:path(.*)",
+        redirect: to => `/original-character/${to.params.path}`,
+    },
+    {
         // 重定向到致谢页面
         path: "/thanks",
         redirect: "/acknowledgments",
+    },
+    {
+        // 致谢子页面路由转发
+        path: "/thanks/:path(.*)",
+        redirect: to => `/acknowledgments/${to.params.path}`,
     },
     {
         // 404 页面

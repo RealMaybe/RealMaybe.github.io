@@ -18,7 +18,7 @@
                     :title="{ video: creations.videoTitle, song: creations.songTitle }" />
             </template>
         </div>
-        
+
         <div class="tips">
             本区域的刷新功能存在页面卡顿的情况，貌似是 B 站的渲染问题，暂不清楚修复方式……
         </div>
@@ -30,8 +30,9 @@
 import CreationCard from "@/components/shared/CreationCard.vue";
 
 // 引入依赖
-import { ref, computed, onMounted, watch } from "vue";
 import type { createPlayerLinkOptions } from "@/tsTypes";
+import { ref, computed, onMounted, watch } from "vue";
+import { throttle } from "@/plugin";
 
 /* ========== */
 
@@ -81,7 +82,7 @@ const selectRandomIndices = (count: number): Set<number> => {
 };
 
 // 刷新作品显示
-const refreshCreations = () => {
+const refreshCreations = throttle(() => {
     isRefreshing.value = true;
 
     // 添加一点延迟，让旋转动画更明显
@@ -89,7 +90,7 @@ const refreshCreations = () => {
         currentIndices.value = selectRandomIndices(6);
         isRefreshing.value = false;
     }, 500);
-};
+}, 1000);
 
 // 监听 allCreations 的变化
 watch(
