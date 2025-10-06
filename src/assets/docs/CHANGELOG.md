@@ -15,6 +15,7 @@
 - <span class="tag-Inline-title">【优化】</span>对<RouterLink to="/work">「我的作品」</RouterLink>页面的模块**刷新**逻辑进行控制，防止重复操作
 - <span class="tag-Inline-title">【文档】</span>修正<RouterLink to="/change-log">「更新日志」</RouterLink>文档本身的历史记录表述与格式，提升一致性与可读性
 - <span class="tag-Inline-title">【性能】</span>优化站点 LOGO 样式，提升页面加载性能与视觉一致性
+- <span class="tag-Inline-title">【调整】</span>调整导航栏、LOGO 的样式，增强阅读体验与整体美观度
 
 ## v1.2.3 – 2025/10/02
 

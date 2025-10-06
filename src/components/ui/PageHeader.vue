@@ -69,7 +69,8 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 <style scoped lang="less">
 @import url("@style/public-page.less");
 
-@fontSize: 2rem;
+@logo-font-size: 2rem; 
+@font-size: 1.5rem;
 
 #page-header {
     width: 100%;
@@ -85,12 +86,12 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
     #logo {
         .logo-realmaybe();
         margin-bottom: 0;
-        font-size: @fontSize;
+        font-size: @font-size;
         cursor: pointer;
     }
 
     .hamburger-button {
-        font-size: @fontSize;
+        font-size: @font-size;
         cursor: pointer;
         display: none;
 
@@ -114,7 +115,7 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 
         .close-btn {
             display: none;
-            font-size: @fontSize;
+            font-size: @font-size;
         }
 
         p.line {
