@@ -18,7 +18,7 @@ export default defineConfig({
         }),
         vueDevTools(),
         Markdown({
-            include: "src/assets/docs/*.md", // glob
+            include: "src/assets/docs/**/*.md", // glob
             exclude: "public/**", // 运行时动态区
         }),
     ],

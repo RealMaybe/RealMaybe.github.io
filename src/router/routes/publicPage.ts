@@ -10,7 +10,7 @@ export const publicPages: Array<RouteRecordRaw> = [
         path: "/index",
         component: views.index,
         meta: {
-            title: "首页",
+            title: "首页导览",
             disableZoom: true,
             nav: true,
         },
@@ -19,7 +19,7 @@ export const publicPages: Array<RouteRecordRaw> = [
         path: "/about",
         component: views.about,
         meta: {
-            title: "关于",
+            title: "个人简介",
             disableZoom: true,
             nav: true,
         },
@@ -28,7 +28,7 @@ export const publicPages: Array<RouteRecordRaw> = [
         path: "/work",
         component: views.work,
         meta: {
-            title: "作品",
+            title: "作品集锦",
             disableZoom: true,
             nav: true,
         },
@@ -37,7 +37,7 @@ export const publicPages: Array<RouteRecordRaw> = [
         path: "/shop",
         component: views.shop,
         meta: {
-            title: "小店",
+            title: "精品小店",
             disableZoom: true,
             // nav: true,
         },

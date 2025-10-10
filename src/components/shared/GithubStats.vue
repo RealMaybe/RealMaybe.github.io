@@ -6,7 +6,9 @@
 
         <div class="tips">{{ tip }}</div>
         <div class="github-stats-box">
-            <img v-for="img in Object.values(imgSrc)" :key="img" :src="img" />
+            <div class="starts" v-for="img in Object.values(imgSrc)" :key="img">
+                <img :src="img" />
+            </div>
         </div>
     </section>
 </template>
@@ -52,31 +54,38 @@ const imgSrc = ref({
     flex: 1 1 100% !important;
 
     .tips {
-        border-left: 0.25rem solid @text-muted;
-        padding-left: 0.75rem;
-        margin-bottom: 1.25rem;
-        margin-left: 0.125rem;
-        font-size: 0.75rem;
-        color: @text-muted;
+        margin-bottom: 1.5rem;
     }
 
     .github-stats-box {
         width: 100%;
         .flex-between-start();
 
-        img {
-            width: 48%;
-            transition: all 0.3s ease-in-out;
+        div.starts {
+            width: 49%;
 
-            &:hover {
-                .hover(-0.25rem);
+            img {
+                width: 100%;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    .hover(-0.25rem);
+                }
+            }
+        }
+
+        @media (max-width: @tablet-breakpoint) {
+            // .flex-between-start();
+
+            div.starts {
+                width: 49%;
             }
         }
 
         @media (max-width: @mobile-breakpoint) {
             flex-direction: column;
 
-            img {
+            div.starts {
                 width: 100%;
 
                 &:first-child {

@@ -1,4 +1,5 @@
 import IndexPage from "@/views/IndexPage.vue";
+// import docs from "@/features/document/docs";
 
 /* ========== */
 
@@ -13,6 +14,7 @@ export const views = {
     originalCharacter: () => import("@/views/OriginalCharacterPage.vue"), // 原创角色
     acknowledgments: () => import("@/views/ThanksPage.vue"), // 致谢
     changeLog: () => import("@/views/ChangeLogPage.vue"), // 更新日志
+    document: () => import("@/views/DocumentPage.vue"),
 };
 
 // 定义子组件元素
@@ -23,4 +25,5 @@ export const components = {
         list: () => import("@/features/blog/BlogList.vue"),
         update: () => import("@/features/blog/BlogUpdate.vue"),
     },
+    // document: docs,
 };

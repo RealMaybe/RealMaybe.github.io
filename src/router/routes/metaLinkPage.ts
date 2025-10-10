@@ -1,11 +1,14 @@
 /* 功能路由 */
 
 import type { RouteRecordRaw } from "vue-router";
-import { views } from "./routesMaps";
+import { views, components } from "./routesMaps";
 
 /* ========== */
 
-export const metaLinkPage: Array<RouteRecordRaw> = [
+/**
+ * 导航栏内的路由
+ */
+const used: Array<RouteRecordRaw> = [
     {
         path: "/change-log",
         component: views.changeLog,
@@ -19,11 +22,19 @@ export const metaLinkPage: Array<RouteRecordRaw> = [
         path: "/acknowledgments",
         component: views.acknowledgments,
         meta: {
-            title: "致谢名单",
+            title: "致谢专栏",
             disableZoom: true,
             nav: true,
         },
     },
+];
+
+/* ========== */
+
+/**
+ * 非导航栏内的路由
+ */
+const notNav: Array<RouteRecordRaw> = [
     {
         path: "/original-character",
         component: views.originalCharacter,
@@ -33,49 +44,26 @@ export const metaLinkPage: Array<RouteRecordRaw> = [
             nav: false,
         },
     },
-    /* {
-        path: "/blog",
-        component: views.blog,
+    {
+        path: "/documents",
+        component: views.document,
         meta: {
-            nav: true,
+            title: "文档",
+            disableZoom: true,
+            nav: false,
         },
         children: [
-            {
-                path: "",
-                name: "blog-display",
-                component: components.blog.display,
-                meta: {
-                    title: "博客",
-                    disableZoom: true,
-                },
-            },
-            {
-                path: "list",
-                name: "blog-list",
-                component: components.blog.list,
-                meta: {
-                    title: "博客列表",
-                    disableZoom: true,
-                },
-            },
-            {
-                path: "detail",
-                name: "blog-detail",
-                component: components.blog.detail,
-                meta: {
-                    title: "博客详情",
-                    disableZoom: true,
-                },
-            },
-            {
-                path: "update",
-                name: "blog-update",
-                component: components.blog.update,
-                meta: {
-                    title: "博客更新记录",
-                    disableZoom: true,
-                },
-            },
+            // {
+            //     path: "idea",
+            //     component: components.document.idea,
+            // },
         ],
-    }, */
+    },
 ];
+
+/* ========== */
+
+/**
+ * 功能路由
+ */
+export const metaLinkPage: Array<RouteRecordRaw> = [...used, ...notNav];

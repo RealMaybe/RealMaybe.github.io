@@ -7,3 +7,6 @@ export * from "./blog/ContentCache";
 // thanks
 export * from "./thanks/credits";
 export * from "./thanks/thanks";
+
+// character
+export * from "./character/character";

@@ -9,6 +9,7 @@
 ## 文档
 
 [中文文档](./README.md)
+
 [English Document](./docs/README.en.md)
 
 ## 关于构建
@@ -23,7 +24,6 @@
 - Pinia
 - Less
 - Font Awesome
-- Git
 
 整个架构轻快而灵活，正如我所期待的个人空间一样，能够自由地生长和演化。
 
@@ -35,7 +35,9 @@
 
 ## 动态更新
 
-这个网站如同一个持续生长的有机体，在不断迭代和进化。你可以在网站上查看详细的 **[更新日志](https://www.realmaybe0429.space/change-log)** ，了解它的演变历程和背后的思考。
+这个网站如同一个持续生长的有机体，在不断迭代和进化。
+
+你可以在网站上查看详细的 **[更新日志](https://www.realmaybe0429.space/change-log)** ，了解它的演变历程和背后的思考。
 
 ## 反馈与交流
 

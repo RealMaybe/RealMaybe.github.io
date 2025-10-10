@@ -12,9 +12,21 @@
             "name": "Git",
             "type": "版本控制系统",
             "purpose": "版本控制",
-            "description": "分布式版本控制系统，用于跟踪代码变更和协作开发",
-            "link": "https://git-scm.com",
-            "icon": "/icons/git.png",
+            "description": {
+                "exists": true,
+                "value": [
+                    "分布式版本控制系统，用于跟踪代码变更和协作开发",
+                    "支持分支管理、代码合并和版本回退等操作"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://git-scm.com"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/git.png"
+            },
             "tags": ["版本控制", "协作开发", "代码管理"]
         },
         {
@@ -22,9 +34,21 @@
             "name": "GitHub",
             "type": "代码托管平台",
             "purpose": "开源托管",
-            "description": "基于Git的代码托管平台，支持版本控制和协作开发",
-            "link": "https://github.com",
-            "icon": "/icons/github.png",
+            "description": {
+                "exists": true,
+                "value": [
+                    "基于Git的代码托管平台，支持版本控制和协作开发",
+                    "提供Pull Request、Issue跟踪和项目管理功能"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://github.com"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/github.png"
+            },
             "tags": ["代码托管", "开源协作", "项目管理"]
         },
         {
@@ -32,9 +56,21 @@
             "name": "Pnpm",
             "type": "包管理工具",
             "purpose": "包管理工具",
-            "description": "快速、节省磁盘空间的包管理器，替代npm和yarn",
-            "link": "https://pnpm.io",
-            "icon": "/icons/pnpm.png",
+            "description": {
+                "exists": true,
+                "value": [
+                    "快速、节省磁盘空间的包管理器，替代npm和yarn",
+                    "使用硬链接和符号链接来优化依赖存储"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://pnpm.io"
+            },
+            "icon": {
+                "exists": false,
+                "value": ""
+            },
             "tags": ["包管理", "依赖管理", "性能优化"]
         },
         {
@@ -42,9 +78,21 @@
             "name": "Vite",
             "type": "构建工具",
             "purpose": "构建工具",
-            "description": "下一代前端构建工具，提供极速的开发服务器和优化的构建输出",
-            "link": "https://vitejs.dev",
-            "icon": "/icons/vite.png",
+            "description": {
+                "exists": true,
+                "value": [
+                    "下一代前端构建工具，提供极速的开发服务器和优化的构建输出",
+                    "基于ES模块，支持热模块替换和按需编译"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://vitejs.dev"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/vite.png"
+            },
             "tags": ["构建工具", "开发服务器", "性能优化"]
         },
         {
@@ -52,9 +100,18 @@
             "name": "Vue.js",
             "type": "前端框架",
             "purpose": "前端框架",
-            "description": "渐进式JavaScript框架，用于构建用户界面和单页面应用",
-            "link": "https://vuejs.org",
-            "icon": "/icons/vue.png",
+            "description": {
+                "exists": true,
+                "value": ["渐进式JavaScript框架，用于构建用户界面和单页面应用"]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://vuejs.org"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/vue.png"
+            },
             "tags": ["前端框架", "响应式", "组件化"]
         },
         {
@@ -62,9 +119,18 @@
             "name": "TypeScript",
             "type": "编程语言",
             "purpose": "静态类型语言",
-            "description": "JavaScript的超集，添加了静态类型定义，提高代码质量和开发体验",
-            "link": "https://www.typescriptlang.org",
-            "icon": "/icons/typescript.png",
+            "description": {
+                "exists": true,
+                "value": ["JavaScript的超集，添加了静态类型定义，提高代码质量和开发体验"]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://www.typescriptlang.org"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/typescript.png"
+            },
             "tags": ["类型安全", "开发体验", "代码质量"]
         },
         {
@@ -72,9 +138,15 @@
             "name": "Less",
             "type": "CSS预处理器",
             "purpose": "CSS 预处理器",
-            "description": "向后兼容的CSS扩展语言，提供变量、混合、函数等高级功能",
-            "link": "http://lesscss.org",
-            "icon": "/icons/less.png",
+            "description": ["向后兼容的CSS扩展语言，提供变量、混合、函数等高级功能"],
+            "link": {
+                "exists": true,
+                "value": "http://lesscss.org"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/less.png"
+            },
             "tags": ["CSS预处理器", "样式扩展", "开发效率"]
         },
         {
@@ -82,9 +154,15 @@
             "name": "Font Awesome",
             "type": "图标库",
             "purpose": "图标库",
-            "description": "广泛使用的矢量图标库和工具包，提供丰富的可缩放图标",
-            "link": "https://fontawesome.com",
-            "icon": "/icons/font-awesome.png",
+            "description": ["广泛使用的矢量图标库和工具包，提供丰富的可缩放图标"],
+            "link": {
+                "exists": true,
+                "value": "https://fontawesome.com"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/font-awesome.png"
+            },
             "tags": ["图标库", "矢量图标", "UI设计"]
         },
         {
@@ -92,9 +170,18 @@
             "name": "Markdown",
             "type": "标记语言",
             "purpose": "文档格式",
-            "description": "轻量级标记语言，使用纯文本格式编写文档，可转换为HTML",
-            "link": "https://www.markdownguide.org",
-            "icon": "/icons/markdown.png",
+            "description": {
+                "exists": true,
+                "value": ["轻量级标记语言，使用纯文本格式编写文档，可转换为HTML"]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://www.markdownguide.org"
+            },
+            "icon": {
+                "exists": true,
+                "value": "/icons/markdown.png"
+            },
             "tags": ["标记语言", "文档编写", "内容管理"]
         }
     ]

@@ -7,12 +7,12 @@ import App from "./App.vue";
 import router from "./router";
 
 /* 引入自定义插件 */
-import { autoRefresh } from "@/plugin";
+// import { autoRefresh } from "@/plugin";
 
 /* 引入全局样式 */
 import "./assets/style/public-global.less";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "highlight.js/styles/github-dark.css"; 
+import "highlight.js/styles/github-dark.css";
 
 /* ========== */
 

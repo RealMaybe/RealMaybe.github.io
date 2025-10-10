@@ -9,6 +9,13 @@
 
 ---
 
+## v1.2.5 – 2025/10/11
+
+- <span class="tag-Inline-title">【功能】</span> 新增隐藏路由「文档」页面，用于集中管理项目相关文档
+    - 该页面暂未对外开放，为后续内容发布做准备
+- <span class="tag-Inline-title">【重构】</span> 调整部分页面的内容渲染逻辑，提升一致性与可维护性
+- <span class="tag-Inline-title">【优化】</span> 更新导航栏中部分条目标题，使其更清晰地反映对应页面功能
+
 ## v1.2.4 - 2025/10/06
 
 - <span class="tag-Inline-title">【优化】</span>统一处理全站路由链接，确保跨页面跳转的一致性与可靠性
