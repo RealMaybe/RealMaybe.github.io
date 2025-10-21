@@ -25,13 +25,13 @@ import { ref, onMounted, onUnmounted } from "vue";
 // 1. 定义单条消息的接口
 interface MobileMessage {
     title: string;
-    content: string[];
+    content: Array<string>;
 }
 
 /* ========== */
 
 // 提示消息
-const mobileMessages: MobileMessage[] = [
+const mobileMessages: Array<MobileMessage> = [
     {
         title: "💡 温馨提示",
         content: [
@@ -56,7 +56,7 @@ const mobileMessages: MobileMessage[] = [
 ];
 
 // 当前选中的消息，初始化为列表中的第一条消息
-const currentMessage: Ref<MobileMessage> = ref < MobileMessage > (mobileMessages[0]);
+const currentMessage: Ref<MobileMessage> = ref<MobileMessage>(mobileMessages[0]);
 
 const STORAGE_KEY: string = "dismissedMobileDocNotice", // sessionStorage 的键名 (常量)
     isVisible: Ref<boolean> = ref(true), // 可见状态
@@ -93,7 +93,7 @@ const closeNotice = (): void => {
     }
 };
 
-// --- 生命周期钩子 ---
+// 生命周期钩子
 
 onMounted((): void => {
     // 检查 sessionStorage 决定是否可能显示

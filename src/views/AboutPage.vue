@@ -16,7 +16,7 @@
 <script setup lang="ts">
 // 引入组件
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
-import aboutMe from "@/assets/docs/aboutMe.md";
+import aboutMe from "@/assets/docs/about/aboutMe.md";
 
 // 技能
 import WebSkill from "@/components/shared/WebSkill.vue";

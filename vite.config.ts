@@ -7,10 +7,16 @@ import Markdown from "unplugin-vue-markdown/vite";
 
 /* ========== */
 
+/**
+ * 获取当前文件所在目录的绝对路径
+ */
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 /* ========== */
 
+/**
+ * Vite 配置文件
+ */
 export default defineConfig({
     plugins: [
         vue({
@@ -18,7 +24,7 @@ export default defineConfig({
         }),
         vueDevTools(),
         Markdown({
-            include: "src/assets/docs/**/*.md", // glob
+            include: "src/assets/docs/**/*.md", // 开发时解析的 Markdown 文件
             exclude: "public/**", // 运行时动态区
         }),
     ],
@@ -28,16 +34,15 @@ export default defineConfig({
         host: "0.0.0.0", // 允许外部访问
     },
     resolve: {
+        // 路径别名
         alias: {
-            // 主要的别名
-            "@": fileURLToPath(new URL("./src", import.meta.url)),
-            "@tsTypes": fileURLToPath(new URL("./tsTypes/index.d.ts", import.meta.url)),
-            // 数据
-            "@pageData": fileURLToPath(new URL("./src/assets/data/data.ts", import.meta.url)),
-            // 路径
-            "@style": fileURLToPath(new URL("./src/assets/style", import.meta.url)),
-            "@img": fileURLToPath(new URL("./public/images", import.meta.url)),
-            "@images": fileURLToPath(new URL("./public/images", import.meta.url)),
+            "@": fileURLToPath(new URL("./src", import.meta.url)), // src 文件夹
+            "@tsTypes": fileURLToPath(new URL("./tsTypes/index.d.ts", import.meta.url)), // ts 类型文件
+            "@style": fileURLToPath(new URL("./src/assets/style", import.meta.url)), // 样式文件
+            "@data": fileURLToPath(new URL("./src/assets/data", import.meta.url)), // 数据文件
+            "@docs": fileURLToPath(new URL("./src/assets/docs", import.meta.url)), // 文档文件
+            "@img": fileURLToPath(new URL("./public/images", import.meta.url)), // 图片文件
+            "@images": fileURLToPath(new URL("./public/images", import.meta.url)), // 图片文件
         },
     },
     build: {

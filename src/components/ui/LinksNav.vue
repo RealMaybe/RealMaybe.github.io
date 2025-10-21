@@ -3,7 +3,7 @@
 <template>
     <nav id="links-nav">
         <template v-for="link in internalLink" :key="link.name">
-            <RouterLink :to="link.path" active-class="on" @click="scrollToTop">
+            <RouterLink :to="link.path" active-class="on">
                 {{ link.name }}
             </RouterLink>
         </template>
@@ -11,9 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, computed } from "vue";
+import { computed } from "vue";
 import { publicPages } from "@/router/routes/publicPage";
-import { scrollToTop } from "@/plugin";
 
 // 内链
 const internalLink = computed(() =>
@@ -43,14 +42,18 @@ const internalLink = computed(() =>
         color: @text-color;
         text-decoration: none;
 
-        &.on {
-            color: @link-on-color;
-            font-weight: bold;
-            text-decoration: underline;
+        &:hover {
+            border-bottom: 0.0625rem solid @link-on-color;
         }
 
-        &:hover {
-            text-decoration: underline;
+        &.on {
+            color: @inline-title;
+            font-weight: bold;
+            border-bottom: 0.0625rem solid @inline-title;
+
+            &:hover {
+                border-bottom-color: @inline-title;
+            }
         }
     }
 }

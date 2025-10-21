@@ -8,6 +8,7 @@ import router from "./router";
 
 /* 引入自定义插件 */
 // import { autoRefresh } from "@/plugin";
+import { scrollToTopPlugin } from "@/plugin";
 
 /* 引入全局样式 */
 import "./assets/style/public-global.less";
@@ -22,6 +23,9 @@ const app = createApp(App);
 // 注册 Pinia 状态管理和 Vue Router
 app.use(createPinia());
 app.use(router);
+
+// 注册自定义插件
+app.use(scrollToTopPlugin);
 
 // 挂载应用到 DOM 元素 #app
 app.mount("#app");

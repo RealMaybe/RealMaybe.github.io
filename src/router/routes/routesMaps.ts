@@ -25,5 +25,10 @@ export const components = {
         list: () => import("@/features/blog/BlogList.vue"),
         update: () => import("@/features/blog/BlogUpdate.vue"),
     },
-    // document: docs,
+    shop: {
+        shopPolicies: () => import("@/features/shop/ShopPolicies.vue"),
+    },
+    acknowledgments: {
+        ContributionGuidelines: () => import("@/features/thanks/ContributionGuidelines.vue"),
+    },
 };

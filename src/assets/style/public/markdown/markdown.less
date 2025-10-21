@@ -8,7 +8,7 @@
     font-family: "Inter", "Segoe UI", Roboto, sans-serif;
     line-height: @md-line-height;
     letter-spacing: 0.015em;
-    padding: .0625rem 1rem;
+    padding: 0.0625rem 1rem;
 
     @media (max-width: @tablet-breakpoint) {
         padding-left: 0;
@@ -20,15 +20,17 @@
     }
 
     // 特殊格式
+
+    // 加粗
     b,
     strong {
         color: @md-text-bright;
     }
 
+    // 下划线
     u,
     ins {
-        text-decoration: none;
-        border-bottom: 0.0625rem solid @md-text-normal;
+        .underline(@md-text-normal);
     }
 
     // 标题
@@ -217,8 +219,7 @@
     // 链接
     a {
         color: @md-primary;
-        text-decoration: none;
-        border-bottom: 0.0625rem solid fade(@md-primary, 35%);
+        .underline(fade(@md-primary, 35%));
         transition: all 0.2s;
 
         &:hover {

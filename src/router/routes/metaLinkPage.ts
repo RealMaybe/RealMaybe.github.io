@@ -20,12 +20,27 @@ const used: Array<RouteRecordRaw> = [
     },
     {
         path: "/acknowledgments",
-        component: views.acknowledgments,
         meta: {
             title: "致谢专栏",
-            disableZoom: true,
             nav: true,
         },
+        children: [
+            {
+                path: "",
+                component: views.acknowledgments,
+                meta: {
+                    disableZoom: true,
+                },
+            },
+            {
+                path: "contribution-guidelines",
+                component: components.acknowledgments.ContributionGuidelines,
+                meta: {
+                    title: "店铺政策",
+                    disableZoom: true,
+                },
+            },
+        ],
     },
 ];
 

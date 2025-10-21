@@ -1,0 +1,157 @@
+[
+    {
+        "id": "K",
+        "name": "徵羽摩柯 亚克力桌面立牌",
+        "images": [
+            "https://img.alicdn.com/imgextra/i3/3483755495/O1CN01PFfChe1qSlITH9m59_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i4/3483755495/O1CN01kMCyhL1qSlIQxSYlQ_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i3/3483755495/O1CN01tjUQMf1qSlITKXtoU_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i2/3483755495/O1CN01wb7Ckw1qSlIVgndB0_!!3483755495.jpg"
+        ],
+        "price": 23.9,
+        "originalPrice": 26.9,
+        "taobaoLink": "https://item.taobao.com/item.htm?id=761023701634",
+        "specifications": [
+            {
+                "type": "style",
+                "name": "款式",
+                "options": [
+                    {
+                        "value": "K01",
+                        "displayName": "K01",
+                        "inStock": false
+                    },
+                    {
+                        "value": "K02",
+                        "displayName": "K02",
+                        "inStock": true
+                    }
+                ]
+            },
+            {
+                "type": "size",
+                "name": "大小",
+                "options": [
+                    {
+                        "value": 20,
+                        "displayName": "20cm",
+                        "inStock": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "Y",
+        "name": "洛少爷 亚克力钥匙挂件",
+        "images": [
+            "https://img.alicdn.com/imgextra/i3/3483755495/O1CN018eihU91qSlKoec8Cg_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i1/3483755495/O1CN010NarYZ1qSlKnsns5w_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i2/3483755495/O1CN01coZtiB1qSlKgV6Hiw_!!3483755495.jpg"
+        ],
+        "price": 5,
+        "taobaoLink": "https://item.taobao.com/item.htm?id=790609610750",
+        "specifications": [
+            {
+                "type": "style",
+                "name": "款式",
+                "options": [
+                    {
+                        "value": "Y01",
+                        "displayName": "Y01",
+                        "inStock": true
+                    },
+                    {
+                        "value": "Y02",
+                        "displayName": "Y02",
+                        "inStock": true
+                    },
+                    {
+                        "value": "Y03",
+                        "displayName": "Y03",
+                        "inStock": true
+                    }
+                ]
+            },
+            {
+                "type": "shape",
+                "name": "扣形",
+                "options": [
+                    {
+                        "value": "猫猫扣",
+                        "displayName": "猫猫扣",
+                        "inStock": true
+                    },
+                    {
+                        "value": "爱心扣",
+                        "displayName": "爱心扣",
+                        "inStock": true
+                    },
+                    {
+                        "value": "星星扣",
+                        "displayName": "星星扣",
+                        "inStock": true
+                    }
+                ]
+            },
+            {
+                "type": "size",
+                "name": "大小",
+                "options": [
+                    {
+                        "value": 5,
+                        "displayName": "5cm",
+                        "inStock": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "VMK",
+        "name": "徵羽摩柯 V4＆V3 徽章",
+        "images": [
+            "https://img.alicdn.com/imgextra/i1/3483755495/O1CN018PlUO11qSlTZzSREG_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i1/3483755495/O1CN01Ml3qnp1qSlTaRarva_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i4/3483755495/O1CN01JOEvre1qSlTbfDqJ6_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i4/3483755495/O1CN01wzBNit1qSlTbJI8Ql_!!3483755495.jpg"
+        ],
+        "price": [8, 9],
+        "taobaoLink": "https://item.taobao.com/item.htm?id=982603590322",
+        "tags": ["新品"],
+        "specifications": [
+            {
+                "type": "style",
+                "name": "覆膜",
+                "options": [
+                    {
+                        "value": "镭射星星膜",
+                        "displayName": "镭射星星膜",
+                        "inStock": true
+                    },
+                    {
+                        "value": "爱心烟花膜",
+                        "displayName": "爱心烟花膜",
+                        "inStock": true
+                    }
+                ]
+            },
+            {
+                "type": "size",
+                "name": "大小",
+                "options": [
+                    {
+                        "value": 58,
+                        "displayName": "58mm",
+                        "inStock": true
+                    },
+                    {
+                        "value": 75,
+                        "displayName": "75mm",
+                        "inStock": true
+                    }
+                ]
+            }
+        ]
+    }
+]

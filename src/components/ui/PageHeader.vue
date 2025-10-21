@@ -5,23 +5,11 @@
                 RealMaybe
             </div>
 
-            <div class="hamburger-button" :title="open ? '关闭导航栏' : '开启导航栏'" @click="open = !open">
+            <div id="hamburger-button" :title="open ? '关闭导航栏' : '开启导航栏'" @click="open = !open">
                 <i class="fas fa-bars"></i>
             </div>
 
-            <!-- 导航 -->
-            <div id="header-nav" :class="{ open }">
-                <!-- 内部关闭按钮 -->
-                <div class="close-btn" @click="open = false" title="关闭导航栏">
-                    <i class="fas fa-times"></i>
-                </div>
-
-                <p class="line"></p>
-
-                <LinksNav />
-
-                <MetaLink class="header-meta-link" />
-            </div>
+            <LinksNav class="header-link-nav" />
 
             <!-- 底部悬浮功能块（移动端） -->
             <div class="mobile-fab-group" :class="{ show: showFab }">
@@ -35,12 +23,20 @@
                 </p>
             </div>
         </section>
+
+        <div class="side-bar">
+            <RightSidebar :class="{ open }" @close="open = false" />
+            <div v-if="open" class="right-sidebar-mask" @click="open = false"></div>
+        </div>
     </header>
 </template>
 
 <script setup lang="ts">
+// 引入组件
 import LinksNav from "./LinksNav.vue";
-import MetaLink from "./MetaLink.vue";
+import RightSidebar from "./RightSidebar.vue";
+
+// 引入依赖
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { scrollToTop } from "@/plugin";
 
@@ -59,9 +55,8 @@ onBeforeUnmount(() => mql.removeEventListener("change", closeNav));
 /* 底部功能块显示控制 */
 const showFab = ref(false);
 const SCROLL_THRESHOLD = 160;
-const updateFab = () => {
-    showFab.value = window.scrollY > SCROLL_THRESHOLD;
-};
+const updateFab = () => (showFab.value = window.scrollY > SCROLL_THRESHOLD);
+
 onMounted(() => window.addEventListener("scroll", updateFab, { passive: true }));
 onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 </script>
@@ -69,8 +64,8 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 <style scoped lang="less">
 @import url("@style/public-page.less");
 
-@logo-font-size: 2rem; 
-@font-size: 1.5rem;
+@hamburger-size: 1.5rem;
+@logo-size: 2rem;
 
 #page-header {
     width: 100%;
@@ -79,19 +74,24 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
 
     .header-content {
         width: 100%;
+        padding: 0 0.75rem;
         position: relative;
         .flex-between-center();
     }
 
     #logo {
+        @h: 3.125rem;
+
         .logo-realmaybe();
+        max-height: @h;
+        line-height: @h;
         margin-bottom: 0;
-        font-size: @font-size;
+        font-size: @logo-size;
         cursor: pointer;
     }
 
-    .hamburger-button {
-        font-size: @font-size;
+    #hamburger-button {
+        font-size: @hamburger-size;
         cursor: pointer;
         display: none;
 
@@ -100,47 +100,9 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
         }
     }
 
-    #header-nav {
-        .flex-between-center();
-        flex-wrap: wrap;
-        gap: 1.25rem;
-        max-width: 37.5rem;
-        padding: 0.9375rem;
-        transition: all 0.3s ease-in-out;
-        position: relative;
-
-        nav {
-            padding: 0;
-        }
-
-        .close-btn {
+    .header-link-nav {
+        @media (max-width: @tablet-breakpoint) {
             display: none;
-            font-size: @font-size;
-        }
-
-        p.line {
-            display: none;
-            padding: 0;
-            width: 100%;
-            border-bottom: 0.0625rem solid @text-color;
-        }
-    }
-
-    .header-meta-link {
-        display: none;
-
-        @media (max-width: 768px) {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            position: absolute;
-            bottom: 3rem;
-
-            a {
-                width: 100%;
-                margin: 0 0 .25rem 0 !important;
-                text-align: center;
-            }
         }
     }
 
@@ -195,65 +157,13 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
             display: none;
         }
     }
+}
 
-    // 移动端
-    @media (max-width: @tablet-breakpoint) {
-        padding: 0 @main-content-padding-left;
-
-        // 显示汉堡按钮
-        #menu-toggle {
-            display: block;
-        }
-
-        // 导航默认隐藏（折叠到右侧）
-        #header-nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100vh;
-            width: 8rem;
-            max-width: none;
-            flex-direction: column;
-            .flex-start-center();
-            padding-top: 6rem;
-            gap: 1.5rem;
-            background-color: @card-bg;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            z-index: 999;
-            border-left: 1px solid @primary-color;
-
-            nav {
-                width: 100%;
-
-                &>* {
-                    width: 100%;
-                }
-            }
-
-            // 展开状态
-            &.open {
-                transform: translateX(0);
-                box-shadow: -10px 0px 8px rgba(0, 0, 0, 0.3);
-            }
-
-            .close-btn {
-                position: absolute;
-                top: 2rem;
-                right: 50%;
-                transform: translateX(50%);
-                display: block;
-                background: none;
-                border: none;
-                color: @text-color;
-                cursor: pointer;
-                z-index: 1000;
-            }
-
-            p.line {
-                display: block;
-            }
-        }
-    }
+.right-sidebar-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    cursor: pointer;
 }
 </style>

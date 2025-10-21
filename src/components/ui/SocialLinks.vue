@@ -11,34 +11,10 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import social from "@data/social.json";
+import { ref } from "vue";
 
-const socialLinks = reactive([
-    {
-        name: "Weibo",
-        icon: "fab fa-weibo",
-        title: "也许吧真的RealMaybe - 微博",
-        link: "https://weibo.com/u/5678690912"
-    },
-    {
-        name: "Bilibili",
-        icon: "fab fa-bilibili",
-        title: "也许吧真的RealMaybe - 哔哩哔哩",
-        link: "https://space.bilibili.com/175020735"
-    },
-    {
-        name: "Twitter",
-        icon: "fab fa-twitter",
-        title: "RealMaybe - X",
-        link: "https://x.com/RealMaybe0429"
-    },
-    {
-        name: "GitHub",
-        icon: "fab fa-github",
-        title: "RealMaybe - GitHub",
-        link: "https://github.com/realmaybe"
-    },
-]);
+const socialLinks = ref(social);
 </script>
 
 <style scoped lang="less">

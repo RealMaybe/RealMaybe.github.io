@@ -1,4 +1,4 @@
-import type { BlogItem } from "@/tsTypes/index";
+import type { BlogItem } from "@tsTypes";
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 

@@ -1,6 +1,6 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
-    "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "notUse/NotFound.vue"],
+    "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "notUse/NotFound.vue", "tsTypes"],
     "exclude": ["src/**/__tests__/*"],
     "compilerOptions": {
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
@@ -10,6 +10,7 @@
             "@tsTypes": ["./tsTypes/index.d.ts"],
             // 指向静态资源目录
             "@style/*": ["./src/assets/style/*"],
+            "@data/*": ["./src/assets/data/*"],
             "@img/*": ["./src/assets/images/*"],
             "@images/*": ["./src/assets/images/*"]
         }

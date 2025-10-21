@@ -1,7 +1,7 @@
 <!-- OC 角色 -->
 
 <template>
-    <section class="oc-section">
+    <div class="oc-module">
         <h2>
             <i class="fas fa-paint-brush"></i>
             <span>OC 角色</span>
@@ -10,7 +10,10 @@
         <!-- 作品集 -->
         <article>
             <div class="oc-group" v-for="(group, groupKey) in characters" :key="groupKey">
-                <h3 class="group-title">{{ group.title }}</h3>
+                <h3 class="group-title">
+                    <span>世界观：</span>
+                    <ins>{{ group.title }}</ins>
+                </h3>
 
                 <!-- 角色卡片 -->
                 <div class="oc-grid">
@@ -21,19 +24,11 @@
                 </div>
             </div>
         </article>
-
-        <div class="tips">
-            <p class="title">注：</p>
-            <ul>
-                <li>本站所有角色均为原创，未经允许不得转载。</li>
-                <li>相关具体设计正在注册版权，现阶段暂不公布完整设定。</li>
-            </ul>
-        </div>
-    </section>
+    </div>
 </template>
 
 <script setup lang="ts">
-import type { Characters } from "@/tsTypes";
+import type { Characters } from "@tsTypes";
 import charactersData from "@/assets/data/characters.json"
 
 const characters = charactersData as Characters;
@@ -42,7 +37,7 @@ const characters = charactersData as Characters;
 <style scoped lang="less">
 @import url("@style/public-page.less");
 
-.oc-section {
+.oc-module {
     flex: 1 1 100% !important;
 
     .oc-group {

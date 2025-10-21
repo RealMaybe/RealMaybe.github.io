@@ -31,11 +31,10 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 // 定义组件接收的属性接口
 interface Props {
     /**
-     * 图片列表，由父组件传入
-     * 存在多张图片时，最多显示前 10 张图片
-     * @type { string[] }
+     * - 图片列表，由父组件传入
+     * - 存在多张图片时，最多显示前 10 张图片
      */
-    imageList: string[]; // 图片URL数组，由父组件传入
+    imageList: Array<string>; // 图片URL数组，由父组件传入
 }
 
 // 声明组件属性
@@ -260,12 +259,16 @@ onUnmounted(() => {
     position: relative;
     width: 18.75rem;
     height: 18.75rem;
+    min-width: 18.75rem;
+    min-height: 18.75rem;
     overflow: hidden;
     border-radius: 1rem;
 
     @media (max-width: @tablet-breakpoint) {
         width: 12.5rem;
         height: 12.5rem;
+        min-width: 12.5rem;
+        min-height: 12.5rem;
     }
 
     // 图片列表
@@ -337,7 +340,7 @@ onUnmounted(() => {
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 50%;
             transition: all 0.3s;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             .flex-center();
             cursor: pointer;
 

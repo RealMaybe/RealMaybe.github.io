@@ -24,9 +24,8 @@ async function extractNewScripts(): Promise<Array<string>> {
 
     // 循环执行正则匹配，查找所有符合条件的 script 标签
     while ((match = scriptReg.exec(html)) !== null) {
-        // 安全地访问命名捕获组 'src'
+        // 安全地访问命名捕获组 "src"
         const src: string | undefined = match.groups?.src;
-        // 可以选择性地添加 trim() 来去除可能的首尾空白
         // if (src !== undefined && src.trim() !== "") result.push(src.trim());
         if (src !== undefined && src !== "") result.push(src);
     }

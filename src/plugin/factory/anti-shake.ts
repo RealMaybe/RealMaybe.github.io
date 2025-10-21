@@ -12,9 +12,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
 
     return function (this: ThisParameterType<T>, ...args: Parameters<T>): void {
         // 清除之前的计时器
-        if (timerId !== null) {
-            clearTimeout(timerId);
-        }
+        if (timerId !== null) clearTimeout(timerId);
 
         // 设置新的计时器，经过指定时间后执行函数
         timerId = setTimeout(() => {

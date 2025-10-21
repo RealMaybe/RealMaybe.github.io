@@ -6,7 +6,7 @@
 
         <div class="tips">{{ tip }}</div>
         <div class="github-stats-box">
-            <div class="starts" v-for="img in Object.values(imgSrc)" :key="img">
+            <div class="starts" v-for="img in Object.values(githubImgs)" :key="img">
                 <img :src="img" />
             </div>
         </div>
@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { baseParam, buildGitHubStatsURL } from "@/plugin";
+import { githubImgs } from "@data/stats-generator";
 
 /**
  * 提示语
@@ -30,21 +30,6 @@ const tips = [
  * 随机获取提示语
  */
 const tip = ref(tips[Math.floor(Math.random() * tips.length)]);
-
-/**
- * 获取 GitHub 统计数据
- */
-const imgSrc = ref({
-    topLangs: buildGitHubStatsURL({
-        ...baseParam,
-        layout: "compact",
-    }, "top-langs"),
-    stats: buildGitHubStatsURL({
-        ...baseParam,
-        show_icons: true,
-        include_all_commits: true
-    }),
-});
 </script>
 
 <style scoped lang="less">

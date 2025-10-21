@@ -3,7 +3,7 @@
 <template>
     <div class="meta-link">
         <template v-for="item in metaLinkPages" :key="item.name">
-            <RouterLink :to="item.path" active-class="on" @click="scrollToTop">
+            <RouterLink :to="item.path" active-class="on">
                 {{ item.name }}
             </RouterLink>
         </template>
@@ -13,7 +13,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { metaLinkPage } from "@/router/routes/metaLinkPage";
-import { scrollToTop } from "@/plugin";
 
 // 拿到导航的一级路由
 const metaLinkPages = computed(() =>

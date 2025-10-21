@@ -7,15 +7,32 @@
             <span>我的作品</span>
         </h2>
 
-        <MusicWork :all-creations="videoLink" />
+        <MusicWork class="work-module" :all-creations="MusicWorkLink" />
+        <NovelWork class="work-module" :novelList="NovelWorkLink" />
     </section>
 </template>
 
 <script setup lang="ts">
-import MusicWork from "@/features/work/MusicWork.vue"; // main
-import videoLink from "@/assets/data/video.json"; // data
+// 引入数据
+import { MusicWorkLink, NovelWorkLink } from "@/assets/data/work";
+
+// 引入组件
+import MusicWork from "@/features/work/MusicWork.vue";
+import NovelWork from "@/features/work/NovelWork.vue";
 </script>
 
 <style scoped lang="less">
 @import url("@style/public-page.less");
+
+.work-module {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: .0625rem solid @secondary-color ;
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
 </style>

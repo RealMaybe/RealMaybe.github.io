@@ -14,18 +14,15 @@
 </template>
 
 <script setup lang="ts">
-import type { createPlayerLinkOptions } from "@/tsTypes";
+import type { createPlayerLinkOptions } from "@tsTypes";
 import { createPlayerLink, createBVLink } from "@/plugin";
 
-interface Props {
+const props = defineProps<{
     link: createPlayerLinkOptions;
     title: {
         video: string;
-        song: string;
     }
-}
-
-const props = defineProps<Props>();
+}>();
 const playerUrl = createPlayerLink(props.link);
 const bvUrl = createBVLink(props.link.bvid);
 </script>

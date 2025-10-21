@@ -3,20 +3,19 @@
 <template>
     <div class="creation-section creation-music">
         <h3>
-            <p class="title">
+            <p class="title" :class="allCreations.length >= need ? 'mr' : ''">
                 <i class="fas fa-music"></i>
-                <span>翻唱过的歌</span>
+                <span>唱过的歌</span>
             </p>
-            <p class="refresh" @click="refreshCreations" :class="{ rotating: isRefreshing }">
+            <p v-if="allCreations.length >= need" class="refresh" :class="{ rotating: isRefreshing }"
+                @click="refreshCreations">
                 <i class="fa-solid fa-arrows-rotate"></i>
             </p>
         </h3>
 
         <div class="creation">
-            <template v-for="creations in displayedCreations" :key="creations.videoTitle">
-                <CreationCard :link="creations.link"
-                    :title="{ video: creations.videoTitle, song: creations.songTitle }" />
-            </template>
+            <CreationCard v-for="idx in currentIndices" :key="idx" :link="allCreations[idx].link"
+                :title="{ video: allCreations[idx].videoTitle }" />
         </div>
 
         <div class="tips">
@@ -26,124 +25,61 @@
 </template>
 
 <script setup lang="ts">
-// 引入组件
 import CreationCard from "@/components/shared/CreationCard.vue";
-
-// 引入依赖
-import type { createPlayerLinkOptions } from "@/tsTypes";
-import { ref, computed, onMounted, watch } from "vue";
+import type { MusicalList } from "@tsTypes";
+import { ref, watch } from "vue";
 import { throttle } from "@/plugin";
 
-/* ========== */
+/* props */
+const props = defineProps<{
+    allCreations: MusicalList;
+}>();
+
+/* 常量 & 响应式 */
+const need = 6; // 显示的条目数
+const isRefreshing = ref(false); // 刷新状态
+const currentIndices = ref<Set<number>>(new Set()); // 当前随机选中的作品下标集合
+
+/* 工具函数 */
 
 /**
- * 作品
+ * 随机抽取指定数量的不重复下标
+ * @param count - 需要抽取的个数
+ * @returns 抽到的下标集合（可能为空）
  */
-interface Creation {
-    link: createPlayerLinkOptions;
-    videoTitle: string;
-    songTitle: string;
+function selectRandomIndices(count: number): Set<number> {
+    const len = props.allCreations.length
+    if (len === 0) return new Set()
+    count = Math.min(count, len)
+    const s = new Set<number>()
+    while (s.size < count) s.add(Math.floor(Math.random() * len))
+    return s
 }
 
 /**
- * 组件属性
+ * 刷新函数，用于更新数据
+ * - 500 ms 后结束旋转动画
+ * - 1 s 内仅响应第一次调用
  */
-interface Props {
-    allCreations: Array<Creation>;
-}
-
-/* ========== */
-
-const props = defineProps<Props>();
-const isRefreshing = ref(false); // 是否正在刷新
-const currentIndices = ref<Set<number>>(new Set()); // 当前显示的索引
-
-// 计算属性：根据当前索引显示的作品
-const displayedCreations = computed(() => Array.from(currentIndices.value).map(index => props.allCreations[index]));
-
-// 随机选择不重复的作品索引
-const selectRandomIndices = (count: number): Set<number> => {
-    const indices = new Set<number>();
-
-    // 如果作品数量不超过需要的数量，选择所有作品
-    if (props.allCreations.length <= count) {
-        for (let i = 0; i < props.allCreations.length; i++) indices.add(i);
-
-        return indices;
-    }
-
-    // 随机选择指定数量的不重复索引
-    while (indices.size < count) {
-        const randomIndex = Math.floor(Math.random() * props.allCreations.length);
-        indices.add(randomIndex);
-    }
-
-    return indices;
-};
-
-// 刷新作品显示
 const refreshCreations = throttle(() => {
-    isRefreshing.value = true;
+    isRefreshing.value = true
+    currentIndices.value = selectRandomIndices(need)
+    setTimeout(() => (isRefreshing.value = false), 500)
+}, 1000)
 
-    // 添加一点延迟，让旋转动画更明显
-    setTimeout(() => {
-        currentIndices.value = selectRandomIndices(6);
-        isRefreshing.value = false;
-    }, 500);
-}, 1000);
-
-// 监听 allCreations 的变化
+/**
+ * 监听歌单变化，自动重新随机展示
+ * immediate: true 保证组件创建时执行一次
+ */
 watch(
     () => props.allCreations,
-    newCreations => { if (newCreations && newCreations.length > 0) currentIndices.value = selectRandomIndices(6) },
+    () => (currentIndices.value = selectRandomIndices(need)),
     { immediate: true }
-);
-
-// 组件挂载时初始化显示的作品
-onMounted(() => {
-    if (props.allCreations && props.allCreations.length > 0)
-        currentIndices.value = selectRandomIndices(6);
-});
+)
 </script>
 
 <style scoped lang="less">
 @import url("@style/public-page.less");
-
-h3 {
-    .flex-center();
-    margin: 1.25rem 0;
-    font-size: 1.25rem;
-
-    i {
-        margin-right: 0.625rem;
-        color: #88d3ce;
-    }
-
-    .title {
-        margin-right: 3rem;
-    }
-
-    .refresh {
-        .flex-center();
-        width: 1.5rem;
-        height: 1.5rem;
-        cursor: pointer;
-        transition: transform 0.3s;
-        transform-origin: 50% 50%;
-
-        &.rotating {
-            animation: rotate 0.5s linear;
-        }
-
-        &:active {
-            opacity: 0.5;
-        }
-
-        * {
-            margin: 0;
-        }
-    }
-}
 
 @keyframes rotate {
     from {
@@ -172,12 +108,5 @@ h3 {
         flex-direction: column;
         flex-wrap: wrap;
     }
-}
-
-.tips {
-    border-left: 0.25rem solid @text-muted;
-    padding-left: 0.75rem;
-    font-size: 0.75rem;
-    color: @text-muted;
 }
 </style>

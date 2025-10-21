@@ -2,6 +2,7 @@
 
 import type { RouteRecordRaw } from "vue-router";
 import { views } from "./routesMaps";
+import { components } from "./routesMaps";
 
 /* ========== */
 
@@ -35,11 +36,26 @@ export const publicPages: Array<RouteRecordRaw> = [
     },
     {
         path: "/shop",
-        component: views.shop,
         meta: {
             title: "精品小店",
-            disableZoom: true,
-            // nav: true,
+            nav: true,
         },
+        children: [
+            {
+                path: "",
+                component: views.shop,
+                meta: {
+                    disableZoom: true,
+                },
+            },
+            {
+                path: "policies",
+                component: components.shop.shopPolicies,
+                meta: {
+                    title: "店铺政策",
+                    disableZoom: true,
+                },
+            },
+        ],
     },
 ];
