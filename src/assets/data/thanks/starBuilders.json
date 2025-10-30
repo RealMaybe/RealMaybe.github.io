@@ -1,0 +1,10 @@
+{
+    "category": {
+        "id": "starBuilders",
+        "name": "筑星者",
+        "emoji": "🏗️",
+        "description": "提供基础设施与服务的平台与工具",
+        "color": "#38bdf8"
+    },
+    "members": []
+}

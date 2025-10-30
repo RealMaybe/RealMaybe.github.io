@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 // 引入数据
-import { MusicWorkLink, NovelWorkLink } from "@/assets/data/work";
+import { MusicWorkLink, NovelWorkLink } from "@data/work";
 
 // 引入组件
 import MusicWork from "@/features/work/MusicWork.vue";

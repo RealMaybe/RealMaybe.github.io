@@ -7,16 +7,12 @@ import Markdown from "unplugin-vue-markdown/vite";
 
 /* ========== */
 
-/**
- * 获取当前文件所在目录的绝对路径
- */
+/** 获取当前文件所在目录的绝对路径*/
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 /* ========== */
 
-/**
- * Vite 配置文件
- */
+/** Vite 配置 */
 export default defineConfig({
     plugins: [
         vue({
@@ -79,7 +75,7 @@ export default defineConfig({
                         return "documents/[name]-[hash][extname]";
 
                     // json 文件放在 json 文件夹中
-                    if (/\.(json)$/.test(fileName || "")) return "json/[name]-[hash].json";
+                    if (/\.(json)$/.test(fileName || "")) return "data/[name]-[hash].json";
 
                     // 其他静态资源放在 assets 文件夹中
                     return "assets/[name]-[hash][extname]";

@@ -11,18 +11,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { useNavLinks } from "@/utils";
 import { publicPages } from "@/router/routes/publicPage";
 
 // 内链
-const internalLink = computed(() =>
-    publicPages
-        .filter(r => r.meta?.nav && r.meta?.title && !r.redirect)
-        .map(r => ({
-            name: r.meta!.title as string,
-            path: r.path,
-        }))
-);
+const internalLink = useNavLinks(publicPages)
 </script>
 
 <style scoped lang="less">

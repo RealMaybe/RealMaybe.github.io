@@ -1,6 +1,6 @@
 /* 功能路由 */
 
-import type { RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from "@tsTypes";
 import { views, components } from "./routesMaps";
 
 /* ========== */
@@ -32,14 +32,14 @@ const used: Array<RouteRecordRaw> = [
                     disableZoom: true,
                 },
             },
-            {
+            /* {
                 path: "contribution-guidelines",
                 component: components.acknowledgments.ContributionGuidelines,
                 meta: {
-                    title: "店铺政策",
+                    title: "建言献策",
                     disableZoom: true,
                 },
-            },
+            }, */
         ],
     },
 ];

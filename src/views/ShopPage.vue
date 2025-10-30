@@ -10,8 +10,11 @@
         </h2>
 
         <div class="tips">
-            <span>可通过此</span>
-            <RouterLink to="/shop/policies">了解我们的物流及售后政策 ></RouterLink>
+            <h3>【购物说明】</h3>
+            <p>小站暂不支持直接交易，点击商品购买按钮将跳转至淘宝详情页。</p>
+            <p>
+                物流、售后等详细规定，敬请参阅<RouterLink to="/shop/policies">《政策详情》</RouterLink>，感谢支持！
+            </p>
         </div>
 
         <article class="product-details">
@@ -48,7 +51,7 @@ const products = ref<Products>(productsData as Products);
 .product {
     margin-bottom: @spacing;
     padding-bottom: @spacing;
-    border-bottom: .0625rem solid @primary-color;
+    border-bottom: 0.0625rem solid @primary-color;
 
     &:last-child {
         margin-bottom: 0;

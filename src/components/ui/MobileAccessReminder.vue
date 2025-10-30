@@ -17,7 +17,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
 /* ========== */
@@ -56,21 +55,23 @@ const mobileMessages: Array<MobileMessage> = [
 ];
 
 // 当前选中的消息，初始化为列表中的第一条消息
-const currentMessage: Ref<MobileMessage> = ref<MobileMessage>(mobileMessages[0]);
-
-const STORAGE_KEY: string = "dismissedMobileDocNotice", // sessionStorage 的键名 (常量)
-    isVisible: Ref<boolean> = ref(true), // 可见状态
-    isMobile: Ref<boolean> = ref(false); // 移动设备检测状态
+const currentMessage = ref<MobileMessage>(mobileMessages[0]);
+/** sessionStorage 的键名 */
+const STORAGE_KEY: string = "dismissedMobileDocNotice";
+/** 可见状态 */
+const isVisible = ref(true);
+/** 移动设备检测状态 */
+const isMobile = ref(false);
 
 /* ========== */
 
 // 检测移动设备的函数
 const checkIfMobile = (): void => {
-    const isSmallScreen: boolean = window.matchMedia("(max-width: 767px)").matches, // 常见移动设备断点
-        isMobileDevice: boolean =
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                navigator.userAgent
-            );
+    /** 移动设备断点 */
+    const isSmallScreen: boolean = window.matchMedia("(max-width: 767px)").matches;
+    /** 移动设备检测 */
+    const isMobileDevice: boolean =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     isMobile.value = isMobileDevice || isSmallScreen;
 };
@@ -88,17 +89,18 @@ const closeNotice = (): void => {
     // 将关闭状态存入 sessionStorage
     try {
         sessionStorage.setItem(STORAGE_KEY, "true");
-    } catch (e: unknown) {
-        console.warn("无法写入 sessionStorage:", e); // 如果 sessionStorage 不可用，组件行为会回退到每次都显示
+    } catch (err: unknown) {
+        console.warn("无法写入 sessionStorage:", err); // 如果 sessionStorage 不可用，组件行为会回退到每次都显示
     }
 };
 
 // 生命周期钩子
 
-onMounted((): void => {
+onMounted(() => {
     // 检查 sessionStorage 决定是否可能显示
     let shouldShow = true;
 
+    // 尝试从 sessionStorage 读取关闭状态
     try {
         const isDismissed: string | null = sessionStorage.getItem(STORAGE_KEY);
 
@@ -106,8 +108,8 @@ onMounted((): void => {
             isVisible.value = false;
             shouldShow = false; // 不需要显示，也就不需要选消息
         }
-    } catch (e: unknown) {
-        console.warn("无法读取 sessionStorage:", e);
+    } catch (err) {
+        console.warn("无法读取 sessionStorage:", err);
     }
 
     // 如果可能显示，则选择消息并检测设备
@@ -117,9 +119,7 @@ onMounted((): void => {
     window.addEventListener("resize", checkIfMobile as EventListener);
 });
 
-onUnmounted((): void => {
-    window.removeEventListener("resize", checkIfMobile as EventListener);
-});
+onUnmounted(() => window.removeEventListener("resize", checkIfMobile as EventListener));
 </script>
 
 <style scoped lang="less">

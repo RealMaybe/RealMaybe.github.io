@@ -24,7 +24,8 @@
             </div>
         </section>
 
-        <div class="side-bar">
+        <!-- 右侧边栏 -->
+        <div class="right-side-bar">
             <RightSidebar :class="{ open }" @close="open = false" />
             <div v-if="open" class="right-sidebar-mask" @click="open = false"></div>
         </div>
@@ -159,11 +160,13 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateFab));
     }
 }
 
-.right-sidebar-mask {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    cursor: pointer;
+.right-side-bar {
+    .right-sidebar-mask {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        cursor: pointer;
+    }
 }
 </style>

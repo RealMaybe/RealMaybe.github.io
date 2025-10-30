@@ -1,5 +1,8 @@
 /* 路由配置文件 */
 
+import type { RouteRecordRaw } from "@tsTypes";
+import { views } from "./routes/routesMaps";
+
 import { publicPages } from "./routes/publicPage";
 import { metaLinkPage } from "./routes/metaLinkPage";
 import { specialRoutes } from "./routes/specialRoutes";
@@ -7,9 +10,18 @@ import { specialRoutes } from "./routes/specialRoutes";
 /* ========== */
 
 // 导出路由配置
-export const routes = [
+export const routes: Array<RouteRecordRaw> = [
     ...publicPages,
     ...metaLinkPage,
-    ...specialRoutes.filter(r => r.path !== "/:pathMatch(.*)*"),
-    specialRoutes.find(r => r.path === "/:pathMatch(.*)*")!,
+    ...specialRoutes,
+    {
+        // 404 页面
+        path: "/:pathMatch(.*)*",
+        name: "NotFound",
+        component: views.notFound,
+        meta: {
+            title: "404 - 页面不存在",
+            disableZoom: true,
+        },
+    },
 ];

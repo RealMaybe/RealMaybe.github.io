@@ -18,12 +18,10 @@ import type { Product } from "@tsTypes";
 import CarouselCard from "@/features/shop/module/CarouselCard.vue";
 import ProductInfo from "@/features/shop/module/ProductInfo.vue";
 
-interface Props {
-    product: Product // 单个产品对象
-}
-
 // 接收父组件传值
-defineProps<Props>();
+defineProps<{
+    product: Product // 单个产品对象
+}>();
 </script>
 
 <style scoped lang="less">

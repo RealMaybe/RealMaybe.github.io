@@ -2,92 +2,48 @@
     <MobileAccessReminder />
 
     <section class="acknowledgments">
+        <!-- 标题区域 -->
         <thanksDocs />
 
-        <!-- <div class="call-to-action">
-            <h2>共同塑造未来</h2>
-            <p>
-                这个专栏记录着每一位推动网站进步的贡献者。如果您也发现了问题，或有一个让网站变得更好的绝妙想法，欢迎您<RouterLink
-                    to="/acknowledgments/contribution-guidelines">提交反馈</RouterLink>。
-            </p>
-            <p class="center">您的名字，或许将出现在这里。</p>
-        </div> -->
+        <!-- 致谢内容列表区域 -->
+        <ListOfThanks :thanksList="thanksData.list" />
 
-        <footer class="page-footer">
-            <span>最后更新: {{ lastUpdated }}</span>
-            <span class="separator">|</span>
-            <span>版本: {{ version }}</span>
+        <!-- 页脚区域 -->
+        <ClosingRemarks />
+        <footer class="thanks-page-footer">
+            <div class="update-info">
+                <span>本页面数据最后更新时间: {{ thanksData.lastUpdated }}</span>
+            </div>
         </footer>
     </section>
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
-
+// 引入组件
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
 import thanksDocs from "@/assets/docs/thanks/Acknowledgments.md";
+import ListOfThanks from "@/features/thanks/ListOfThanks.vue";
+import ClosingRemarks from "@/assets/docs/thanks/ClosingRemarks.md";
 
-const lastUpdated: string = "2025-10-04";
-const version: string = "1.0";
+// 引入数据
+import thanksData from "@data/thanks";
 </script>
 
 <style scoped lang="less">
 @import url("@style/public-page.less");
 
-.center {
+.thanks-page-footer {
     width: 100%;
-    text-align: center;
-}
 
-.call-to-action {
-    color: #e0e0e0;
-    padding: 20px 24px;
-    border-radius: 8px;
-    margin: 16px auto;
-    max-width: 640px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    .update-info {
+        .flex-end-center();
+        width: 100%;
+        color: @text-muted;
+        font-size: 0.75rem;
 
-    h2 {
-        font-size: 18px;
-        font-weight: 600;
-        margin: 0 0 8px;
-        color: #ffffff;
-    }
-
-    p {
-        font-size: 14px;
-        line-height: 1.5;
-        margin: 0 0 6px;
-
-        &:last-of-type {
-            margin-bottom: 0;
-            opacity: 0.85;
+        .separator {
+            margin: 0 0.5rem;
         }
-    }
-
-    a {
-        color: #66b2ff;
-        font-weight: 600;
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        transition: all 0.2s ease;
-
-        &:hover,
-        &:focus {
-            border-bottom-color: #66b2ff;
-            outline: none;
-        }
-    }
-}
-
-.page-footer {
-    .flex-end-center();
-    color: @text-muted;
-    font-size: 14.4px;
-
-    .separator {
-        margin: 0 8px;
     }
 }
 </style>

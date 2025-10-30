@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import type { Characters } from "@tsTypes";
-import charactersData from "@/assets/data/characters.json"
+import charactersData from "@data/characters.json"
 
 const characters = charactersData as Characters;
 </script>

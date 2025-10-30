@@ -28,17 +28,14 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
-// 定义组件接收的属性接口
-interface Props {
+// 声明组件属性
+const { imageList } = defineProps<{
     /**
      * - 图片列表，由父组件传入
      * - 存在多张图片时，最多显示前 10 张图片
      */
     imageList: Array<string>; // 图片URL数组，由父组件传入
-}
-
-// 声明组件属性
-const props = defineProps<Props>();
+}>();
 
 // 响应式引用
 const carouselList = ref<HTMLElement | null>(null); // 轮播列表的 DOM 元素引用
@@ -50,8 +47,8 @@ const autoPlayTimer = ref<number | null>(null); // 自动播放定时器引用
  * 过滤多余的图片
  */
 const filterImages = computed(() => {
-    if (!props.imageList || props.imageList.length === 0) return [];
-    return props.imageList.length > 10 ? props.imageList.slice(0, 10) : [...props.imageList];
+    if (!imageList || imageList.length === 0) return [];
+    return imageList.length > 10 ? imageList.slice(0, 10) : [...imageList];
 });
 
 /**

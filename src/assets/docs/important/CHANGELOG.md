@@ -9,6 +9,31 @@
 
 ---
 
+## v1.3.1-preview.1 – 2025/10/30
+
+**预览版发布！🚧 欢迎抢先体验与反馈**
+
+> 此版本是即将到来的 `v1.3.1` 的先行预览，旨在初步展示<RouterLink to="/acknowledgments">「致谢专栏」</RouterLink>的内容框架。
+>
+> 部分内容与样式仍在精心打磨中，<ins>**并非最终效果**</ins>。
+
+- <span class="tag-Inline-title">【文档】</span> 初始化并构建<RouterLink to="/acknowledgments">「致谢专栏」</RouterLink>页面的核心内容与结构
+    - 初步完成了致谢名单的信息整理与分类
+    - 搭建了更为详尽的致谢内容展示框架
+- <span class="tag-Inline-title">【样式】</span> 为<RouterLink to="/acknowledgments">「致谢专栏」</RouterLink>页面设计了初步的视觉样式与排版布局
+- <span class="tag-Inline-title">【优化】</span> 重新设计导航栏的交互与实时渲染逻辑，提升响应速度
+- <span class="tag-Inline-title">【优化】</span> 调整「致谢专栏」页面的数据加载逻辑，为后续内容扩充做好准备
+
+> **当前进行中的内容**：
+>
+> - <RouterLink to="/acknowledgments">「致谢专栏」</RouterLink>中的「筑星者」、「塑星者」、「引星者」、「智慧星」等模块
+> - 各个模块的图像引用、样式调整与交互优化
+> - 「提交反馈」模块的样式、交互及第三方表单集成
+
+> **喵喵预告**：在正式的 `v1.3.1` 版本中，我们将带来更完整、更动人的致谢内容与最终优化后的视觉体验！敬请期待~ ✨
+>
+> 为保持日志的清晰与聚焦，本预览版的记录将在 `v1.3.1` 正式发布后归档。
+
 ## v1.3.0 – 2025/10/22
 
 **一次专注于导航与体验的全面升级 🚀**

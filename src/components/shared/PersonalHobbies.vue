@@ -16,13 +16,18 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { ref } from "vue";
 
-const hobbies = reactive([
+const hobbies = ref([
     { name: "唱歌", icon: "fas fa-music" },
     { name: "写作", icon: "fas fa-pen" },
     { name: "游戏", icon: "fas fa-gamepad" },
     { name: "编程", icon: "fas fa-laptop-code" },
+    { name: "吉他", icon: "fas fa-guitar" },
+    { name: "跑步", icon: "fas fa-running" },
+    { name: "摄影", icon: "fas fa-camera" },
+    { name: "烹饪", icon: "fas fa-utensils" },
+    { name: "阅读", icon: "fas fa-book-open" },
 ]);
 </script>
 

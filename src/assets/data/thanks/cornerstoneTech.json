@@ -1,6 +1,6 @@
 {
     "category": {
-        "id": "technologies",
+        "id": "cornerstoneTech",
         "name": "辰星石",
         "emoji": "⚙️",
         "description": "构建这个数字世界所依赖的技术、框架与工具",
@@ -25,9 +25,12 @@
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/git.png"
+                "value": "https://git-scm.com/favicon.ico"
             },
-            "tags": ["版本控制", "协作开发", "代码管理"]
+            "tags": {
+                "exists": true,
+                "value": ["版本控制", "协作开发", "代码管理"]
+            }
         },
         {
             "id": "tech_002",
@@ -47,9 +50,12 @@
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/github.png"
+                "value": "https://s1.chu0.com/src/img/png/53/53d8334f2310427298aee57ac6e62094.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:CmAB4rgMzDOgfzYQK-OzJjgrGNk="
             },
-            "tags": ["代码托管", "开源协作", "项目管理"]
+            "tags": {
+                "exists": true,
+                "value": ["代码托管", "开源协作", "项目管理"]
+            }
         },
         {
             "id": "tech_003",
@@ -68,10 +74,13 @@
                 "value": "https://pnpm.io"
             },
             "icon": {
-                "exists": false,
-                "value": ""
+                "exists": true,
+                "value": "https://pnpm.io/img/pnpm-no-name-with-frame.svg"
             },
-            "tags": ["包管理", "依赖管理", "性能优化"]
+            "tags": {
+                "exists": true,
+                "value": ["包管理", "依赖管理", "性能优化"]
+            }
         },
         {
             "id": "tech_004",
@@ -91,9 +100,12 @@
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/vite.png"
+                "value": "https://vite.dev/logo.svg"
             },
-            "tags": ["构建工具", "开发服务器", "性能优化"]
+            "tags": {
+                "exists": true,
+                "value": ["构建工具", "开发服务器", "性能优化"]
+            }
         },
         {
             "id": "tech_005",
@@ -110,9 +122,12 @@
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/vue.png"
+                "value": "https://vuejs.org/logo.svg"
             },
-            "tags": ["前端框架", "响应式", "组件化"]
+            "tags": {
+                "exists": true,
+                "value": ["前端框架", "响应式", "组件化"]
+            }
         },
         {
             "id": "tech_006",
@@ -129,41 +144,56 @@
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/typescript.png"
+                "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"
             },
-            "tags": ["类型安全", "开发体验", "代码质量"]
+            "tags": {
+                "exists": true,
+                "value": ["类型安全", "开发体验", "代码质量"]
+            }
         },
         {
             "id": "tech_007",
             "name": "Less",
             "type": "CSS预处理器",
             "purpose": "CSS 预处理器",
-            "description": ["向后兼容的CSS扩展语言，提供变量、混合、函数等高级功能"],
+            "description": {
+                "exists": true,
+                "value": ["向后兼容的CSS扩展语言，提供变量、混合、函数等高级功能"]
+            },
             "link": {
                 "exists": true,
                 "value": "http://lesscss.org"
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/less.png"
+                "value": "https://lesscss.org/public/img/less_logo.png"
             },
-            "tags": ["CSS预处理器", "样式扩展", "开发效率"]
+            "tags": {
+                "exists": true,
+                "value": ["CSS预处理器", "样式扩展", "开发效率"]
+            }
         },
         {
             "id": "tech_008",
             "name": "Font Awesome",
             "type": "图标库",
             "purpose": "图标库",
-            "description": ["广泛使用的矢量图标库和工具包，提供丰富的可缩放图标"],
+            "description": {
+                "exists": true,
+                "value": ["广泛使用的矢量图标库和工具包，提供丰富的可缩放图标"]
+            },
             "link": {
                 "exists": true,
                 "value": "https://fontawesome.com"
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/font-awesome.png"
+                "value": "https://fontawesome.com/favicon.ico"
             },
-            "tags": ["图标库", "矢量图标", "UI设计"]
+            "tags": {
+                "exists": true,
+                "value": ["图标库", "矢量图标", "UI设计"]
+            }
         },
         {
             "id": "tech_009",
@@ -180,9 +210,12 @@
             },
             "icon": {
                 "exists": true,
-                "value": "/icons/markdown.png"
+                "value": "https://www.markdownguide.org/assets/images/markdown-mark-white.svg"
             },
-            "tags": ["标记语言", "文档编写", "内容管理"]
+            "tags": {
+                "exists": true,
+                "value": ["标记语言", "文档编写", "内容管理"]
+            }
         }
     ]
 }

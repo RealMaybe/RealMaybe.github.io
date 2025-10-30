@@ -59,9 +59,9 @@ title: 建言献策
 
 开发团队诚挚地希望将您的卓越贡献载入网站的<RouterLink to="/acknowledgments">「致谢专栏」</RouterLink>，以表达最诚挚的谢意。
 
-- **【引星者】**：为网站提供了关键的灵感、方向或资源。
-- **【塑星者】**：为网站提供了具体的测试、反馈与改进建议。
-- **【筑星者】**：提出了对网站核心体验或关键模块有重大价值的建议。
+- **「 引星者 」**：为网站提供了关键的灵感、方向或资源。
+- **「 塑星者 」**：为网站提供了具体的测试、反馈与改进建议。
+- **「 筑星者 」**：提出了对网站核心体验或关键模块有重大价值的建议。
 
 > **授权须知**
 >
@@ -92,3 +92,15 @@ title: 建言献策
     font-size: 1.5rem;
     font-weight: bold;
 ">开发团队 敬上</p>
+
+---
+
+<div class="guide-footer">
+    <p>
+        <span>阅读完毕？</span>
+        <RouterLink
+            class="back-btn"
+            to="/acknowledgments/feedback"
+        >去填表 →</RouterLink>
+    </p>
+</div>

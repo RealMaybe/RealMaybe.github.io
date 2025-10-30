@@ -1,5 +1,4 @@
 import IndexPage from "@/views/IndexPage.vue";
-// import docs from "@/features/document/docs";
 
 /* ========== */
 

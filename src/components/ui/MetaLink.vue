@@ -11,18 +11,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { useNavLinks } from "@/utils";
 import { metaLinkPage } from "@/router/routes/metaLinkPage";
 
 // 拿到导航的一级路由
-const metaLinkPages = computed(() =>
-    metaLinkPage
-        .filter(r => r.meta?.nav && r.meta?.title && !r.redirect)
-        .map(r => ({
-            name: r.meta!.title as string,
-            path: r.path,
-        }))
-);
+const metaLinkPages = useNavLinks(metaLinkPage)
 </script>
 
 <style scoped lang="less">
@@ -36,7 +29,7 @@ const metaLinkPages = computed(() =>
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.3s;
-        margin: 0 .25rem;
+        margin: 0 0.25rem;
 
         &:hover {
             text-decoration: underline;
@@ -56,7 +49,7 @@ const metaLinkPages = computed(() =>
 
         @media (max-width: 768px) {
             width: 100%;
-            margin: 0 0 .25rem 0;
+            margin: 0 0 0.25rem 0;
             text-align: center;
         }
     }

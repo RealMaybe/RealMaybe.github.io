@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import type { Novel, NovelList } from "@tsTypes";
 import { computed } from "vue";
-import { useMediaQuery } from "@/plugin";
+import { useMediaQuery } from "@/utils";
 
 // 父组件传值
 const props = defineProps<{ novelList: NovelList }>();

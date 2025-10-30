@@ -58,7 +58,7 @@ import MetaLink from "./MetaLink.vue";
 
     .right-top-link {
         width: 100%;
-        justify-content: center !important;
+        flex-direction: column;
     }
 
     .right-meta-link {

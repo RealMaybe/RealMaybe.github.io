@@ -52,6 +52,7 @@ body {
     }
 }
 
+// 提示语
 div.tips {
     opacity: 0.5;
     border-left: 0.25rem solid @text-muted;
@@ -83,6 +84,30 @@ div.tips {
                 margin-bottom: 0;
             }
         }
+    }
+}
+
+// 断点隐藏
+.hide-below {
+    .hide(@size) {
+        @media (max-width: @size) {
+            display: none;
+        }
+    }
+
+    // .hide-below-desktop
+    &-desktop {
+        .hide(@desktop-breakpoint);
+    }
+
+    // .hide-below-tablet
+    &-tablet {
+        .hide(@tablet-breakpoint);
+    }
+
+    // .hide-below-mobile
+    &-mobile {
+        .hide(@mobile-breakpoint);
     }
 }
 

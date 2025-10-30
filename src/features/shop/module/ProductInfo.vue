@@ -80,7 +80,7 @@
 import type { Product } from "@tsTypes";
 import { ref, computed } from "vue";
 
-const props = defineProps<{
+const { product } = defineProps<{
     product: Product;
 }>();
 
@@ -88,7 +88,7 @@ const props = defineProps<{
 const selectedSpecs = ref<Record<string, string | number>>({});
 
 // 初始化：默认选中每个规格里第一个有库存的选项
-(props.product.specifications ?? []).forEach(spec => {
+(product.specifications ?? []).forEach(spec => {
     const available = spec.options.find(o => o.inStock);
     if (available) selectedSpecs.value[spec.type] = available.value;
 });
@@ -109,7 +109,7 @@ const getTagClass = (tag: string) => TAG_CLASS[tag] || "tag-default";
 
 /* 把价格统一成 [lowest, highest] */
 const priceRange = computed((): [number, number] => {
-    const p = props.product.price;
+    const p = product.price;
     return Array.isArray(p) ? p : [p, p];
 });
 
@@ -117,7 +117,7 @@ const priceRange = computed((): [number, number] => {
 const isRange = computed(() => priceRange.value[0] !== priceRange.value[1]);
 
 /* 统一用最高价跟原价比较，保证折扣口径一致 */
-const original = computed(() => props.product.originalPrice ?? 0);
+const original = computed(() => product.originalPrice ?? 0);
 
 /* 是否有折扣 */
 const hasDiscount = computed(() => original.value > priceRange.value[1]);
@@ -126,7 +126,7 @@ const hasDiscount = computed(() => original.value > priceRange.value[1]);
 const saved = computed(() => (original.value - priceRange.value[1]).toFixed(1));
 
 /* 跳转 */
-const goToTaobao = () => { window.open(props.product.taobaoLink, "_blank") };
+const goToTaobao = () => { window.open(product.taobaoLink, "_blank") };
 </script>
 
 <style scoped lang="less">

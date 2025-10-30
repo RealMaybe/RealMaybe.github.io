@@ -10,7 +10,7 @@
             </div>
 
             <!-- 右侧 -->
-            <div class="right links-content">
+            <div class="right links-content hide-below-tablet">
                 <LinksNav />
             </div>
         </div>
@@ -18,7 +18,7 @@
         <!-- 下方 -->
         <div class="footer-content bottom">
             <!-- 左侧 -->
-            <div class="left links-content">
+            <div class="left links-content hide-below-tablet">
                 <MetaLink />
             </div>
 
@@ -29,7 +29,7 @@
                         <span>© 2025</span>
                         <RouterLink to="/index">RealMaybe</RouterLink>
                     </span>
-                    <span class="divider">|</span>
+                    <span class="divider hide-below-mobile">|</span>
                     <span>
                         <a href="https://icp.gov.moe/?keyword=20250294" target="_blank">萌ICP备20250294号</a>
                     </span>
@@ -62,10 +62,6 @@ footer {
 
         @media (max-width: @tablet-breakpoint) {
             .flex-center();
-
-            .links-content {
-                display: none;
-            }
         }
     }
 
@@ -92,10 +88,6 @@ footer {
             @media (max-width: @mobile-breakpoint) {
                 .flex-center();
                 flex-direction: column;
-
-                .divider {
-                    display: none;
-                }
             }
         }
     }

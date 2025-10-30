@@ -15,16 +15,16 @@
 
 <script setup lang="ts">
 import type { createPlayerLinkOptions } from "@tsTypes";
-import { createPlayerLink, createBVLink } from "@/plugin";
+import { createPlayerLink, createBVLink } from "@/utils";
 
-const props = defineProps<{
+const { link, title } = defineProps<{
     link: createPlayerLinkOptions;
     title: {
         video: string;
     }
 }>();
-const playerUrl = createPlayerLink(props.link);
-const bvUrl = createBVLink(props.link.bvid);
+const playerUrl = createPlayerLink(link);
+const bvUrl = createBVLink(link.bvid);
 </script>
 
 <style scoped lang="less">

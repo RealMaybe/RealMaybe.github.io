@@ -28,7 +28,7 @@
 import CreationCard from "@/components/shared/CreationCard.vue";
 import type { MusicalList } from "@tsTypes";
 import { ref, watch } from "vue";
-import { throttle } from "@/plugin";
+import { throttle } from "@/utils";
 
 /* props */
 const props = defineProps<{
