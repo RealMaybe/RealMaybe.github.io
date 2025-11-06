@@ -1,4 +1,89 @@
 {
-    "category": {},
-    "members": []
+    "category": {
+        "id": "wisdom-stars",
+        "key": "wisdomStars",
+        "name": "智慧星",
+        "emoji": "🌟",
+        "description": "在创意的星河中，为我照亮未知可能性的 AI 伙伴"
+    },
+    "members": [
+        {
+            "id": "wisdom-001",
+            "name": "DeepSeek",
+            "type": "AI 模型",
+            "purpose": "强大的代码编程伙伴，以出色的推理能力见长",
+            "description": {
+                "exists": true,
+                "value": [
+                    "开源免费，支持商用，代码能力对标 GPT-4",
+                    "深度逻辑推理，复杂算法、数学证明一步直达"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://deepseek.com"
+            },
+            "icon": {
+                "exists": true,
+                "mark": false,
+                "value": "/images/thanks/wisdom/deepseek.png"
+            },
+            "tags": {
+                "exists": true,
+                "value": ["代码专家", "逻辑推理", "免费开源"]
+            }
+        },
+        {
+            "id": "wisdom-002",
+            "name": "Kimi",
+            "type": "AI 模型",
+            "purpose": "超长文本专家，阅读和分析长文档的得力助手",
+            "description": {
+                "exists": true,
+                "value": [
+                    "支持 200 万字上下文，一键解析 PDF、Word、Excel 等长文档",
+                    "联网搜索实时信息，快速给出带出处回答"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://kimi.moonshot.cn"
+            },
+            "icon": {
+                "exists": true,
+                "mark": false,
+                "value": "/images/thanks/wisdom/kimi.png"
+            },
+            "tags": {
+                "exists": true,
+                "value": ["文档解析", "联网搜索", "长文本"]
+            }
+        },
+        {
+            "id": "wisdom-003",
+            "name": "通义",
+            "type": "AI 模型",
+            "purpose": "全能的中文模型，在创意与办公场景中表现优异",
+            "description": {
+                "exists": true,
+                "value": [
+                    "中文创作天花板，文案、诗歌、脚本秒级生成",
+                    "多模态支持，图文、视频、语音一站式办公"
+                ]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://tongyi.aliyun.com"
+            },
+            "icon": {
+                "exists": true,
+                "mark": false,
+                "value": "/images/thanks/wisdom/通义.png"
+            },
+            "tags": {
+                "exists": true,
+                "value": ["多模态", "创意写作", "办公辅助"]
+            }
+        }
+    ]
 }

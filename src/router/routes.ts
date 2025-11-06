@@ -6,6 +6,7 @@ import { views } from "./routes/routesMaps";
 import { publicPages } from "./routes/publicPage";
 import { metaLinkPage } from "./routes/metaLinkPage";
 import { specialRoutes } from "./routes/specialRoutes";
+import { createHiddenRoute } from "./factory";
 
 /* ========== */
 
@@ -14,14 +15,5 @@ export const routes: Array<RouteRecordRaw> = [
     ...publicPages,
     ...metaLinkPage,
     ...specialRoutes,
-    {
-        // 404 页面
-        path: "/:pathMatch(.*)*",
-        name: "NotFound",
-        component: views.notFound,
-        meta: {
-            title: "404 - 页面不存在",
-            disableZoom: true,
-        },
-    },
+    createHiddenRoute("/:pathMatch(.*)*", views.notFound, "NotFound", "404 - 页面不存在"),
 ];

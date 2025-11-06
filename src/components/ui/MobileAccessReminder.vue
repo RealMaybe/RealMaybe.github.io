@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import { isMobile as checkMobile } from "@/utils";
 
 /* ========== */
 
@@ -66,15 +67,7 @@ const isMobile = ref(false);
 /* ========== */
 
 // 检测移动设备的函数
-const checkIfMobile = (): void => {
-    /** 移动设备断点 */
-    const isSmallScreen: boolean = window.matchMedia("(max-width: 767px)").matches;
-    /** 移动设备检测 */
-    const isMobileDevice: boolean =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    isMobile.value = isMobileDevice || isSmallScreen;
-};
+const checkIfMobile = (): void => { isMobile.value = checkMobile() };
 
 // 随机选择一条消息的函数
 const selectRandomMessage = (): void => {

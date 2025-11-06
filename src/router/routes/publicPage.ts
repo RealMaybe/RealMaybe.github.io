@@ -3,16 +3,19 @@
 import type { RouteRecordRaw } from "@tsTypes";
 import { views } from "./routesMaps";
 import { components } from "./routesMaps";
-import { createRoute } from "../factory";
+import { createRoute, createHiddenRoute } from "../factory";
 
 /* ========== */
 
+/**
+ * 普通页面路由
+ */
 export const publicPages: Array<RouteRecordRaw> = [
     createRoute("/index", views.index, "首页"),
     createRoute("/about", views.about, "关于"),
     createRoute("/work", views.work, "作品"),
     createRoute("/shop", void 0, "小店", void 0, [
         createRoute("", views.shop, "精品小店"),
-        createRoute("policies", components.shop.shopPolicies, "店铺政策"),
+        createHiddenRoute("policies", components.shop.shopPolicies, "店铺政策"),
     ]),
 ];

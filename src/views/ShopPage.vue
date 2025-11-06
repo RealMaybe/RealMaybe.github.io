@@ -11,9 +11,11 @@
 
         <div class="tips">
             <h3>【购物说明】</h3>
-            <p>小站暂不支持直接交易，点击商品购买按钮将跳转至淘宝详情页。</p>
+            <p>本站目前暂不支持直接交易，点击“购买”按钮后将跳转至淘宝商品详情页完成下单。</p>
             <p>
-                物流、售后等详细规定，敬请参阅<RouterLink to="/shop/policies">《政策详情》</RouterLink>，感谢支持！
+                <span>关于物流、售后等具体政策，敬请查看</span>
+                <RouterLink to="/shop/policies">《政策详情》</RouterLink>
+                <span>。感谢您的理解与支持！</span>
             </p>
         </div>
 

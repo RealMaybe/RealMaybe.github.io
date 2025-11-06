@@ -1,4 +1,104 @@
 {
-    "category": {},
-    "members": []
+    "category": {
+        "id": "star-guides",
+        "key": "starGuides",
+        "name": "塑星者",
+        "emoji": "✨",
+        "description": "通过测试、反馈、建议等方式帮助网站改进的伙伴"
+    },
+    "members": [
+        {
+            "id": "sculptors-001",
+            "name": "望舒",
+            "type": "塑星者",
+            "purpose": "创作者",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/望舒.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "sculptors-002",
+            "name": "Blueberry",
+            "type": "塑星者",
+            "purpose": "创作者",
+            "description": {
+                "exists": true,
+                "value": ["一只可爱的憨憨蓝莓（蓝莓是我自设捏）"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/Blueberry.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "sculptors-003",
+            "name": "贺安澜",
+            "type": "塑星者",
+            "purpose": "模玩/游戏/生活区创作者",
+            "description": {
+                "exists": true,
+                "value": ["模玩/游戏/生活区创作者，请多指教"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/贺安澜.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "sculptors-004",
+            "name": "乐迪",
+            "type": "塑星者",
+            "purpose": "创作者",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/乐迪.png"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "sculptors-005",
+            "name": "小旋风",
+            "type": "塑星者",
+            "purpose": "程序员",
+            "description": {
+                "exists": true,
+                "value": ["一只小小程序员"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/小旋风.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "sculptors-006",
+            "name": "小派作",
+            "type": "塑星者",
+            "purpose": "创作者",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/小派作.jpg"
+            },
+            "tags": { "exists": false }
+        }
+    ]
 }

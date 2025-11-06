@@ -1,14 +1,14 @@
 {
     "category": {
-        "id": "cornerstoneTech",
+        "id": "cornerstone-tech",
+        "key": "cornerstoneTech",
         "name": "辰星石",
         "emoji": "⚙️",
-        "description": "构建这个数字世界所依赖的技术、框架与工具",
-        "color": "#6b7280"
+        "description": "构建这个数字世界所依赖的技术、框架与工具"
     },
     "members": [
         {
-            "id": "tech_001",
+            "id": "tech-001",
             "name": "Git",
             "type": "版本控制系统",
             "purpose": "版本控制",
@@ -25,7 +25,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://git-scm.com/favicon.ico"
+                "value": "/images/thanks/cornerstone/git.png"
             },
             "tags": {
                 "exists": true,
@@ -33,7 +33,7 @@
             }
         },
         {
-            "id": "tech_002",
+            "id": "tech-002",
             "name": "GitHub",
             "type": "代码托管平台",
             "purpose": "开源托管",
@@ -50,7 +50,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://s1.chu0.com/src/img/png/53/53d8334f2310427298aee57ac6e62094.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:CmAB4rgMzDOgfzYQK-OzJjgrGNk="
+                "value": "/images/thanks/cornerstone/github.png"
             },
             "tags": {
                 "exists": true,
@@ -58,7 +58,7 @@
             }
         },
         {
-            "id": "tech_003",
+            "id": "tech-003",
             "name": "Pnpm",
             "type": "包管理工具",
             "purpose": "包管理工具",
@@ -75,7 +75,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://pnpm.io/img/pnpm-no-name-with-frame.svg"
+                "value": "/images/thanks/cornerstone/pnpm.svg"
             },
             "tags": {
                 "exists": true,
@@ -83,7 +83,7 @@
             }
         },
         {
-            "id": "tech_004",
+            "id": "tech-004",
             "name": "Vite",
             "type": "构建工具",
             "purpose": "构建工具",
@@ -100,7 +100,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://vite.dev/logo.svg"
+                "value": "/images/thanks/cornerstone/vite.svg"
             },
             "tags": {
                 "exists": true,
@@ -108,7 +108,7 @@
             }
         },
         {
-            "id": "tech_005",
+            "id": "tech-005",
             "name": "Vue.js",
             "type": "前端框架",
             "purpose": "前端框架",
@@ -122,7 +122,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://vuejs.org/logo.svg"
+                "value": "/images/thanks/cornerstone/vue.svg"
             },
             "tags": {
                 "exists": true,
@@ -130,7 +130,7 @@
             }
         },
         {
-            "id": "tech_006",
+            "id": "tech-006",
             "name": "TypeScript",
             "type": "编程语言",
             "purpose": "静态类型语言",
@@ -144,7 +144,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"
+                "value": "/images/thanks/cornerstone/typescript.png"
             },
             "tags": {
                 "exists": true,
@@ -152,7 +152,7 @@
             }
         },
         {
-            "id": "tech_007",
+            "id": "tech-007",
             "name": "Less",
             "type": "CSS预处理器",
             "purpose": "CSS 预处理器",
@@ -166,7 +166,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://lesscss.org/public/img/less_logo.png"
+                "value": "/images/thanks/cornerstone/less.png"
             },
             "tags": {
                 "exists": true,
@@ -174,7 +174,7 @@
             }
         },
         {
-            "id": "tech_008",
+            "id": "tech-008",
             "name": "Font Awesome",
             "type": "图标库",
             "purpose": "图标库",
@@ -188,7 +188,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://fontawesome.com/favicon.ico"
+                "value": "/images/thanks/cornerstone/fontawesome.ico"
             },
             "tags": {
                 "exists": true,
@@ -196,7 +196,7 @@
             }
         },
         {
-            "id": "tech_009",
+            "id": "tech-009",
             "name": "Markdown",
             "type": "标记语言",
             "purpose": "文档格式",
@@ -210,7 +210,7 @@
             },
             "icon": {
                 "exists": true,
-                "value": "https://www.markdownguide.org/assets/images/markdown-mark-white.svg"
+                "value": "/images/thanks/cornerstone/markdown.svg"
             },
             "tags": {
                 "exists": true,

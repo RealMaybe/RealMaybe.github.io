@@ -24,7 +24,7 @@
 // 字体
 @font-face {
     font-family: "Zhiyong";
-    src: url("./fonts/Zhiyong-Elegant-2.ttf") format("truetype");
+    src: url("/fonts/Zhiyong-Elegant-2.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -36,6 +36,10 @@
     border-radius: 0.75rem;
     padding: 1.5rem;
     box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.3);
+
+    @media (max-width: @mobile-breakpoint) {
+        padding: 1.5rem 1.25rem
+    }
 }
 
 .hover(@h) {

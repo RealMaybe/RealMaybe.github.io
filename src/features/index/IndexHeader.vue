@@ -62,9 +62,13 @@ header {
     }
 
     .tagline {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         color: @text-muted;
         margin-bottom: 1.25rem;
+
+        @media (max-width: @mobile-breakpoint) {
+            font-size: 1.125rem;
+        }
     }
 
     .intro {

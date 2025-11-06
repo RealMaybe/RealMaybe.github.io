@@ -2,83 +2,34 @@
 
 import type { RouteRecordRaw } from "@tsTypes";
 import { views, components } from "./routesMaps";
-
-/* ========== */
-
-/**
- * 导航栏内的路由
- */
-const used: Array<RouteRecordRaw> = [
-    {
-        path: "/change-log",
-        component: views.changeLog,
-        meta: {
-            title: "更新日志",
-            disableZoom: true,
-            nav: true,
-        },
-    },
-    {
-        path: "/acknowledgments",
-        meta: {
-            title: "致谢专栏",
-            nav: true,
-        },
-        children: [
-            {
-                path: "",
-                component: views.acknowledgments,
-                meta: {
-                    disableZoom: true,
-                },
-            },
-            /* {
-                path: "contribution-guidelines",
-                component: components.acknowledgments.ContributionGuidelines,
-                meta: {
-                    title: "建言献策",
-                    disableZoom: true,
-                },
-            }, */
-        ],
-    },
-];
-
-/* ========== */
-
-/**
- * 非导航栏内的路由
- */
-const notNav: Array<RouteRecordRaw> = [
-    {
-        path: "/original-character",
-        component: views.originalCharacter,
-        meta: {
-            title: "原创角色",
-            disableZoom: true,
-            nav: false,
-        },
-    },
-    {
-        path: "/documents",
-        component: views.document,
-        meta: {
-            title: "文档",
-            disableZoom: true,
-            nav: false,
-        },
-        children: [
-            // {
-            //     path: "idea",
-            //     component: components.document.idea,
-            // },
-        ],
-    },
-];
+import { createRoute, createHiddenRoute } from "../factory";
 
 /* ========== */
 
 /**
  * 功能路由
  */
-export const metaLinkPage: Array<RouteRecordRaw> = [...used, ...notNav];
+export const metaLinkPage: Array<RouteRecordRaw> = [
+    /*
+     * 功能导航栏内的路由
+     */
+    createRoute("/change-log", views.changeLog, "更新日志"),
+    createRoute("/acknowledgments", void 0, "致谢专栏", void 0, [
+        createRoute("", views.acknowledgments, "致谢专栏"),
+        createHiddenRoute(
+            "contribution-guidelines",
+            components.acknowledgments.ContributionGuidelines,
+            "建言献策"
+        ),
+        createHiddenRoute("feedback", components.acknowledgments.FeedbackView, "反馈"),
+    ]),
+
+    /*
+     * 不在任何导航栏内的路由
+     * - 即便是之后会添加到导航栏内，也是放在功能导航中
+     */
+    createHiddenRoute("/original-character", views.originalCharacter, "原创角色"),
+    createHiddenRoute("/documents", void 0, "官方文档", void 0, [
+        createRoute("", views.document, "官方文档"),
+    ]),
+];

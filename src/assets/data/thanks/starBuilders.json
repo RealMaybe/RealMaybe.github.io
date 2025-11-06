@@ -1,10 +1,50 @@
 {
     "category": {
-        "id": "starBuilders",
+        "id": "star-builders",
+        "key": "starBuilders",
         "name": "筑星者",
-        "emoji": "🏗️",
-        "description": "提供基础设施与服务的平台与工具",
-        "color": "#38bdf8"
+        "emoji": "🌌",
+        "description": "构筑此片星空基座的梦想家与工程师"
     },
-    "members": []
+    "members": [
+        {
+            "id": "builders-001",
+            "name": "RealMaybe",
+            "type": "网站开发与维护者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["负责维护本站点的开发与维护工作", "感谢一下自己，欸嘿~"]
+            },
+            "link": {
+                "exists": true,
+                "value": "https://www.realmaybe0429.space"
+            },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "https://avatars.githubusercontent.com/u/121269017?v=4"
+            },
+            "tags": {
+                "exists": false
+            }
+        },
+        {
+            "id": "builders-006",
+            "name": "星海不是海星",
+            "type": "梦想合伙人",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["这个人很神秘，什么也没有写～"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/builders/星海不是海星.jpg"
+            },
+            "tags": { "exists": false }
+        }
+    ]
 }

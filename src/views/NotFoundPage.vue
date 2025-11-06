@@ -9,36 +9,72 @@
 
         <!-- 主内容 -->
         <div class="content">
-            <h1 class="glitch" data-text="404">404</h1>
-            <p class="subtitle">Oops, lost in space...</p>
+            <h1 class="glitch" data-text="404">
+                404
+            </h1>
+            <p class="subtitle">报告！你已闯入一片未知星域！</p>
 
             <!-- 三只宇航员 -->
             <div class="astronauts">
                 <div class="astro" v-for="n in 3" :key="n" :style="astroDelay(n)"></div>
             </div>
 
-            <button class="btn-home" @click="$router.replace('/')">
-                <span class="fire"></span>
-                发射回航
-            </button>
+            <p class="btn-box">
+                <button class="btn-home" title="回到首页" @click="goToHome">
+                    <span class="fire"></span>
+                    <span>回家回家 ~</span>
+                </button>
+
+                <button class="btn-previous" title="回到上一页" v-if="hasValidHistory" @click="goBackToPrevious">
+                    <span class="fire"></span>
+                    <span>重返哨站 ~</span>
+                </button>
+            </p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-// 随机星星位置 & 大小
+import { useRouter } from "vue-router";
+import { useRouteHistoryStore } from "@/stores/routeHistory";
+import { computed } from "vue";
+
+const router = useRouter();
+const routeHistoryStore = useRouteHistoryStore();
+
+// 计算属性检查是否有有效历史记录
+const hasValidHistory = computed(() => routeHistoryStore.hasValidHistory);
+
+const goToHome = () => {
+    router.push("/");
+};
+
+const goBackToPrevious = () => {
+    try {
+        const lastRoute = routeHistoryStore.getLastValidRoute;
+
+        if (lastRoute && lastRoute.fullPath !== window.location.pathname)
+            router.push(lastRoute.fullPath);
+        else router.go(-1); // 备用方案：使用 router.go(-1)
+    } catch (err) {
+        console.warn("返回前页失败，回到首页:", err);
+        router.push("/");
+    }
+};
+
+// 随机星星位置及大小
 const randomStar = (i: number) => ({
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
     width: `${2 + Math.random() * 3}px`,
     height: `${2 + Math.random() * 3}px`,
-    animationDelay: `${Math.random() * 6}s`
-})
+    animationDelay: `${Math.random() * 6}s`,
+});
 
-// 宇航员动画错开
+// 宇航员动画
 const astroDelay = (n: number) => ({
-    animationDelay: `${(n - 1) * 0.4}s`
-})
+    animationDelay: `${(n - 1) * 0.4}s`,
+});
 </script>
 
 <style lang="less">
@@ -54,7 +90,7 @@ const astroDelay = (n: number) => ({
     overflow: hidden;
     background: linear-gradient(135deg, @dark-bg 0%, #0f3460 100%);
     color: @text-color;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* 星屑背景 */
@@ -91,6 +127,7 @@ const astroDelay = (n: number) => ({
     text-align: center;
     z-index: 2;
     padding: 2rem;
+    margin-top: -3rem;
 }
 
 /* 404 文字 glitch 效果 */
@@ -153,14 +190,14 @@ const astroDelay = (n: number) => ({
 
 .subtitle {
     font-size: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     color: @text-color;
+    text-shadow: 0.25rem 0.25rem 0.125rem @card-bg;
 }
 
 /* 宇航员们 */
 .astronauts {
-    display: flex;
-    justify-content: center;
+    .flex-center();
     gap: 2rem;
     margin-bottom: 2.5rem;
 }
@@ -176,7 +213,7 @@ const astroDelay = (n: number) => ({
 
     // 头盔反光
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 15%;
         left: 20%;
@@ -199,40 +236,47 @@ const astroDelay = (n: number) => ({
     }
 }
 
-/* 返回按钮 */
-.btn-home {
-    .card(); // 使用公共 mixin
-    padding: 0.75rem 1.5rem;
-    border: none;
-    font-size: 1.1rem;
-    color: @text-color;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+.btn-box {
+    .flex-center();
+    gap: 1rem;
 
-    &:hover {
-        .hover(-4px); // 使用公共 hover mixin
-    }
+    /* 按钮 */
+    button {
+        .card(); // 使用公共 mixin
+        padding: 0.75rem 1.5rem;
+        border: none;
+        font-size: 1.1rem;
+        color: @text-color;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
 
-    // 火箭尾焰
-    .fire {
-        position: absolute;
-        top: 50%;
-        left: -2rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        background: linear-gradient(to right, transparent, @accent-color 70%, transparent);
-        border-radius: 50%;
-        opacity: 0;
-        filter: blur(4px);
-        transform: translateY(-50%) scale(0.5);
-        transition: all 0.3s;
-    }
+        &:hover {
+            .hover(-4px); // 使用公共 hover mixin
+        }
 
-    &:hover .fire {
-        opacity: 1;
-        transform: translateY(-50%) scale(1.2) translateX(1rem);
+        // 火箭尾焰
+        .fire {
+            position: absolute;
+            top: 50%;
+            left: -2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: linear-gradient(to right, transparent, @accent-color 70%, transparent);
+            border-radius: 50%;
+            opacity: 0;
+            filter: blur(4px);
+            transform: translateY(-50%) scale(0.5);
+            transition: all 0.3s;
+        }
+
+        &:hover .fire {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.2) translateX(1rem);
+        }
     }
 }
 
@@ -253,6 +297,10 @@ const astroDelay = (n: number) => ({
     .astro {
         width: 3rem;
         height: 3rem;
+    }
+
+    .btn-box {
+        flex-direction: column;
     }
 }
 </style>

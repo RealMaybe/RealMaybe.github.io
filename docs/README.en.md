@@ -4,7 +4,7 @@ Welcome to the source code repository of my personal website project. This is mo
 
 The entire website is meticulously designed and built to deliver a clean, elegant, and deeply personal experience. Every interaction and visual detail reflects my unique style and preferences.
 
-**[→ Visit the website and experience it firsthand ←](https://www.realmaybe0429.space/index)**
+**[→ Visit the website and experience it firsthand ←](https://realmaybe.github.io/index)**
 
 ## Documentation
 
@@ -18,7 +18,7 @@ The project is developed using a modern frontend technology stack, ensuring an e
 Technologies used include, but are not limited to:
 
 - Vite
-- Vue 3
+- Vue 3.5
 - TypeScript
 - Pinia
 - Less
@@ -35,7 +35,7 @@ If you're curious about any design choices or implementations, feel free to expl
 
 ## Dynamic Updates
 
-This website is like a living organism, constantly iterating and evolving. You can view the detailed **[update log](https://www.realmaybe0429.space/change-log)** on the site to learn about its development journey and the thinking behind each change.
+This website is like a living organism, constantly iterating and evolving. You can view the detailed **[update log](https://realmaybe.github.io/change-log)** on the site to learn about its development journey and the thinking behind each change.
 
 ## Feedback and Communication
 

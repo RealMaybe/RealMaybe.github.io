@@ -1,8 +1,3 @@
----
-slug: feedback
-title: 建言献策
----
-
 # 建言献策 · 填表要求
 
 感谢您愿意花费时间阅读本指南。您的声音是帮助**打磨这个网站**、共创卓越体验的关键。
@@ -66,7 +61,7 @@ title: 建言献策
 > **授权须知**
 >
 > - 选择以上任一类别，即代表您同意网站在对应栏目中，公开展示您的**贡献内容摘要**与您提供的**称呼**（网名或姓名）。
-> - 为确保致谢的准确与公正，开发团队将负责最终的荣誉归类工作。。
+> - 为确保致谢的准确与公正，开发团队将负责最终的荣誉归类工作。
 > - 您可随时联系开发团队撤销此项授权。
 
 ---
@@ -95,12 +90,4 @@ title: 建言献策
 
 ---
 
-<div class="guide-footer">
-    <p>
-        <span>阅读完毕？</span>
-        <RouterLink
-            class="back-btn"
-            to="/acknowledgments/feedback"
-        >去填表 →</RouterLink>
-    </p>
-</div>
+阅读完毕？<RouterLink class="back-btn" to="/acknowledgments/feedback">去填表 →</RouterLink>

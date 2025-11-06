@@ -4,7 +4,7 @@
 
 整个网站由我精心设计和构建，旨在提供一个简洁、优雅且充满个人色彩的体验。每一处交互和视觉细节都体现着我的风格与偏好。
 
-**[→ 访问网站，亲身体验 ←](https://www.realmaybe0429.space/index)**
+**[→ 访问网站，亲身体验 ←](https://www.realmaybe0429.space)**
 
 ## 文档
 
@@ -19,7 +19,7 @@
 包括但不限于：
 
 - Vite
-- Vue 3
+- Vue 3.5
 - TypeScript
 - Pinia
 - Less
@@ -37,7 +37,7 @@
 
 这个网站如同一个持续生长的有机体，在不断迭代和进化。
 
-你可以在网站上查看详细的 **[更新日志](https://www.realmaybe0429.space/change-log)** ，了解它的演变历程和背后的思考。
+你可以在网站上查看详细的 **[更新日志](https://realmaybe.github.io/change-log)** ，了解它的演变历程和背后的思考。
 
 ## 反馈与交流
 

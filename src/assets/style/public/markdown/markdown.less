@@ -150,7 +150,7 @@
 
         th {
             background: fade(@md-primary, 85%);
-            color: #fff;
+            color: @md-text-bright;
             text-align: left;
         }
 
@@ -212,9 +212,9 @@
         .hr-nebula(@hr-dark-line, @hr-dark-glow); // 默认：暗底场景
     }
 
-    &.light hr {
-        .hr-nebula(@hr-light-line, @hr-light-glow); // 亮底卡片，需给父级加 .light
-    }
+    // &.light hr {
+    //     .hr-nebula(@hr-light-line, @hr-light-glow); // 亮底卡片，需给父级加 .light
+    // }
 
     // 链接
     a {
@@ -247,7 +247,28 @@
         }
     }
 
-    // ==========
+    span {
+        // 行内小标题
+        &.tag-inline-title {
+            display: inline-block;
+            width: 4rem;
+            margin-right: 0.5rem;
+            font-weight: bold;
+            color: @md-inline-title;
+            text-shadow: 0 0 2px rgba(127, 209, 255, 0.3);
+        }
 
-    @import url("./otherStyles.less");
+        // 行内 Icon 图标
+        &.tag-inline-icon {
+            @h: 1.5rem;
+
+            display: inline-block;
+            width: @h;
+            height: @h;
+            line-height: @h;
+            margin-right: 0.5rem;
+            color: @md-inline-title;
+            text-align: center;
+        }
+    }
 }

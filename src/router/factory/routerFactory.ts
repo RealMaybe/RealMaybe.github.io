@@ -1,4 +1,4 @@
-import type { RouteRecordRaw } from "@tsTypes";
+import type { RouteRecordRaw, RouteMeta } from "@tsTypes";
 
 /* ========== */
 
@@ -56,6 +56,59 @@ export function createRoute(
     return children
         ? ({ ...base, children } as RouteRecordRaw)
         : ({ ...base, component } as RouteRecordRaw);
+}
+
+/**
+ * 隐藏导航路由工厂函数。
+ *
+ * 在 `createRoute` 基础上生成**不会出现在主导航**的 `RouteRecordRaw`。
+ * 唯一差异：把 `meta.nav` 强制设为 `false`，其余 `title / disableZoom` 等保持不变。
+ *
+ * 适用场景：
+ * - 登录页、404、独立活动页等无需入口的页面；
+ * - 需要保持路由结构，但不想让主导航抓取。
+ *
+ * 参数列表与 `createRoute` 完全一致，可无缝替换：
+ *
+ * @param path      一级路径，必须以 `/` 开头
+ * @param component 页面组件（无子级时必填；有子级时传 `undefined`）
+ * @param navTitle  导航名称，仍会写入 `nav.title`（仅作标识，不会展示）
+ * @param title     浏览器页签标题；缺省同 `navTitle`
+ * @param children  子路由数组；提供后父级不再挂载 `component`
+ *
+ * @returns 已关闭导航的完整路由记录，可直接放入路由表
+ *
+ * @example
+ * ```ts
+ * // 隐藏的单页
+ * createHiddenRoute("/callback", OAuthCallback, "三方回调")
+ *
+ * // 隐藏的嵌套路由
+ * createHiddenRoute("/debug", void 0, "调试面板", void 0, [
+ *     createRoute("", DebugHome, "首页"),
+ *     createRoute("log", DebugLog, "日志")
+ * ])
+ * ```
+ */
+export function createHiddenRoute(
+    path: string,
+    component?: Component,
+    navTitle?: string,
+    title?: string,
+    children?: Children
+): RouteRecordRaw {
+    const r = createRoute(path, component, navTitle!, title, children);
+
+    // 保证 meta 存在
+    if (!r.meta) r.meta = {};
+
+    // 保证 nav 是对象（而不是 false）
+    const m = r.meta as RouteMeta;
+
+    // 关闭导航
+    m.nav = false;
+
+    return r;
 }
 
 /**

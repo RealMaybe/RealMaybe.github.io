@@ -1,4 +1,155 @@
 {
-    "category": {},
-    "members": []
+    "category": {
+        "id": "star-sculptors",
+        "key": "starSculptors",
+        "name": "引星者",
+        "emoji": "🚀",
+        "description": "提供灵感、资源、推广等支持的伙伴"
+    },
+    "members": [
+        {
+            "id": "guides-001",
+            "name": "慈禧蟑螂",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["一只看绿蓝玩方舟的米游三开术术人"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/慈禧蟑螂.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-002",
+            "name": "佰小白",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["这里小白，可能啥都会点但是啥都干不好哈哈"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/佰小白.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-003",
+            "name": "黎潇潇暮雨",
+            "type": "引星者",
+            "purpose": "",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/黎潇潇暮雨.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-004",
+            "name": "雷淼",
+            "type": "引星者",
+            "purpose": "",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/雷淼.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-005",
+            "name": "星幻",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["是一只已经失去梦想的星幻，爱好广泛，欢迎来玩啊。"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/星幻.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-006",
+            "name": "柚木玄",
+            "type": "引星者",
+            "purpose": "",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/柚木玄.png"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-007",
+            "name": "Maochen安安",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["二次元插画爱好者，唱歌配音等..."]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/Maochen安安.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-008",
+            "name": "洛尘轩",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["喜欢写歌唱歌的小朋友"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/洛尘轩.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guides-009",
+            "name": "洛子规",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["你若优待与我，我亦等付于你"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/洛子规.png"
+            },
+            "tags": { "exists": false }
+        }
+    ]
 }

@@ -1,13 +1,25 @@
 /* 特殊页面路由配置 */
 
-import type { RouteRecordRaw } from "@tsTypes";
+import type { Redirects, RouteRecordRaw } from "@tsTypes";
 import { createRedirects } from "../factory";
 
 /* ========== */
 
-export const specialRoutes: Array<RouteRecordRaw> = [
-    { path: "/", redirect: "/index" }, // 重定向到首页
-    ...createRedirects("/original-character", ["/oc"]), // 重定向到原创角色
-    ...createRedirects("/acknowledgments", ["/thank", "/thanks"]), // 重定向到感谢页面
-    ...createRedirects("/documents", ["/doc", "/docs", "/document"]), // 重定向到文档页面
+// 重定向配置
+const REDIRECT_CONFIGS: Redirects = [
+    // 原创角色
+    { to: "/original-character", from: ["/oc"] },
+    // 鸣谢
+    { to: "/acknowledgments", from: ["/thank", "/thanks"] },
+    { to: "/acknowledgments/contribution-guidelines", from: ["/acknowledgments/cg"] },
+    // 文档
+    { to: "/documents", from: ["/doc", "/docs", "/document", "/documentation"] },
+] as const;
+
+/* ========== */
+
+// 创建路由
+export const specialRoutes: RouteRecordRaw[] = [
+    { path: "/", redirect: "/index" },
+    ...REDIRECT_CONFIGS.flatMap(config => createRedirects(config.to, config.from)),
 ];

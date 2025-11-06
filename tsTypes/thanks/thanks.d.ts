@@ -1,4 +1,4 @@
-type ThanksKeys = `star${"Builders" | "Sculptors" | "Guides"}` | "wisdomStars" | "cornerstoneTech";
+export type ThanksKeys = `star${"Builders" | "Sculptors" | "Guides"}` | "wisdomStars" | "cornerstoneTech";
 
 interface Description {
     exists: boolean;
@@ -12,6 +12,7 @@ interface Link {
 
 interface Icon {
     exists: boolean;
+    mark?: boolean;
     value?: string;
 }
 
@@ -27,10 +28,11 @@ interface Tags {
  */
 export interface Category {
     id: string;
+    key: ThanksKeys;
     name: string;
     emoji: string;
     description: string;
-    color: string;
+    color?: string;
 }
 
 /**

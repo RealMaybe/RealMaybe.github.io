@@ -29,5 +29,6 @@ export const components = {
     },
     acknowledgments: {
         ContributionGuidelines: () => import("@/features/thanks/ContributionGuidelines.vue"),
+        FeedbackView: () => import("@/features/thanks/FeedbackView.vue"),
     },
 };
