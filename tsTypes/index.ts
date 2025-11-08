@@ -1,6 +1,8 @@
 // route
 export * from "./route/RouteMeta";
 export * from "./route/RouteSpecial";
+export * from "./route/RoutingCore";
+export * from "./route/RoutingConfig";
 
 /* ========== */
 
@@ -24,7 +26,6 @@ export * from "./links/CreateLinks";
 export * from "./shop/products";
 
 // thanks
-export * from "./thanks/credits";
 export * from "./thanks/thanks";
 
 // work

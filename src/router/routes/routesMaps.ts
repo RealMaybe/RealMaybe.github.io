@@ -18,6 +18,10 @@ export const views = {
 
 // 定义子组件元素
 export const components = {
+    changeLog: {
+        index: () => import("@/features/changeLog/ChangeLogIndex.vue"),
+        history: () => import("@/features/changeLog/ChangeLogHistory.vue"),
+    },
     blog: {
         display: () => import("@/features/blog/BlogDisplay.vue"),
         detail: () => import("@/features/blog/BlogDetail.vue"),
@@ -30,5 +34,8 @@ export const components = {
     acknowledgments: {
         ContributionGuidelines: () => import("@/features/thanks/ContributionGuidelines.vue"),
         FeedbackView: () => import("@/features/thanks/FeedbackView.vue"),
+    },
+    document: {
+        DocumentView: () => import("@/features/document/DocumentView.vue"),
     },
 };

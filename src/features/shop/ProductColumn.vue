@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 // 引入类型
-import type { Product } from "@tsTypes";
+import type { Product } from "../../../tsTypes";
 
 // 引入组件
 import CarouselCard from "@/features/shop/module/CarouselCard.vue";

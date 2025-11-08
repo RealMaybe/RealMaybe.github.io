@@ -2,13 +2,13 @@
     <MobileAccessReminder />
 
     <section id="change-log">
-        <changeLogDoc />
+        <RouterView />
     </section>
 </template>
 
 <script setup lang="ts">
+import { RouterView } from "vue-router";
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
-import changeLogDoc from "@/assets/docs/important/CHANGELOG.md";
 </script>
 
 <style scoped lang="less">

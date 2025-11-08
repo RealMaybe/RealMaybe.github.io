@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 // 类型
-import type { Products } from "@tsTypes";
+import type { Products } from "../../tsTypes";
 // 依赖
 import { ref } from "vue";
 import { RouterLink } from "vue-router";

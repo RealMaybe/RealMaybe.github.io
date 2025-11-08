@@ -1,9 +1,4 @@
-import type { RouteRecordRaw, RouteMeta } from "@tsTypes";
-
-/* ========== */
-
-type Component = RouteRecordRaw["component"] | undefined;
-type Children = RouteRecordRaw["children"];
+import type { RouteRecordRaw, RouteMeta, Component, Children, Other } from "@tsTypes";
 
 /* ========== */
 
@@ -13,16 +8,19 @@ type Children = RouteRecordRaw["children"];
  * 快速生成一条供主导航使用的 `RouteRecordRaw`，已内置常用 `meta`：
  * - `title` / `disableZoom` / `nav.show` / `nav.title`
  *
- * **注意：**
- * - 当需要子路由时，**父级记录不会挂载 `component`**，避免 Vue-Router 子路由视图冲突；
- * - 子路由请把 `path` 设为空串 `""` 作为默认页。
+ * **使用指南：**
+ * - 当需要子路由时，**父级记录可以挂载布局组件**，用于承载子路由的 `<RouterView>`
+ * - 如果父级不需要布局组件，可将 `component` 设为 `void 0`
+ * - 子路由请把 `path` 设为空串 `""` 作为默认页
+ * - 如果创建的路由需要展示在导航栏中，请使用 `createRoute`，否则请使用 `createHiddenRoute`
+ * - 如需展示在导航栏中，且包含子路由，默认页面请使用 `createRoute` 创建
+ * - 无论是否展示在导航栏中，非默认页都请使用 `createHiddenRoute` 来辅助创建
  *
  * @param path      一级路径，必须以 `/` 开头，例如 `/shop`（如果是作为子路由的时候请勿带 `/` 前缀）
- * @param component 页面组件（无子级时必填；有子级时仅用于类型推导，不会挂载，有子级时可以直接写为 `undefined`）
+ * @param component 页面组件（无子级时必填；有子级时可作为布局组件使用，也可设为 `void 0`）
  * @param navTitle  导航栏展示名称，也会作为 `nav.title` 和默认 `document.title`
  * @param title     浏览器页签标题；缺省同 `navTitle`
- * @param children  子路由数组；提供后父级不再携带 `component`
- *
+ * @param children  子路由数组；提供后父级仍可保留 `component` 作为布局
  * @returns 可直接放入路由表的完整记录
  *
  * @example
@@ -30,10 +28,15 @@ type Children = RouteRecordRaw["children"];
  * // 无子级
  * createRoute("/about", views.about, "关于", "个人简介")
  *
- * // 有子级
- * createRoute("/shop", void 0, "精品小店", void 0, [
+ * // 有子级 + 布局组件
+ * createRoute("/shop", ShopLayout, "精品小店", void 0, [
  *     createRoute("", views.shop, "小店首页"),        // 默认页
  *     createRoute("policies", ShopPolicies, "店铺政策")
+ * ])
+ *
+ * // 有子级 + 无布局（纯结构）
+ * createRoute("/legacy", void 0, "旧版页面", void 0, [
+ *     createRoute("", { redirect: "/new" }, "重定向")
  * ])
  * ```
  */
@@ -42,7 +45,8 @@ export function createRoute(
     component: Component,
     navTitle: string,
     title?: string,
-    children?: Children
+    children?: Children,
+    other?: Other
 ): RouteRecordRaw {
     const base: Omit<RouteRecordRaw, "component" | "children"> = {
         path,
@@ -50,11 +54,13 @@ export function createRoute(
             title: title ?? navTitle,
             disableZoom: true,
             nav: { show: true, title: navTitle },
+            ...other?.meta,
         },
+        ...other?.attr,
     };
 
     return children
-        ? ({ ...base, children } as RouteRecordRaw)
+        ? ({ ...base, component: component ?? void 0, children } as RouteRecordRaw)
         : ({ ...base, component } as RouteRecordRaw);
 }
 
@@ -70,12 +76,19 @@ export function createRoute(
  *
  * 参数列表与 `createRoute` 完全一致，可无缝替换：
  *
- * @param path      一级路径，必须以 `/` 开头
- * @param component 页面组件（无子级时必填；有子级时传 `undefined`）
+ * **使用指南：**
+ * - 当需要子路由时，**父级记录可以挂载布局组件**，用于承载子路由的 `<RouterView>`
+ * - 如果父级不需要布局组件，可将 `component` 设为 `void 0`
+ * - 子路由请把 `path` 设为空串 `""` 作为默认页
+ * - 如果创建的路由需要展示在导航栏中，请使用 `createRoute`，否则请使用 `createHiddenRoute`
+ * - 如需展示在导航栏中，且包含子路由，默认页面请使用 `createRoute` 创建
+ * - 无论是否展示在导航栏中，非默认页都请使用 `createHiddenRoute` 来辅助创建
+ *
+ * @param path      一级路径，必须以 `/` 开头（如果是作为子路由的时候请勿带 `/` 前缀）
+ * @param component 页面组件（无子级时必填；有子级时可作为布局组件使用，也可设为 `void 0`）
  * @param navTitle  导航名称，仍会写入 `nav.title`（仅作标识，不会展示）
  * @param title     浏览器页签标题；缺省同 `navTitle`
- * @param children  子路由数组；提供后父级不再挂载 `component`
- *
+ * @param children  子路由数组；提供后父级仍可保留 `component` 作为布局
  * @returns 已关闭导航的完整路由记录，可直接放入路由表
  *
  * @example
@@ -83,27 +96,34 @@ export function createRoute(
  * // 隐藏的单页
  * createHiddenRoute("/callback", OAuthCallback, "三方回调")
  *
- * // 隐藏的嵌套路由
- * createHiddenRoute("/debug", void 0, "调试面板", void 0, [
+ * // 隐藏的嵌套路由（带布局）
+ * createHiddenRoute("/debug", DebugLayout, "调试面板", void 0, [
  *     createRoute("", DebugHome, "首页"),
  *     createRoute("log", DebugLog, "日志")
+ * ])
+ *
+ * // 隐藏的嵌套路由（无布局）
+ * createHiddenRoute("/admin", void 0, "管理后台", void 0, [
+ *     createRoute("", AdminDashboard, "仪表板"),
+ *     createRoute("users", UserManagement, "用户管理")
  * ])
  * ```
  */
 export function createHiddenRoute(
     path: string,
-    component?: Component,
-    navTitle?: string,
+    component: Component,
+    navTitle: string,
     title?: string,
-    children?: Children
+    children?: Children,
+    other?: Other
 ): RouteRecordRaw {
-    const r = createRoute(path, component, navTitle!, title, children);
+    const r = createRoute(path, component, navTitle, title, children, other);
 
     // 保证 meta 存在
     if (!r.meta) r.meta = {};
 
     // 保证 nav 是对象（而不是 false）
-    const m = r.meta as RouteMeta;
+    const m: RouteMeta = r.meta;
 
     // 关闭导航
     m.nav = false;

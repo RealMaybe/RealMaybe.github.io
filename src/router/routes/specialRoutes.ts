@@ -7,6 +7,9 @@ import { createRedirects } from "../factory";
 
 // 重定向配置
 const REDIRECT_CONFIGS: Redirects = [
+    // 更新日志
+    { to: "/change-log", from: ["/changelog", "/changelogs"] },
+    { to: "/change-log/history", from: ["/change-log/archive"] },
     // 原创角色
     { to: "/original-character", from: ["/oc"] },
     // 鸣谢

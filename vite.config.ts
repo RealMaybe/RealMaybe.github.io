@@ -33,7 +33,7 @@ export default defineConfig({
         // 路径别名
         alias: {
             "@": fileURLToPath(new URL("./src", import.meta.url)), // src 文件夹
-            "@tsTypes": fileURLToPath(new URL("./tsTypes/index.d.ts", import.meta.url)), // ts 类型文件
+            "@tsTypes": fileURLToPath(new URL("./tsTypes/index.ts", import.meta.url)), // ts 类型文件
             "@style": fileURLToPath(new URL("./src/assets/style", import.meta.url)), // 样式文件
             "@data": fileURLToPath(new URL("./src/assets/data", import.meta.url)), // 数据文件
             "@docs": fileURLToPath(new URL("./src/assets/docs", import.meta.url)), // 文档文件
@@ -54,12 +54,12 @@ export default defineConfig({
                 entryFileNames: "script/main-[hash].js", // 入口文件放在 script 文件夹中
                 chunkFileNames: "script/[name]-[hash].js", // JS 文件放在 script 文件夹中
                 assetFileNames: ({ names: [fileName] }) => {
-                    // CSS 文件放在 style 文件夹中
+                    // 样式文件放在 style 文件夹中
                     if (/\.(css|scss|sass|less)$/.test(fileName || ""))
                         return "style/[name]-[hash][extname]";
 
                     // 图片资源放在 images 文件夹中
-                    if (/\.(png|jpe?g|gif|svg)$/.test(fileName || ""))
+                    if (/\.(png|jpe?g|gif|svg|ico|webp)$/.test(fileName || ""))
                         return "images/[name]-[hash][extname]";
 
                     // 字体文件放在 fonts 文件夹中
@@ -74,8 +74,8 @@ export default defineConfig({
                     if (/\.(pdf|md|txt)$/.test(fileName || ""))
                         return "documents/[name]-[hash][extname]";
 
-                    // json 文件放在 json 文件夹中
-                    if (/\.(json)$/.test(fileName || "")) return "data/[name]-[hash].json";
+                    // json 文件放在 data 文件夹中
+                    if (/\.(json)$/.test(fileName || "")) return "data/[name]-[hash][extname]";
 
                     // 其他静态资源放在 assets 文件夹中
                     return "assets/[name]-[hash][extname]";
