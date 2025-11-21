@@ -9,6 +9,9 @@ export * from "./route/RoutingConfig";
 // links
 export * from "./links/CreateLinks";
 
+// markdown
+export * from "./markdown/renderer";
+
 // blog
 export * from "./blog/BlogItem";
 export * from "./blog/ContentCache";

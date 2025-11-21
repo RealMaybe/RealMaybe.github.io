@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { useRouteHistoryStore } from "@/stores/routeHistory";
+import { useRouteHistoryStore } from "@/stores/factory/routeHistory";
 import { routes } from "./routes";
 import { manageViewportZoom, setDocumentTitle } from "./factory";
 

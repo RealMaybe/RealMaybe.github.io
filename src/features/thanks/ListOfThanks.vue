@@ -69,7 +69,7 @@ const { thanksList, orderedKeys } = defineProps<{
 }>();
 
 /* 顺序 entries */
- const thanksEntries = computed(() => orderedKeys.map(k => [k, thanksList[k]] as const));
+const thanksEntries = computed(() => orderedKeys.map(k => [k, thanksList[k]] as const));
 
 /* 默认描述 */
 const defaultDesc: string = "这里藏着一个好故事，等待书写"
@@ -122,8 +122,8 @@ function getDescription(category: Category, member: Member): string[] {
     width: 95%;
     margin: 0 auto 4rem;
 
-    &:last-child {
-        margin-bottom: 0;
+    &#cornerstoneTech {
+        margin-bottom: 2rem;
     }
 
     // 平板

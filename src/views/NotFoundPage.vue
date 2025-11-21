@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { useRouteHistoryStore } from "@/stores/routeHistory";
+import { useRouteHistoryStore } from "@/stores/factory/routeHistory";
 import { computed } from "vue";
 
 const router = useRouter();

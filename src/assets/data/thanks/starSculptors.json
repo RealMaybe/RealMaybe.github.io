@@ -150,6 +150,23 @@
                 "value": "/images/thanks/sculptors/洛子规.png"
             },
             "tags": { "exists": false }
+        },
+        {
+            "id": "guides-010",
+            "name": "不刀人的安小狼",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["b站UP～游戏杂谈类主播～欢迎大家关注哦"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/不刀人的安小狼.jpg"
+            },
+            "tags": { "exists": false }
         }
     ]
 }

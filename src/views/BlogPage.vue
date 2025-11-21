@@ -1,14 +1,21 @@
 <template>
     <section class="blog-page">
-        <RouterView />
+        <h1 class="title page-title">
+            <i class="fa fa-book-open"></i>
+            <span>博客</span>
+        </h1>
+
+        <article>
+            <RouterView />
+        </article>
     </section>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { useBlogDataStore } from "@/stores/blogData";
-
-onMounted(() => {
-    useBlogDataStore().fetchIndex(); // 仅拉索引
-});
+import { RouterView } from "vue-router";
+// import { useBlogDataStore } from "@/stores";
 </script>
+
+<style scoped lang="less">
+@import url("@style/public-page.less");
+</style>

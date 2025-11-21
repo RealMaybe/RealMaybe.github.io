@@ -40,7 +40,7 @@ export const useBlogDataStore = defineStore("blogData", () => {
         try {
             // 请求远端索引文件
             const url =
-                "https://raw.githubusercontent.com/RealMaybe/RealMaybe/main/data/index.json";
+                "https://raw.githubusercontent.com/RealMaybe/realmaybe-io-website-data/main/data/docs.json";
             const res = await fetch(url);
 
             // 检查响应状态

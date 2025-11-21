@@ -4,11 +4,6 @@
     <MobileAccessReminder />
 
     <section>
-        <div class="tips">
-            <span>可通过此处</span>
-            <RouterLink to="/acknowledgments">返回「致谢专栏」页面</RouterLink>
-        </div>
-
         <ContributionGuidelinesDoc />
     </section>
 </template>

@@ -19,7 +19,7 @@ export const orderedThanksKeys: Array<ThanksKeys> = [
 
 /** 感谢名单 */
 export default {
-    lastUpdated: "2025-11-04",
+    lastUpdated: "2025-11-20",
     list: {
         starBuilders,
         starGuides,

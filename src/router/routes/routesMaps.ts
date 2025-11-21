@@ -7,35 +7,33 @@ export const views = {
     notFound: () => import("@/views/NotFoundPage.vue"), // 404
     index: IndexPage, // 首页
     about: () => import("@/views/AboutPage.vue"), // 关于
-    blog: () => import("@/views/BlogPage.vue"), // 博客
+    // blog: () => import("@/views/BlogPage.vue"), // 博客
     work: () => import("@/views/WorkPage.vue"), // 作品
     shop: () => import("@/views/ShopPage.vue"), // 小店
     originalCharacter: () => import("@/views/OriginalCharacterPage.vue"), // 原创角色
     acknowledgments: () => import("@/views/ThanksPage.vue"), // 致谢
     changeLog: () => import("@/views/ChangeLogPage.vue"), // 更新日志
-    document: () => import("@/views/DocumentPage.vue"),
+    // document: () => import("@/views/DocumentPage.vue"),
 };
 
 // 定义子组件元素
 export const components = {
+    /* public: {
+        DocumentView: () => import("@/components/shared/DocumentView.vue"),
+    }, */
     changeLog: {
         index: () => import("@/features/changeLog/ChangeLogIndex.vue"),
         history: () => import("@/features/changeLog/ChangeLogHistory.vue"),
     },
-    blog: {
-        display: () => import("@/features/blog/BlogDisplay.vue"),
-        detail: () => import("@/features/blog/BlogDetail.vue"),
+    /* blog: {
         list: () => import("@/features/blog/BlogList.vue"),
-        update: () => import("@/features/blog/BlogUpdate.vue"),
-    },
+        show: () => import("@/features/blog/BlogShow.vue"),
+    }, */
     shop: {
         shopPolicies: () => import("@/features/shop/ShopPolicies.vue"),
     },
     acknowledgments: {
         ContributionGuidelines: () => import("@/features/thanks/ContributionGuidelines.vue"),
         FeedbackView: () => import("@/features/thanks/FeedbackView.vue"),
-    },
-    document: {
-        DocumentView: () => import("@/features/document/DocumentView.vue"),
     },
 };

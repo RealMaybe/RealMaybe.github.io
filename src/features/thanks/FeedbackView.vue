@@ -12,11 +12,16 @@
         <article>
             <!-- 提示 -->
             <div class="instructions">
-                <div class="tips">如果您填写并提交了该表单，我们将默认您已阅读并同意《建言献策 · 填表须知》的全部内容。</div>
+                <h3>为确保沟通顺畅，请务必先行阅读</h3>
+
+                <p>
+                    <RouterLink to="/acknowledgments/contribution-guidelines">《建言献策 · 填表须知》</RouterLink>
+                    <span>将帮助您了解反馈的流程与规范。</span>
+                    <span>阅读完毕后，勾选确认框即可解锁表单链接。</span>
+                </p>
             </div>
 
             <!-- 表单 -->
-            <div class="feedback-form"></div>
         </article>
     </section>
 </template>
@@ -25,6 +30,7 @@
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
 
 import { ref, onMounted, onUnmounted } from "vue";
+import { RouterLink } from "vue-router";
 import { isMobile as checkMobile } from "@/utils";
 
 /** 是否已阅读过说明内容 */
@@ -36,7 +42,9 @@ const isMobile = ref(false);
 /* ========== */
 
 // 检测移动设备
-const checkIfMobile = (): void => { isMobile.value = checkMobile() };
+const checkIfMobile = (): void => {
+    isMobile.value = checkMobile();
+};
 
 /* ========== */
 
@@ -51,25 +59,26 @@ onUnmounted(() => window.removeEventListener("resize", checkIfMobile as EventLis
 <style scoped lang="less">
 @import url("@style/public-page.less");
 
-.w() {
-    width: 98%;
-    margin: 0 auto;
-}
-
 .instructions {
-    .w();
-    margin-bottom: 1rem;
-}
+    .card();
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.5);
 
-.feedback-form {
-    .w();
-    height: calc(100vh - 1rem);
-    border: 0.125rem solid @dark-bg;
-    border-radius: 1rem;
-    transition: all 0.25s ease-in-out;
+    h3 {
+        margin-bottom: 1rem;
+    }
 
-    &:hover {
-        border-color: @inline-title
+    p {
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        .link-t-border(@inline-title, @link-on-color)
     }
 }
 </style>
