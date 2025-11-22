@@ -13,7 +13,7 @@ import { scrollToTopPlugin } from "@/plugin";
 /* 引入全局样式 */
 import "@style/public-global.less";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "highlight.js/styles/github-dark.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 /* ========== */
 

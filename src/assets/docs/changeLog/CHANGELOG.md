@@ -22,6 +22,8 @@
 - <span class="tag-inline-title">【重构】</span> **重构「更新日志」体系，启用<ins>历史版本</ins>页面**
     - 主页面<RouterLink to="/change-log">「更新日志」</RouterLink>现专注于展示**近期版本与未来规划**
     - 旧版本已整体迁移至<RouterLink to="/change-log/history">「更新日志 · 历史版本」</RouterLink>页面，确保完整项目历史的可追溯性
+- <span class="tag-inline-title">【优化】</span> **优化 Markdown 代码块的语法高亮与主题适配**
+    - 统一并美化了文档中代码块的视觉样式，提升技术内容的可读性
 - <span class="tag-inline-title">【战略】</span> **启动多域名内容战略，优化主站定位**
     - 已暂停主站内<ins>「文档」</ins>与<ins>「博客」</ins>页面的开发，相关功能将规划迁移至**专属新域名**
     - 此举旨在为主站提供更清晰的定位，并为「文档」与「博客」打造更专业、独立的平台体验

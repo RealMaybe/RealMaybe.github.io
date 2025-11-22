@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
 import Markdown from "unplugin-vue-markdown/vite";
+import hljs from "highlight.js"; // 引入 highlight.js
 
 /* ========== */
 
@@ -22,6 +23,19 @@ export default defineConfig({
         Markdown({
             include: "src/assets/docs/**/*.md", // 开发时解析的 Markdown 文件
             exclude: "public/**", // 运行时动态区
+            markdownItOptions: {
+                html: true,
+                linkify: true,
+                typographer: true,
+                highlight: function (str, lang) {
+                    if (lang && hljs.getLanguage(lang)) {
+                        try {
+                            return hljs.highlight(str, { language: lang }).value;
+                        } catch (__) {}
+                    }
+                    return ""; // 使用默认的转义
+                },
+            },
         }),
     ],
     server: {
