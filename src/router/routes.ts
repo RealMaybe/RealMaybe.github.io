@@ -10,6 +10,9 @@ import { createHiddenRoute } from "./factory";
 
 /* ========== */
 
+export * from "./routes/externalLinks";
+export { publicPages, metaLinkPage };
+
 // 导出路由配置
 export const routes: Array<RouteRecordRaw> = [
     ...publicPages,

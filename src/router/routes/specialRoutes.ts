@@ -16,7 +16,7 @@ const REDIRECT_CONFIGS: Redirects = [
     { to: "/acknowledgments", from: ["/thank", "/thanks"] },
     { to: "/acknowledgments/contribution-guidelines", from: ["/acknowledgments/cg"] },
     // 文档
-    // { to: "/documents", from: ["/doc", "/docs", "/document", "/documentation"] },
+    { to: "/docs", from: ["/doc", "/document", "/documents", "/documentation"] },
 ] as const;
 
 /* ========== */

@@ -8,7 +8,7 @@
     },
     "members": [
         {
-            "id": "guides-001",
+            "id": "sculptor-001",
             "name": "慈禧蟑螂",
             "type": "引星者",
             "purpose": "",
@@ -25,7 +25,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-002",
+            "id": "sculptor-002",
             "name": "佰小白",
             "type": "引星者",
             "purpose": "",
@@ -42,7 +42,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-003",
+            "id": "sculptor-003",
             "name": "黎潇潇暮雨",
             "type": "引星者",
             "purpose": "",
@@ -56,7 +56,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-004",
+            "id": "sculptor-004",
             "name": "雷淼",
             "type": "引星者",
             "purpose": "",
@@ -70,7 +70,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-005",
+            "id": "sculptor-005",
             "name": "星幻",
             "type": "引星者",
             "purpose": "",
@@ -87,7 +87,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-006",
+            "id": "sculptor-006",
             "name": "柚木玄",
             "type": "引星者",
             "purpose": "",
@@ -101,7 +101,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-007",
+            "id": "sculptor-007",
             "name": "Maochen安安",
             "type": "引星者",
             "purpose": "",
@@ -118,7 +118,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-008",
+            "id": "sculptor-008",
             "name": "洛尘轩",
             "type": "引星者",
             "purpose": "",
@@ -135,7 +135,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-009",
+            "id": "sculptor-009",
             "name": "洛子规",
             "type": "引星者",
             "purpose": "",
@@ -152,7 +152,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "guides-010",
+            "id": "sculptor-010",
             "name": "不刀人的安小狼",
             "type": "引星者",
             "purpose": "",
@@ -165,6 +165,23 @@
                 "exists": true,
                 "mark": true,
                 "value": "/images/thanks/sculptors/不刀人的安小狼.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "sculptor-011",
+            "name": "沈雾",
+            "type": "引星者",
+            "purpose": "",
+            "description": {
+                "exists": true,
+                "value": ["非常美丽的小蛇一条来着的"]
+            },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/sculptors/沈雾.jpg"
             },
             "tags": { "exists": false }
         }

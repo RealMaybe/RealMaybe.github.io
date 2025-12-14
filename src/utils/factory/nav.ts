@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from "@tsTypes";
 import { computed } from "vue";
 
-import { isObject, isString } from "../typper";
+import { isObject, isString } from "@/utils";
 
 /* ========== */
 

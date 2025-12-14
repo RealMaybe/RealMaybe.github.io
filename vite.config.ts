@@ -31,7 +31,9 @@ export default defineConfig({
                     if (lang && hljs.getLanguage(lang)) {
                         try {
                             return hljs.highlight(str, { language: lang }).value;
-                        } catch (__) {}
+                        } catch (err) {
+                            console.error(err);
+                        }
                     }
                     return ""; // 使用默认的转义
                 },

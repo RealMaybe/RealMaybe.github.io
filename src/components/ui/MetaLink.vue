@@ -2,6 +2,14 @@
 
 <template>
     <div class="meta-link">
+        <!-- 站外导航 -->
+        <!-- <template v-for="item in metaExternalLinks" :key="item.title">
+            <a :href="item.href" :title="item.title" target="_blank" rel="noopener noreferrer">
+                {{ item.title }}
+            </a>
+        </template> -->
+
+        <!-- 站内导航 -->
         <template v-for="item in metaLinkPages" :key="item.name">
             <RouterLink :to="item.path" active-class="on">
                 {{ item.name }}
@@ -12,10 +20,10 @@
 
 <script setup lang="ts">
 import { useNavLinks } from "@/utils";
-import { metaLinkPage } from "@/router/routes/metaLinkPage";
+import { metaLinkPage, metaExternalLinks } from "@/router/routes";
 
-// 拿到导航的一级路由
-const metaLinkPages = useNavLinks(metaLinkPage)
+// 内链
+const metaLinkPages = useNavLinks(metaLinkPage);
 </script>
 
 <style scoped lang="less">

@@ -47,11 +47,11 @@ export function updateUrlParams(
     let protocol,
         host,
         pathname,
-        this_url = location.href;
+        thisUrl = location.href;
 
     /* 判断传入的url地址是路径形式还是url形式 */
     if (judge) {
-        if (url.indexOf("./") >= 0) ({ protocol, host, pathname } = new URL(url, this_url));
+        if (url.indexOf("./") >= 0) ({ protocol, host, pathname } = new URL(url, thisUrl));
         else ({ protocol, host, pathname } = new URL(url));
     } else ({ protocol, host, pathname } = location);
 

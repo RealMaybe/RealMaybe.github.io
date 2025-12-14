@@ -24,8 +24,6 @@ const hobbies = ref([
     { name: "游戏", icon: "fas fa-gamepad" },
     { name: "编程", icon: "fas fa-laptop-code" },
     { name: "吉他", icon: "fas fa-guitar" },
-    { name: "跑步", icon: "fas fa-running" },
-    { name: "摄影", icon: "fas fa-camera" },
     { name: "烹饪", icon: "fas fa-utensils" },
     { name: "阅读", icon: "fas fa-book-open" },
 ]);

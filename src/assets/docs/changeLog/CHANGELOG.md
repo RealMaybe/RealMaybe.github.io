@@ -1,5 +1,5 @@
 ---
-{ version: { now: 1.4.0, old: 1.3.2 } }
+{ version: { now: 1.4.1, old: 1.3.2 } }
 ---
 
 # <i class="fa-solid fa-paw"></i> 更新日志
@@ -12,6 +12,27 @@
 > - 不用担心，每次更新都会尽量保持向下兼容，以减少对现有功能的影响
 
 ---
+
+> **🔖 快速导航**
+>
+> - 本页收录至最新版本 **v{{frontmatter.version.now}}**。
+> - 若需查看 **v{{frontmatter.version.old}}** 及更早的完整历史，请前往<RouterLink to="/change-log/history">「更新日志 · 历史版本」</RouterLink>页面。
+
+---
+
+## v1.4.1 – 2025/12/15
+
+**文档内容优化与细节调整 📝**
+
+> 本次更新聚焦于内容优化与细节打磨，持续提升用户体验。
+
+- <span class="tag-inline-title">【内容】</span> **更新部分文档与数据**
+    - 更新了店铺数据与致谢名单。
+- <span class="tag-inline-title">【优化】</span> **优化文档结构与路由逻辑**
+    - 重构了文档层次，提升了信息查找效率。
+    - 优化了路由配置及部分路由链接的渲染逻辑。
+- <span class="tag-inline-title">【修复】</span> **修复<RouterLink to="/acknowledgments">「致谢专栏」</RouterLink>中的显示与数据问题**
+    - 解决了页面内容显示异常，并修正了原始数据中的错误。
 
 ## v1.4.0 – 2025/11/22
 

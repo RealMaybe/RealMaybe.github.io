@@ -8,7 +8,7 @@
     },
     "members": [
         {
-            "id": "builders-001",
+            "id": "builder-001",
             "name": "RealMaybe",
             "type": "网站开发与维护者",
             "purpose": "",
@@ -30,7 +30,7 @@
             }
         },
         {
-            "id": "builders-006",
+            "id": "builder-002",
             "name": "星海不是海星",
             "type": "梦想合伙人",
             "purpose": "",

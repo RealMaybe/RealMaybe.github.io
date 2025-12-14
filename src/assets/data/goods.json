@@ -118,7 +118,6 @@
         ],
         "price": [8, 9],
         "taobaoLink": "https://item.taobao.com/item.htm?id=982603590322",
-        "tags": ["新品"],
         "specifications": [
             {
                 "type": "style",
@@ -148,6 +147,46 @@
                     {
                         "value": 75,
                         "displayName": "75mm",
+                        "inStock": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "CWIS-P",
+        "name": "徵羽摩柯「绯羽学园」系列 证件照 亚克力邮票",
+        "images": [
+            "https://img.alicdn.com/imgextra/i2/3483755495/O1CN01z9jdT21qSlUcL8VLO_!!3483755495.jpg",
+            "https://img.alicdn.com/imgextra/i3/3483755495/O1CN01RC6sBZ1qSlUbqRTOb_!!3483755495.jpg"
+        ],
+        "price": [9.5, 10],
+        "taobaoLink": "https://item.taobao.com/item.htm?id=1002573770620",
+        "tags": ["新品"],
+        "specifications": [
+            {
+                "type": "style",
+                "name": "款式",
+                "options": [
+                    {
+                        "value": "P11",
+                        "displayName": "P11",
+                        "inStock": true
+                    },
+                    {
+                        "value": "P12",
+                        "displayName": "P12",
+                        "inStock": true
+                    }
+                ]
+            },
+            {
+                "type": "size",
+                "name": "大小",
+                "options": [
+                    {
+                        "value": "55mm×70mm",
+                        "displayName": "55mm×70mm",
                         "inStock": true
                     }
                 ]

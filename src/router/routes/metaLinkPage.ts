@@ -32,8 +32,4 @@ export const metaLinkPage: Array<RouteRecordRaw> = [
      * - 即便是之后会添加到导航栏内，也是放在功能导航中
      */
     createHiddenRoute("/original-character", views.originalCharacter, "原创角色"),
-    /* createHiddenRoute("/documents", views.document, "官方文档", void 0, [
-        createRoute("", void 0, ""),
-        // createHiddenRoute("test", components.document.DocumentView, "测试文档页面"),
-    ]), */
 ];

@@ -8,7 +8,7 @@
     },
     "members": [
         {
-            "id": "sculptors-001",
+            "id": "guide-001",
             "name": "望舒",
             "type": "塑星者",
             "purpose": "创作者",
@@ -22,7 +22,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "sculptors-002",
+            "id": "guide-002",
             "name": "Blueberry",
             "type": "塑星者",
             "purpose": "创作者",
@@ -39,7 +39,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "sculptors-003",
+            "id": "guide-003",
             "name": "贺安澜",
             "type": "塑星者",
             "purpose": "模玩/游戏/生活区创作者",
@@ -56,7 +56,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "sculptors-004",
+            "id": "guide-004",
             "name": "乐迪",
             "type": "塑星者",
             "purpose": "创作者",
@@ -70,7 +70,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "sculptors-005",
+            "id": "guide-005",
             "name": "小旋风",
             "type": "塑星者",
             "purpose": "程序员",
@@ -87,7 +87,7 @@
             "tags": { "exists": false }
         },
         {
-            "id": "sculptors-006",
+            "id": "guide-006",
             "name": "小派作",
             "type": "塑星者",
             "purpose": "创作者",
@@ -97,6 +97,20 @@
                 "exists": true,
                 "mark": true,
                 "value": "/images/thanks/guides/小派作.jpg"
+            },
+            "tags": { "exists": false }
+        },
+        {
+            "id": "guide-007",
+            "name": "帝国绝凶虎",
+            "type": "塑星者",
+            "purpose": "创作者",
+            "description": { "exists": false },
+            "link": { "exists": false },
+            "icon": {
+                "exists": true,
+                "mark": true,
+                "value": "/images/thanks/guides/帝国绝凶虎.png"
             },
             "tags": { "exists": false }
         }

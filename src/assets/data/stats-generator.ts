@@ -51,7 +51,7 @@ export const githubImgs = {
     /* 用户统计 */
     stats: buildGitHubStatsURL({
         ...baseParam,
-        include_all_commits: true,
-        // show_icons: true,
+        // include_all_commits: true,
+        show_icons: true,
     }),
 };

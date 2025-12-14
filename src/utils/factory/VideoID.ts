@@ -1,5 +1,5 @@
 import type { createPlayerLinkOptions } from "@tsTypes";
-import { updateUrlParams, parseUrlParams } from "./url";
+import { updateUrlParams, parseUrlParams } from "@/utils";
 
 /**
  *
