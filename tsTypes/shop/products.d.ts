@@ -85,6 +85,8 @@ export interface Product {
      */
     tags?: Array<string>;
 
+    qrcode?: string;
+    
     /** 跳转到淘宝商品页面的链接 */
     taobaoLink: string;
 

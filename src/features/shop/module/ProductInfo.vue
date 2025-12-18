@@ -8,7 +8,7 @@
                 <a :href="product.taobaoLink" :title="product.name">{{ product.name }}</a>
             </h3>
             <div class="product-tags" v-if="product.tags?.length">
-                <span v-for="tag in product.tags" :key="tag" class="tag" :class="getTagClass(tag)">
+                <span v-for="tag in product.tags" :key="tag" class="tag" :style="{ backgroundColor: getTagColor(tag) }">
                     {{ tag }}
                 </span>
             </div>
@@ -79,6 +79,7 @@
 <script setup lang="ts">
 import type { Product } from "@tsTypes";
 import { ref, computed } from "vue";
+import { getTagColor } from "@/utils"; // 根据实际路径调整
 
 const { product } = defineProps<{
     product: Product;
@@ -95,17 +96,6 @@ const selectedSpecs = ref<Record<string, string | number>>({});
 
 /* 选择规格 */
 const selectSpec = (type: string, value: string | number) => { selectedSpecs.value[type] = value };
-
-/* 标签样式 */
-const TAG_CLASS: Record<string, string> = {
-    新品: "tag-new",
-    热卖: "tag-hot",
-    限时优惠: "tag-discount",
-    推荐: "tag-recommend",
-};
-
-/* 获取标签样式 */
-const getTagClass = (tag: string) => TAG_CLASS[tag] || "tag-default";
 
 /* 把价格统一成 [lowest, highest] */
 const priceRange = computed((): [number, number] => {
@@ -183,27 +173,8 @@ const goToTaobao = () => { window.open(product.taobaoLink, "_blank") };
             padding: 0.125rem 0.375rem;
             border-radius: 0.125rem;
             font-size: 0.75rem;
+            font-weight: bold;
             color: @bg;
-
-            &-new {
-                background: #FFB86C;
-            }
-
-            &-hot {
-                background: #FF5F57;
-            }
-
-            &-discount {
-                background: @primary;
-            }
-
-            &-recommend {
-                background: #5E9DFF;
-            }
-
-            &-default {
-                background: @gray;
-            }
         }
     }
 }

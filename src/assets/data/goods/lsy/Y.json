@@ -1,0 +1,68 @@
+{
+    "id": "Y",
+    "name": "洛少爷 亚克力钥匙挂件",
+    "images": [
+        "https://img.alicdn.com/imgextra/i3/3483755495/O1CN018eihU91qSlKoec8Cg_!!3483755495.jpg",
+        "https://img.alicdn.com/imgextra/i1/3483755495/O1CN010NarYZ1qSlKnsns5w_!!3483755495.jpg",
+        "https://img.alicdn.com/imgextra/i2/3483755495/O1CN01coZtiB1qSlKgV6Hiw_!!3483755495.jpg"
+    ],
+    "price": 6,
+    "taobaoLink": "https://item.taobao.com/item.htm?id=790609610750",
+    "qrcode": "/goods/qrcode/lsy-Y.png",
+    "tags": ["涨价"],
+    "specifications": [
+        {
+            "type": "style",
+            "name": "款式",
+            "options": [
+                {
+                    "value": "Y01",
+                    "displayName": "Y01",
+                    "inStock": true
+                },
+                {
+                    "value": "Y02",
+                    "displayName": "Y02",
+                    "inStock": true
+                },
+                {
+                    "value": "Y03",
+                    "displayName": "Y03",
+                    "inStock": true
+                }
+            ]
+        },
+        {
+            "type": "shape",
+            "name": "扣形",
+            "options": [
+                {
+                    "value": "猫猫扣",
+                    "displayName": "猫猫扣",
+                    "inStock": true
+                },
+                {
+                    "value": "爱心扣",
+                    "displayName": "爱心扣",
+                    "inStock": true
+                },
+                {
+                    "value": "星星扣",
+                    "displayName": "星星扣",
+                    "inStock": true
+                }
+            ]
+        },
+        {
+            "type": "size",
+            "name": "大小",
+            "options": [
+                {
+                    "value": 5,
+                    "displayName": "5cm",
+                    "inStock": true
+                }
+            ]
+        }
+    ]
+}

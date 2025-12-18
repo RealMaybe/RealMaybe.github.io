@@ -7,5 +7,8 @@ export * from "./factory/url";
 export * from "./factory/useMediaQuery";
 export * from "./factory/VideoID";
 
+// shop
+export * from "./factory/tagHelper";
+
 // typper
 export * from "./typper";

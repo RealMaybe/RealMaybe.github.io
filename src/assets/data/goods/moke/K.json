@@ -1,0 +1,44 @@
+{
+    "id": "K",
+    "name": "徵羽摩柯 亚克力桌面立牌",
+    "images": [
+        "https://img.alicdn.com/imgextra/i3/3483755495/O1CN01PFfChe1qSlITH9m59_!!3483755495.jpg",
+        "https://img.alicdn.com/imgextra/i4/3483755495/O1CN01kMCyhL1qSlIQxSYlQ_!!3483755495.jpg",
+        "https://img.alicdn.com/imgextra/i3/3483755495/O1CN01tjUQMf1qSlITKXtoU_!!3483755495.jpg",
+        "https://img.alicdn.com/imgextra/i2/3483755495/O1CN01wb7Ckw1qSlIVgndB0_!!3483755495.jpg"
+    ],
+    "price": 23.9,
+    "originalPrice": 23.9,
+    "taobaoLink": "https://item.taobao.com/item.htm?id=761023701634",
+    "qrcode": "/goods/qrcode/moke-K.png",
+    "tags": ["涨价"],
+    "specifications": [
+        {
+            "type": "style",
+            "name": "款式",
+            "options": [
+                {
+                    "value": "K01",
+                    "displayName": "K01",
+                    "inStock": false
+                },
+                {
+                    "value": "K02",
+                    "displayName": "K02",
+                    "inStock": true
+                }
+            ]
+        },
+        {
+            "type": "size",
+            "name": "大小",
+            "options": [
+                {
+                    "value": 20,
+                    "displayName": "20cm",
+                    "inStock": true
+                }
+            ]
+        }
+    ]
+}

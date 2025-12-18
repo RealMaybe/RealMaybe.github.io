@@ -6,17 +6,19 @@
         </div>
         <div class="right">
             <ProductInfo :product="product" />
+            <qrCodeBox :product="product" />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 // 引入类型
-import type { Product } from "../../../tsTypes";
+import type { Product } from "@tsTypes";
 
 // 引入组件
 import CarouselCard from "@/features/shop/module/CarouselCard.vue";
 import ProductInfo from "@/features/shop/module/ProductInfo.vue";
+import qrCodeBox from "@/features/shop/module/qrCodeBox.vue";
 
 // 接收父组件传值
 defineProps<{
@@ -46,6 +48,7 @@ defineProps<{
     .right {
         flex: 1;
         margin-left: 1.5rem;
+        position: relative;
 
         @media (max-width: @mobile-breakpoint) {
             width: 100%;

@@ -27,6 +27,7 @@ export * from "./links/CreateLinks";
 
 // shop
 export * from "./shop/products";
+export * from "./shop/tagTypes";
 
 // thanks
 export * from "./thanks/thanks";

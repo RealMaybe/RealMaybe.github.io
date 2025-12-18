@@ -27,12 +27,12 @@
 
 <script setup lang="ts">
 // 类型
-import type { Products } from "../../tsTypes";
+import type { Products } from "@tsTypes";
 // 依赖
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 // 数据
-import productsData from "@data/goods.json";
+import productsData from "@/assets/data/goods";
 // 组件
 import MobileAccessReminder from "@/components/ui/MobileAccessReminder.vue";
 import ProductColumn from "@/features/shop/ProductColumn.vue";
