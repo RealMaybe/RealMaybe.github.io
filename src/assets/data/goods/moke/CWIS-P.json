@@ -7,7 +7,6 @@
     ],
     "price": [9.5, 10],
     "taobaoLink": "https://item.taobao.com/item.htm?id=1002573770620",
-    "qrcode": "/goods/qrcode/moke-CWIS-P.png",
     "tags": ["新品"],
     "specifications": [
         {
@@ -22,6 +21,16 @@
                 {
                     "value": "P12（有挂链）",
                     "displayName": "P12（有挂链）",
+                    "inStock": true
+                },
+                {
+                    "value": "P13（P11镜像版）",
+                    "displayName": "P13（P11镜像版）",
+                    "inStock": true
+                },
+                {
+                    "value": "P14（P12镜像版）",
+                    "displayName": "P14（P12镜像版）",
                     "inStock": true
                 }
             ]

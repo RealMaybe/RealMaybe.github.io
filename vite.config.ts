@@ -97,8 +97,22 @@ export default defineConfig({
                     return "assets/[name]-[hash][extname]";
                 },
                 manualChunks: id => {
-                    // 将所有第三方依赖打包到一个名为 vendor 的文件中
-                    if (id.includes("node_modules")) return "vendor";
+                    if (id.includes("node_modules")) {
+                        // 核心库
+                        if (
+                            id.includes("vue") ||
+                            id.includes("vue-router") ||
+                            id.includes("pinia") ||
+                            id.includes("axios")
+                        )
+                            return "vue-core";
+
+                        // 第三方库
+                        if (id.includes("highlight.js")) return "highlightjs";
+                        if (id.includes("dayjs")) return "dayjs";
+
+                        return "vendor";
+                    }
                 },
             },
         },
